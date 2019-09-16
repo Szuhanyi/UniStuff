@@ -11,7 +11,74 @@ public class Algo1 {
     public static void main(String[] args) {
         //we are who we are..
         Algo1 a1 = new Algo1();
-        a1.a19();
+        a1.a122();
+
+    }
+
+    void a122(int a, int b, int c) {
+        double resultArea = 0;
+        if ( !(a + b >= c && a + c >= b && b + c >= a)) {
+            System.out.println("Not a valid triangle. Try again... ");
+        }
+        else {
+            double p = (1f / 2f) * (a + b + c);
+            resultArea = Math.sqrt(p * (p - a) * (p - b) * (p -c));
+        }
+        System.out.println("Area : " + resultArea);
+    }
+
+    void a122() {
+        // calculate area of triangle
+        a122(3,2,3);
+    }
+
+
+    void a121(double a, double b, double c) {
+        double result [] = new double [2];
+        if (a == 0) {
+            System.out.println("'a' can't be zero, obviously... ");
+        }
+        else {
+            double delta = b * b - 4 * a * c;
+            if (c == 0) {
+                result[0] = 0;
+                result[1] = -b / a;
+            } else {
+                if (delta < 0) {
+                    System.out.println("We don't have a real solution. I don't wanna do imaginary solving. a pity ...  ");
+                }
+                else {
+                    if (delta == 0) {
+                        result[0] = result[1] = -b / 2 * a;
+                    }
+                    else {
+                        result[0] = 1/(2*a) * (-b + Math.sqrt(delta));
+                        result[1] = 1/(2*a) * (-b - Math.sqrt(delta));
+                    }
+                }
+            }
+        }
+        System.out.println("Result set : ");
+        Arrays.stream(result).forEach(x -> System.out.print(x + " "));
+    }
+
+    void a121 () {
+        // solve a second grade equation
+        a121(-5,1,2);
+    }
+
+    void a120(int height, int age, boolean male) {
+
+        double result = 50 + 0.75 * (height - 150) + (age - 20) / 40;
+        if (!male) {
+            result = result * 0.9;
+        }
+        System.out.println("Ideal weight: " + result);
+    }
+
+    void a120() {
+        // calculate a person's ideal weight
+        a120(195, 27, true);
 
     }
 
