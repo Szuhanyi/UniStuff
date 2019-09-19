@@ -3,7 +3,12 @@ package main;
 import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 
 import java.io.Console;
+import java.time.Clock;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.temporal.Temporal;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Algo1 {
@@ -11,8 +16,94 @@ public class Algo1 {
     public static void main(String[] args) {
         //we are who we are..
         Algo1 a1 = new Algo1();
-        a1.a122();
+        a1.a201();
 
+    }
+
+
+    void a202() {
+        // I don't get this
+        // the description might be bad..
+
+
+    }
+
+
+    void a201(int n) {
+        // find the first n perfect number's
+        int sum = 0;
+        int counter = 1;
+        while( n > 0&& counter < 100000) {
+            sum = 0;
+            for (int i = 1; i < counter; i++) {
+                if (counter % i == 0) {
+                    sum += i;
+                }
+            }
+            if (sum == counter) {
+                n--;
+                System.out.println(counter);
+            }
+            counter++;
+        }
+
+    }
+    void a201() {
+        a201(5);
+    }
+
+    public void a124(int year, int month, int day) {
+        LocalDate ld = LocalDate.now();
+        LocalDate ld2 = LocalDate.of(year,month,day);
+        long s = ld.toEpochDay() - ld2.toEpochDay();
+        System.out.println("YOu lived " + s + " days.");
+    }
+
+    public void a124() {
+        a124(1993, 02,05);
+    }
+
+    void a123(int date1, int date2) {
+
+        // like date1 should be smaller
+         if ( date1 > date2 ) {
+             System.out.println("change the date order .. ");
+             date1 += date2;
+             date2 = date1 - date2;
+             date1 = date1 - date2;
+         }
+        // cheeky date swap ... oh my
+
+         int counter = 0;
+         int diff = date2 - date1 + 1;
+         counter += diff / 4;
+         if (diff >= 100) {
+             counter -= diff / 100;
+         }
+         if ( diff >= 400) {
+             counter += diff / 400;
+         }
+
+         if ( date1 % 4 == 0 && date1 % 100 != 0) {
+             counter++;
+         }
+        if ( date2 % 4 == 0 && date1 % 100 != 0) {
+            counter++;
+        }
+        if (date1 % 400 == 0) {
+            counter ++;
+        }
+        if (date2 % 400 == 0) {
+            counter ++;
+        }
+
+
+        System.out.println("Leap years : " + counter);
+
+    }
+
+    void a123 () {
+        a123(1800,2019);
     }
 
     void a122(int a, int b, int c) {
