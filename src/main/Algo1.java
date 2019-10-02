@@ -1,14 +1,7 @@
 package main;
 
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
-
-import java.io.Console;
-import java.time.Clock;
-import java.time.Instant;
 import java.time.LocalDate;
-import java.time.temporal.Temporal;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.Scanner;
 
 public class Algo1 {
@@ -16,8 +9,59 @@ public class Algo1 {
     public static void main(String[] args) {
         //we are who we are..
         Algo1 a1 = new Algo1();
-        a1.a201();
+        a1.a204();
 
+    }
+
+
+    void a204() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Gimme a number");
+        int x = sc.nextInt();
+        int counter = 0;
+        int counterSeven = 0;
+        int counterThirteen = 0;
+        while (x != 0 && counter++ < 10) {
+            System.out.println("Number pls");
+            x = sc.nextInt();
+            if (x % 7 == 5) {
+                counterSeven ++;
+            }
+            else {
+                if (x % 13 == 7) {
+                    counterThirteen++;
+                }
+            }
+        }
+        System.out.println("N.o. numbers which divident by 7 modulo equals 5 "+counterSeven);
+        System.out.println("N.o numcounterThirteen");
+    }
+
+
+    void a203(int[] x) {
+        int [] stat = new int[3];
+        for(int i = 0; i < x.length; i++) {
+            if (x[i] % 3 == 0 && x[i] % 5 == 0) {
+               stat[2]++;
+            }
+            else {
+                if (x[i] % 3 == 0) {
+                    stat[0]++;
+                }
+                if(x[i] % 5 == 0) {
+                    stat[1]++;
+                }
+            }
+        }
+        Arrays.stream(stat).forEach(System.out::println);
+//        for (int i = 0; i < stat.length; i++ ){
+//            System.out.println(stat[i]);
+//        }
+    }
+
+    void a203() {
+        // read in natural numbers, calculate if there are divideable by : 3 5 15 , make stats
+        a203(new int[]{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 1});
     }
 
 
