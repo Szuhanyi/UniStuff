@@ -33,8 +33,8 @@ public class Algo1 {
                 }
             }
         }
-        System.out.println("N.o. numbers which divident by 7 modulo equals 5 "+counterSeven);
-        System.out.println("N.o numcounterThirteen");
+        System.out.println("N.o. numbers which divident by 7 modulo and equals to 5 = "+counterSeven);
+        System.out.println("N.o numcounterThirteen " + counterThirteen);
     }
 
 
