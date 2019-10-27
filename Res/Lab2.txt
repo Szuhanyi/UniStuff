@@ -1,0 +1,78 @@
+
+
+ lab 2
+
+    Due Nov 4, 2012 by 11:59pm Points 10 Submitting a file upload
+
+    Írjunk algoritmust, amely megkeresi és kiírja az első n tökéletes számot! Egy szám tökéletes, ha egyenlő a nála kisebb osztóinak összegével.
+
+    Példa ■ 6 = 1 + 2 + 3.
+
+    Számoljuk meg hány olyan szám van adott n természetes szám között, amelyeknek 13-mal való osztási maradéka 7! Írjuk ki ezeket a számokat, és számítsuk ki a többi szám szorzatát!
+
+    Számoljuk meg, hogy n beolvasott természetes szám közül hány osztható 3-mal, hány osztható 5-tel, illetve hány osztható 15-tel!
+
+    Olvassunk be természetes számokat! A számok beolvasása a 0 szám beviteléig tart. Számoljuk meg és írjuk ki, hány olyan számot találtunk, amelyeknek 7-tel való osztási maradéka 5, illetve hány olyant, amelyeknek 13-mal való osztási maradéka 7!
+
+    Határozzuk meg az n  N*szám legnagyobb valódi osztóját! Ha a szám prím, írjunk megfelelő üzenetet!
+
+    Útmutatás ■ Ha a legkisebb osztó d, akkor a legnagyobb n/d lesz.
+
+    Írjuk ki egy adott n  N* szám minden osztóját!
+
+    Útmutatás ■ Legyen n = 100. Az osztók: 1, 2, 4, 5, 10, 20, 25, 50, 100. Tehát elég, ha az osztókat az {1, 2, 3, ..., [n/2]} halmazban keressük, majd kiírjuk a 100-at. Ha az osztókat kiírjuk párosával (d és n/d), csak a szám négyzetgyökéig kell keresnünk.
+
+    Írjunk programot, amely megtalálja az összes k-val osztható számot, amelyek két adott szám (n1 és n2) között találhatók!
+
+    Írjunk algoritmust, amely egy 0-nál nagyobb természetes számról eldönti, hogy prímszám-e, vagy sem! Ha a szám nem prím, írjuk ki a szám valódi osztóit, valamint az osztók számát!
+
+    Határozzuk meg az 1 milliónál kisebb, legnagyobb prímszámot!
+
+    Keressük meg adott számig a legtöbb osztójú természetes számot!
+
+    Írjunk algoritmust, amely egy adott, 6-nál nagyobb páros számot felír két különböző prímszám összegeként (Goldbach-sejtés).
+
+    Írjunk algoritmust, amely megkeresi és kiírja az első n ikerprímet! Két prímszám, p és q ikerprímek, ha q – p = 2.
+
+    Példa ■ Az első 5 ikerprím: (3, 5), (5, 7), (11, 13), (17, 19) és (29, 31).
+
+    Írjuk ki n természetes szám legnagyobb közös osztóját!
+
+    Egy Internet-mániás szeretne karácsonyi üdvözletet küldeni n > 1 milliárd e-mail címre, de kényelemből végül úgy dönt, hogy csak minden k-adik meglévő címre fog üdvözletet küldeni. Nem szeretné, ha a barátja kimaradna az üdvözölt személyek közül, ezért vele kezdi a listát. Amikor a lista végére ér, kezdi elölről, mintha ez körkörös lenne. Addig küldi az üzeneteket, amíg valakinek másodszor kellene küldeni.
+
+    Állapítsuk meg, hogy adott n, k és b (a barátja címének a sorszáma a listában) esetében, hányan nem kapnak üdvözletet!
+
+    Egy elhagyatott szigeten három tengerész és egy majom él. A tengerészek összegyűjtöttek egy halom kókuszdiót és úgy döntöttek, hogy másnap szétosztják a diókat testvériesen. Az éjszaka folyamán, az egyik tengerész felkelt, három egyenlő részre osztotta a diókat és egy részt elrejtett. Maradt egy dió, ezt a majomnak adta. Reggelig ezt a titkos beavatkozást megismételte a másik két tengerész is. Reggel a tengerészek elosztották a megmaradt diókat három egyenlő részre, újból maradt egy dió, amit a majomnak adtak.
+
+    Határozzuk meg az összes n (n  1000) számot, amely az eredetileg öszszegyűlt diók száma lehetne.
+
+    Egy állatkertben n kalitkában élnek a papagájok. Egy játékos majom kinyitotta minden kalitka ajtaját, majd visszatért és az elsővel kezdődően becsukta minden másodikat. Ezután újraindult az első kalitkától, bezárta minden harmadik kalitka ajtaját, ha ez nyitva volt, illetve kinyitotta minden harmadik kalitka ajtaját, ha ez zárva volt. Ezt így folytatta minden negyedik, ötödik stb. kalitkával, (n-szer) mindig az elsővel kezdve.
+
+    Írjuk ki a végén nyitva maradt kalitkák sorszámait!
+
+    Írjunk algoritmust, amely megadja a Fibonacci-sorozat egy adott számnál kisebb elemeinek számát!
+
+    Keressük meg azt a legkisebb Fibonacci-számot, amely nagyobb mint egy adott n szám!
+
+    A billentyűzetről beolvasunk egy legfeljebb 9 számjegyet tartalmazó egész számot és egy számjegyet. Számoljuk meg hányszor fordul elő az adott számjegy a számban!
+
+    Írjunk programot, amely megkeresi azokat az 1000-nél kisebb számokat, amelyek egyenlők számjegyeik köbének összegével!
+
+    Írjunk algoritmust, amely egy természetes számról eldönti, hogy palindrom-e! (Palindrom az a szám, amelynek számjegyeit balról jobbra, illetve jobbról balra olvasva ugyanazt a számot kapjuk.)
+
+    Írjunk ki egy, a 60-as számrendszerben megadott számot a 10-es számrendszerben! A 60-as számrendszer számjegyei: 0,1, …, 9, (10), (11), …, (59).
+
+    Például az 5(15)(55)0(20)4 szám lehet egy 60-as számrendszerben megadott szám.
+
+    Határozzuk meg azokat a természetes számokat, amelyek m és n között találhatók és amelyeknek bináris alakja azonos számú 1-es számjegyet tartalmaz!
+
+    Alakítsunk át egy 16-os számrendszerben megadott számot a 10-es számrendszerbe! Vigyázzunk a túlcsordulásra, és írjuk ki azt a legnagyobb 16-os számrendszerbeli számot, amit még át lehet alakítani!
+
+    Bontsunk fel egy adott n számot 2 hatványainak összegére!
+
+    Babszem Jankó el szeretne jutni Óriásországba egy elvarázsolt paszuly segítségével. A paszuly minden percben nő, és az aktuális magasságának 1/2, 1/3, 1/4, ... részével lesz nagyobb. Tudva azt, hogy Babszem Jankó 300m magasra szeretne eljutni és, hogy a paszuly eredeti magassága 1m, számítsuk ki hány perc alatt jut el Óriásországba! [16]
+
+    Adva van egy római szám, írjuk ki arab számjegyekkel!
+
+    Adva van egy arab szám (n ≤ 5000), írjuk ki római számjegyekkel!
+

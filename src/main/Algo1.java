@@ -13,6 +13,11 @@ public class Algo1 {
 
     }
 
+    public void a206() {
+
+
+    }
+
 
     void a204() {
         Scanner sc = new Scanner(System.in);
