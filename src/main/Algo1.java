@@ -1,15 +1,157 @@
 package main;
 
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 public class Algo1 {
 
     public static void main(String[] args) {
         //we are who we are..
         Algo1 a1 = new Algo1();
-        a1.a204();
+        a1.a211();
+
+    }
+
+    void a212() {
+        // find the first n twin prime pairs
+        // (3,5), (5,7), (11,13) (p1-p2) = 2
+        int n = 10;
+        a212(n);
+    }
+
+    private void a212(int n) {
+
+    }
+
+    void a211() {
+        // write in two prime number's sum
+        int n = 100;
+        a211(n);
+    }
+
+    private void a211(int n) {
+        int d1 = 2;
+        int d2 = 2;
+        boolean ok = false;
+        while(!ok) {
+            int i = 2;
+            while( i < n && !ok) {
+                while(!isPrime(i)) i++;
+                int j = 2;
+                while(j < n && !ok) {
+                    while(!isPrime(j)) j++;
+                    if ((i + j) == n) {
+                        ok = true;
+                        d1 = i;
+                        d2 = j;
+                    }
+                    j++;
+                }
+                i++;
+            }
+        }
+        System.out.println(n + " = " + d1 + " + " + d2);
+    }
+
+     boolean isPrime(int n ) {
+        boolean ok = false;
+        int i = 2;
+        while (i < n && !ok) {
+            if (n % i == 0) {
+                ok = true;
+            }
+            i++;
+        }
+        return !ok;
+    }
+    void a210() {
+        // get the number with the most dividents, in rage [0,t]
+        int t = 10000;
+        a210(t);
+    }
+
+    private void a210(int treshold) {
+        int max = 0;
+        int maxN = 0;
+        for (int i = 2; i < treshold; i++) {
+            int d = getNDividents(i);
+            if (max < d) {
+                max =  d;
+                maxN = i;
+            }
+        }
+        System.out.println("Number with most dividents : " + maxN);
+    }
+    private int getNDividents(int n) {
+        int divN = 0;
+        for (int i = 2; i < n; i++) {
+            if (n % i == 0) {
+                divN ++;
+            }
+        }
+        return divN;
+    }
+
+    void a209() {
+        //get the biggest prime number under one million
+        long n = 1000000 - 1;
+        boolean gotPrime = false;
+        while(!gotPrime) {
+            boolean div = false;
+            for (int i = 2; i < n; i++ ){
+                if (n % i == 0) {
+                    div = true;
+                    break;
+                }
+            }
+            if (!div) {
+                gotPrime = true;
+            }
+            n--;
+        }
+        System.out.println(n);
+    }
+
+    void a208() {
+        // define if its prim number, if it is, then write to std the real dividents, and how many were
+        // n > 0
+        int n = 71;
+        a208(n);
+
+    }
+
+    private void a208(int n) {
+        int noD = 0;
+        int o = 2;
+        for ( ; o < n; o++) {
+            if (n % o == 0) {
+                noD ++;
+            }
+        }
+        if (noD == 0) {
+            System.out.println(n + " is a prime number");
+        }
+        else {
+            o = 2;
+            Set<Integer> divs = new HashSet<>();
+            while (o < n) {
+                if (n % o ==0) {
+                    n = n / o;
+                    divs.add(o);
+                }
+                else {
+                    o++;
+                }
+            }
+            System.out.println("Number of dividents : " + divs.size());
+            divs.stream().forEach(System.out::println);
+        }
+
+    }
+
+    void a205() {
+        int n = 5;
+        // calculte n's real biggest divident
 
     }
 
