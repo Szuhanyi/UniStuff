@@ -11,6 +11,28 @@ public class Algo1 {
         a1.a212();
 
     }
+    void a214() {
+        //send messages to every k-th address, till someone would get a second one
+        int k = 9;
+        int n = 100000;
+        a214(k,n);
+
+    }
+
+    private void a214(int k, int n) {
+
+        int [] x = new int[n+1];
+        boolean run = true;
+        while( run ){
+            for (int i = 0; i < n; i += k) {
+                if (x[i] == 0) {
+                    x[i] = 1;
+                } else {
+                    run = false;
+                }
+            }
+        }
+    }
 
     void a212() {
         // find the first n twin prime pairs
@@ -35,11 +57,11 @@ public class Algo1 {
             }
             i++;
         }
-        pairs.forEach(Arrays.stream(p).forEach(System.out::print));
+        pairs.forEach(this::prettyFormat);
     }
 
     void prettyFormat(int[] x) {
-        System.out.println("("+x[1] +)
+        System.out.println("("+x[1] + "," + x[2] + ")");
     }
 
     void a211() {
