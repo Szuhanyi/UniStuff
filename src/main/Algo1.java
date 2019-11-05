@@ -8,30 +8,42 @@ public class Algo1 {
     public static void main(String[] args) {
         //we are who we are..
         Algo1 a1 = new Algo1();
-        a1.a212();
+        a1.a214();
 
     }
+    void a215() {
+
+    }
+
     void a214() {
         //send messages to every k-th address, till someone would get a second one
-        int k = 9;
-        int n = 100000;
-        a214(k,n);
+        int k = 2;  // result is 50
+        // int k = 9; // result would be 0
+        int n = 100;
+        int b = 50;
+        a214(k,n,b);
 
     }
 
-    private void a214(int k, int n) {
-
+    private void a214(int k, int n,int b) {
+        // it doens't matter where is the starting point, in finding how many of them are going to be left out
+        b = 0;
         int [] x = new int[n+1];
         boolean run = true;
+        int s = 0;
         while( run ){
-            for (int i = 0; i < n; i += k) {
-                if (x[i] == 0) {
+            for ( int i = (b + s); i < n; i += k) {
+
+                if (x[i] != 1) {
                     x[i] = 1;
                 } else {
                     run = false;
                 }
             }
+            s =  ((k - (n % k) + s) % k);
         }
+        int i = Arrays.stream(x).sum();
+        System.out.println("Memebers count who didn't receive a message : " + (n - i));
     }
 
     void a212() {
