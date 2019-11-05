@@ -8,7 +8,7 @@ public class Algo1 {
     public static void main(String[] args) {
         //we are who we are..
         Algo1 a1 = new Algo1();
-        a1.a211();
+        a1.a212();
 
     }
 
@@ -20,7 +20,26 @@ public class Algo1 {
     }
 
     private void a212(int n) {
+        int i = 2;
+        int o1= 2;
+        int o2= 2;
+        List<int[]> pairs = new LinkedList<>();
+        while (n > 0 && i < 10000) {
+            if (isPrime(i)) {
+                o2 = o1;
+                o1 = i;
+                if (o1 - o2 == 2) {
+                    pairs.add(new int[]{o1,o2});
+                }
+                n--;
+            }
+            i++;
+        }
+        pairs.forEach(Arrays.stream(p).forEach(System.out::print));
+    }
 
+    void prettyFormat(int[] x) {
+        System.out.println("("+x[1] +)
     }
 
     void a211() {
