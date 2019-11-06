@@ -8,10 +8,28 @@ public class Algo1 {
     public static void main(String[] args) {
         //we are who we are..
         Algo1 a1 = new Algo1();
-        a1.a217();
+        a1.a218();
 
     }
 
+
+    private void a218() {
+        // find the first fibo number after n
+        int n = 100;
+        a218(n);
+    }
+
+    private void a218(int n) {
+        int f1 = 0;
+        int f2 = 1;
+        int f3 = 1;
+        while(f3 < n) {
+            f1 = f2;
+            f2 = f3;
+            f3 = f1+f2;
+        }
+        System.out.println("Fibo after n="+n + " : " + f3);
+    }
 
     private void a217() {
         // count how many fibo numbers are below n
