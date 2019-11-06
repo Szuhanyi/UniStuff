@@ -8,8 +8,55 @@ public class Algo1 {
     public static void main(String[] args) {
         //we are who we are..
         Algo1 a1 = new Algo1();
-        a1.a218();
+        a1.a219();
 
+    }
+
+
+    private void a219() {
+        //read from input a number, then a digit,
+        // print the occurencess
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Gimme a number, max 9 digits");
+        boolean reading = true;
+        int number = 0;
+        while(reading) {
+            try {
+                number = sc.nextInt();
+                reading = false;
+            }
+            catch (Exception e) {
+                System.out.println("try again pls");
+            }
+        }
+        reading = true;
+        int digit = 0;
+        while(reading) {
+            System.out.println("Gimme a digit");
+            try {
+                digit = sc.nextInt();
+                if (digit / 10 == 0) {
+                    reading = false;
+                }
+                else {
+                    throw new Exception("only a digit..");
+                }
+            }
+            catch (Exception e) {
+                System.out.println("try again pls");
+            }
+        }
+        int counter = 0;
+        int originalNumber = number;
+        while(number > 0) {
+            int m = number % 10;
+            number /= 10;
+            if(m == digit){
+                counter++;
+            }
+        }
+
+        System.out.println("Digit: " + digit + " is in the number : " + originalNumber + " " + counter + " times.");
     }
 
 
