@@ -8,11 +8,78 @@ public class Algo1 {
     public static void main(String[] args) {
         //we are who we are..
         Algo1 a1 = new Algo1();
-        a1.a214();
+        a1.a217();
 
     }
-    void a215() {
 
+
+    private void a217() {
+        // count how many fibo numbers are below n
+        int n = 100;
+        a217(n);
+    }
+
+    private void a217(int n) {
+        int f1 = 0;
+        int f2 = 1;
+        int f3 = 1;
+        int counter = 0;
+        while(f3 < n) {
+            f1 = f2;
+            f2 = f3;
+            f3 = f1+f2;
+            counter++;
+        }
+        counter --; // we need to decrement, in order to exclude the number that's above n
+        System.out.println("Fibo count below n="+n + " : " + counter);
+
+    }
+
+    private void a216() {
+        // monkey opens the cages of animals.. then closes them.. how many are left open at the end ? let's find out
+        // monkeys like bananas.. right ?
+        // are you a monkey as well ? ;)
+
+        int nOfCages = 100;
+        a216(nOfCages);
+    }
+
+    private void a216(int nOfCages) {
+        int [] cages = new int[nOfCages];
+        for(int i = 1; i < nOfCages; i++) {
+            for(int j = 0; j < nOfCages; j+=i) {
+                cages[j] += 1;
+                cages[j] %=2;
+            }
+        }
+
+        for(int i = 0; i< nOfCages; i++) {
+            if(cages[i] == 1) {
+                System.out.println(i+1);
+            }
+        }
+
+    }
+
+    void a215() {
+        // find x for which : x = (( (x / 3 + 1) / 3 + 1) / 3 + 1)/ 3 + 1 is a whole number
+        int n = 1000;
+        a215(n);
+    }
+
+    private void a215(int n) {
+        boolean run = true;
+        int i = 1;
+        while (run) {
+            int x = (((i * 3 + 1) * 3 + 1) * 3 + 1) * 3 + 1;
+            if (x < n) {
+                System.out.println("Possible number of coconuts: " + x);
+            }
+            else {
+                run = false;
+            }
+            i++;
+        }
     }
 
     void a214() {
@@ -22,7 +89,6 @@ public class Algo1 {
         int n = 100;
         int b = 50;
         a214(k,n,b);
-
     }
 
     private void a214(int k, int n,int b) {

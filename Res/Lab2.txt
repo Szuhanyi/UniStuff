@@ -46,7 +46,9 @@
 
     Határozzuk meg az összes n (n  1000) számot, amely az eredetileg öszszegyűlt diók száma lehetne.
 
-    Egy állatkertben n kalitkában élnek a papagájok. Egy játékos majom kinyitotta minden kalitka ajtaját, majd visszatért és az elsővel kezdődően becsukta minden másodikat. Ezután újraindult az első kalitkától, bezárta minden harmadik kalitka ajtaját, ha ez nyitva volt, illetve kinyitotta minden harmadik kalitka ajtaját, ha ez zárva volt. Ezt így folytatta minden negyedik, ötödik stb. kalitkával, (n-szer) mindig az elsővel kezdve.
+    Egy állatkertben n kalitkában élnek a papagájok. Egy játékos majom kinyitotta minden kalitka ajtaját, majd visszatért és az elsővel kezdődően becsukta minden másodikat.
+    Ezután újraindult az első kalitkától, bezárta minden harmadik kalitka ajtaját, ha ez nyitva volt, illetve kinyitotta minden harmadik kalitka ajtaját,
+    ha ez zárva volt. Ezt így folytatta minden negyedik, ötödik stb. kalitkával, (n-szer) mindig az elsővel kezdve.
 
     Írjuk ki a végén nyitva maradt kalitkák sorszámait!
 
