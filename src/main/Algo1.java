@@ -16,11 +16,12 @@ public class Algo1 {
     private void a219() {
         //read from input a number, then a digit,
         // print the occurencess
-        Scanner sc = new Scanner(System.in);
         System.out.println("Gimme a number, max 9 digits");
         boolean reading = true;
         int number = 0;
         while(reading) {
+
+            Scanner sc = new Scanner(System.in);
             try {
                 number = sc.nextInt();
                 reading = false;
@@ -34,6 +35,8 @@ public class Algo1 {
         while(reading) {
             System.out.println("Gimme a digit");
             try {
+
+                Scanner sc = new Scanner(System.in);
                 digit = sc.nextInt();
                 if (digit / 10 == 0) {
                     reading = false;
