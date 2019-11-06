@@ -8,8 +8,38 @@ public class Algo1 {
     public static void main(String[] args) {
         //we are who we are..
         Algo1 a1 = new Algo1();
-        a1.a220();
+        a1.a221();
 
+    }
+
+    private void a221() {
+        //is a number palindrom
+        int n = 2334332;
+        if(a221(n))
+        {
+            System.out.println("It's palindrom");
+        }
+        else {
+            System.out.println("It's not palindrom");
+        }
+    }
+
+    private boolean a221(int n) {
+        boolean result = true;
+        int [] digits = new int [10];
+        int i = -1;
+        while(n > 0) {
+            digits[++i] = n % 10;
+            n /= 10;
+        }
+        for (int j = 0; j < i / 2; j++) {
+            if(digits[j] != digits[i - j]) {
+                result = false;
+                System.out.println(digits[j] + " " + digits[i -j]);
+            }
+        }
+
+        return result;
     }
 
     private void a220() {
