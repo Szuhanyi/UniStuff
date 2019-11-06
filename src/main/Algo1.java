@@ -8,10 +8,39 @@ public class Algo1 {
     public static void main(String[] args) {
         //we are who we are..
         Algo1 a1 = new Algo1();
-        a1.a219();
+        a1.a220();
 
     }
 
+    private void a220() {
+        // find all numbers where the number equals to the sum of it's digits on cubic power
+        int n = 1000;
+        a220(n);
+
+    }
+
+    private void a220(int n) {
+        for (int i = 1; i <= n; i++ ) {
+            int sum = 0;
+            int x = i;
+            while (x > 0) {
+                sum += Math.pow(x % 10,3);
+                x /= 10;
+            }
+            if (sum == i) {
+                System.out.println(i);
+            }
+        }
+    }
+
+    private int sumOfDigits(int n ) {
+        int sum = 0;
+        while (n > 0) {
+            sum += n % 10;
+            n /= 10;
+        }
+        return sum;
+    }
 
     private void a219() {
         //read from input a number, then a digit,
