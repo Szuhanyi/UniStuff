@@ -11,7 +11,56 @@ public class Algo1 {
         //we are who we are..
 
         Algo1 a1 = new Algo1();
-        a1.a224();
+        a1.a225Redefined();
+
+    }
+
+    private void a225Redefined() {
+        // now use the binary stuff
+        int n = 100;
+        a225Redefined(n);
+
+    }
+
+    private void a225Redefined(int n) {
+        String s = Integer.toBinaryString(n);
+        for(int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) =='1') {
+                System.out.println("1 * " + Math.pow(2,s.length() - i -1 ));
+            }
+        }
+    }
+
+    private void a225() {
+        // write given number as a sum of 2's powers
+        int n = 11112;
+        a225(n);
+    }
+
+    private void a225(int n) {
+        List<Integer> twoPowers = new LinkedList<>();
+        int p = 0;
+        int power = 0;
+        while (( power = (int) Math.pow(2,p++)) < n) {
+            twoPowers.add(power);
+        }
+
+        Collections.reverse(twoPowers);
+        int [] stat = new int[twoPowers.size()];
+        int i = 0;
+        while (n > 0) {
+            int tPow = twoPowers.get(i);
+            while(n - tPow >= 0) {
+                n -= tPow;
+                stat[i]++;
+            }
+            i++;
+        }
+        for(int j = 0; j < stat.length; j++) {
+            if (stat[j] > 0) {
+                System.out.println(twoPowers.get(j) + " * " + stat[j] );
+            }
+        }
 
     }
 
@@ -24,7 +73,7 @@ public class Algo1 {
 
     private void a224(String number) {
         int decimal = Integer.parseInt(number,16);
-        System.out.println(decimal);
+        System.out.println("Hex number : " + number + " in dec system is : " + decimal);
 
         int max = ~0;
         max = max >>> 1;
