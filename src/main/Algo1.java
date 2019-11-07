@@ -3,13 +3,85 @@ package main;
 import java.time.LocalDate;
 import java.util.*;
 
+import static javafx.scene.input.KeyCode.V;
+
 public class Algo1 {
 
     public static void main(String[] args) {
         //we are who we are..
-        Algo1 a1 = new Algo1();
-        a1.a221();
 
+        Algo1 a1 = new Algo1();
+        a1.a223();
+
+    }
+
+    private void a223() {
+        // [m,n] intervall
+        // find all numbers which have the exact number of 1s in them // in binary system
+        // wtf ?? meaning need to group them ?
+        //wtf ??
+        a223(1,100);
+    }
+
+    private void a223(int m, int n) {
+
+        Map<Integer,List<Integer>> stat = new HashMap<>();
+        for(int i = m; i < n; i++) {
+            int nOnes = calcOnes(i);
+            if(stat.containsKey(nOnes)) {
+                stat.get(nOnes).add(i);
+            }
+            else {
+                stat.put(nOnes,new LinkedList<>(Arrays.asList(i)));
+            }
+        }
+        stat.forEach((k,v) -> {
+            System.out.println("Number of ONEs : " + k );
+            v.forEach(System.out::println);
+        });
+    }
+
+    private int calcOnes(int n) {
+        //count the 1s in binary
+        int sum = 0;
+        while(n > 0) {
+            sum += n % 2;
+            n /= 2;
+        }
+        return sum;
+    }
+
+    private void a222() {
+        // convert a number in 60 system to 10
+        String number = "1(11)(60)";
+        String number8 = "12345";
+
+        a222(number8,8);
+    }
+
+    private void a222(String number, int system) {
+        int nInTen = 0;
+        String[] digits = null;
+        if(system == 60) {
+            digits = number.split("[()]");
+        }
+        else { // this should work till system 9
+            digits = number.split("");
+        }
+        Arrays.stream(digits).forEach(System.out::println);
+        for (int i = 0; i < digits.length; i++) {
+            try {
+                int digit = Integer.parseInt(digits[i]);
+                int power = (int) Math.pow(system, digits.length - i - 1);
+                nInTen += digit * power;
+                System.out.println("digit:"+digit+" + " + power);
+            }
+            catch (Exception e) {
+                // in case we get for input an empty string
+                // solution, to avoid ?? like with a better regexp ?
+            }
+        }
+        System.out.println("Number in "+system+"S :" + number + " in 10S is : " + nInTen);
     }
 
     private void a221() {
