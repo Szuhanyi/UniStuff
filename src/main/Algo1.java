@@ -11,8 +11,25 @@ public class Algo1 {
         //we are who we are..
 
         Algo1 a1 = new Algo1();
-        a1.a225Redefined();
+        a1.a226();
 
+    }
+
+    private void a226() {
+        // Jack and the beanstalk
+        // the bean grows with each minute
+        // growth with thick is : 1/2,1/3,1/4 ...
+        int heightToReach = 300;
+        a226(heightToReach);
+    }
+
+    private void a226(int heightToReach) {
+        double height = 1;
+        int minCounter = 0;
+        while(height < heightToReach) {
+            height += height * (1.0/ (2.0 + minCounter++));
+        }
+        System.out.println("Minutes need to reach " + heightToReach + "m  is " +(minCounter - 1) + " minutes");
     }
 
     private void a225Redefined() {

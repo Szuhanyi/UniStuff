@@ -72,7 +72,9 @@
 
     Bontsunk fel egy adott n számot 2 hatványainak összegére!
 
-    Babszem Jankó el szeretne jutni Óriásországba egy elvarázsolt paszuly segítségével. A paszuly minden percben nő, és az aktuális magasságának 1/2, 1/3, 1/4, ... részével lesz nagyobb. Tudva azt, hogy Babszem Jankó 300m magasra szeretne eljutni és, hogy a paszuly eredeti magassága 1m, számítsuk ki hány perc alatt jut el Óriásországba! [16]
+    Babszem Jankó el szeretne jutni Óriásországba egy elvarázsolt paszuly segítségével.
+    A paszuly minden percben nő, és az aktuális magasságának 1/2, 1/3, 1/4, ... részével lesz nagyobb. Tudva azt, hogy Babszem Jankó 300m magasra szeretne eljutni és,
+    hogy a paszuly eredeti magassága 1m, számítsuk ki hány perc alatt jut el Óriásországba! [16]
 
     Adva van egy római szám, írjuk ki arab számjegyekkel!
 
