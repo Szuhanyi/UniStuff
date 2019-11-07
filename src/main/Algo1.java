@@ -11,8 +11,24 @@ public class Algo1 {
         //we are who we are..
 
         Algo1 a1 = new Algo1();
-        a1.a223();
+        a1.a224();
 
+    }
+
+    private void a224() {
+        // convert number in 16S to 10S
+        // print the biggest still convertible number
+        String number = "111A";
+        a224(number);
+    }
+
+    private void a224(String number) {
+        int decimal = Integer.parseInt(number,16);
+        System.out.println(decimal);
+
+        int max = ~0;
+        max = max >>> 1;
+        System.out.println("Biggest convertible number using int : " + Integer.toHexString(max));
     }
 
     private void a223() {
