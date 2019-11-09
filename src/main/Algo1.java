@@ -549,17 +549,22 @@ public class Algo1 {
 
     }
 
-    void a205() {
-        int n = 5;
-        // calculte n's real biggest divident
-
-    }
-
     public void a206() {
 
-
     }
 
+    void a205() {
+        a205(10);
+    }
+
+    void a205(int n) {
+        //face
+        int o = 2;
+        while (o < n && n % o != 0) {
+            o++;
+        }
+        System.out.println("Biggest real divident: " + n / o);
+    }
 
     void a204() {
         Scanner sc = new Scanner(System.in);
@@ -580,10 +585,9 @@ public class Algo1 {
                 }
             }
         }
-        System.out.println("N.o. numbers which divident by 7 modulo and equals to 5 = "+counterSeven);
-        System.out.println("N.o numcounterThirteen " + counterThirteen);
+        System.out.println("N.o. numbers which divident by 7 modulo equals 5 "+counterSeven);
+        System.out.println("N.o numcounterThirteen" + counterThirteen);
     }
-
 
     void a203(int[] x) {
         int [] stat = new int[3];
@@ -611,14 +615,11 @@ public class Algo1 {
         a203(new int[]{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 1});
     }
 
-
     void a202() {
         // I don't get this
         // the description might be bad..
 
-
     }
-
 
     void a201(int n) {
         // find the first n perfect number's
@@ -687,8 +688,6 @@ public class Algo1 {
         if (date2 % 400 == 0) {
             counter ++;
         }
-
-
         System.out.println("Leap years : " + counter);
 
     }
