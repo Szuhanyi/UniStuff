@@ -3,7 +3,6 @@ package main;
 import java.time.LocalDate;
 import java.util.*;
 
-import static javafx.scene.input.KeyCode.V;
 
 public class Algo1 {
 
@@ -11,8 +10,106 @@ public class Algo1 {
         //we are who we are..
 
         Algo1 a1 = new Algo1();
-        a1.a226();
+        a1.a228();
 
+    }
+
+    private void a228() {
+        // convert arabic number into roman
+        int aNumber = 4999;
+        //CMXCIXMP CM XC IX
+       // aNumber = 999;
+        //CM XC IX
+        a228(aNumber);
+
+    }
+
+    private void a228(int aNumber) {
+        String rNumber = "";
+        Map<Integer,String> numberMap = new HashMap<>();
+
+        numberMap.put(1,"I");
+        numberMap.put(5,"V");
+        numberMap.put(10,"X");
+        numberMap.put(50,"L");
+        numberMap.put(100,"C");
+        numberMap.put(500,"D");
+        numberMap.put(1000,"M");
+        numberMap.put(5000,"P");
+
+        int i = 0;
+        String strNumber = Integer.toString(aNumber);
+        while( i < strNumber.length() ) {
+            int mod = aNumber % 10 ;
+            aNumber /= 10;
+            int power = (int) ( Math.pow(10,i));
+            if(numberMap.containsKey(power * mod)) {
+                rNumber = numberMap.get(power * mod) + rNumber;
+            }
+            else {
+                // if we dont have the key
+                if (mod <= 3) {
+                    for(int j = 0; j < 3; j++ ) {
+                        rNumber = numberMap.get(power) + rNumber;
+                    }
+                }
+                if (mod == 4) {
+                   rNumber = numberMap.get(power) + numberMap.get(power * 5) + rNumber;
+                }
+                if( mod > 5 && mod <=8) {
+                    String subS = numberMap.get(power * 5);
+                    for(int j = 0; j < mod - 5; j++ ) {
+                        subS += numberMap.get(power);
+                    }
+                    rNumber = subS + rNumber;
+                }
+                if( mod == 9) {
+                    rNumber = numberMap.get(power) + numberMap.get(power * 10) + rNumber;
+                }
+
+            }
+            i++;
+        }
+        System.out.println(rNumber);
+    }
+
+    private void a227() {
+        // got a roman number,
+        // convert it to arabic
+        String number = "LXIII";
+        a227(number);
+    }
+
+    private void a227(String number) {
+        String [] rDigits = number.split("");
+        int aNumber = 0;
+        Map<String, Integer> digitList = new HashMap<>();
+        digitList.put("I", 1);
+        digitList.put("V", 5);
+        digitList.put("X", 10);
+        digitList.put("L", 50);
+        digitList.put("C", 100);
+        digitList.put("D", 500);
+        digitList.put("M", 1000);
+
+        int digit1 = digitList.get(rDigits[0]);
+        int digit2 = 0;
+        int i = 1;
+        while( i < number.length()) {
+            digit2 = digitList.get(rDigits[i]);
+            if( digit1 < digit2 ) {
+                aNumber += (digit2 - digit1);
+            }
+            else {
+                aNumber += digit1;
+                digit1 = digit2;
+            }
+            i++;
+        }
+        if(digit1 >= digit2) {
+            aNumber += digit2;
+        }
+        System.out.println(aNumber);
     }
 
     private void a226() {
