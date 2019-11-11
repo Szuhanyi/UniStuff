@@ -5,14 +5,14 @@ import java.util.*;
 
 
 public class Algo1 {
-
-    public static void main(String[] args) {
-        //we are who we are..
-
-        Algo1 a1 = new Algo1();
-        a1.a228();
-
-    }
+//
+//    public static void main(String[] args) {
+//        //we are who we are..
+//
+//        Algo1 a1 = new Algo1();
+//        a1.a228();
+//
+//    }
 
     private void a228() {
         // convert arabic number into roman

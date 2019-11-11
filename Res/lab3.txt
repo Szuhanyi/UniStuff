@@ -1,0 +1,46 @@
+
+
+    Due Nov 18, 2012 by 5:59pm Points 10 Submitting a file upload
+
+F1. Adottak egy n létszámú osztály tanulóinak év végi átlagai. Számítsuk ki az osztályátlagot!
+F2. Adva van m karakter. Fűzzük össze ezeket egy karakterláncba!
+F3. k kutató, egyenként feljegyezte a Duna Deltában megfigyelt madárfajokat. Határozzuk meg a Duna Deltában élő madárfajok halmazát!
+F4. Számítsuk ki az első n természetes szám szorzatát (faktoriálisát)!
+
+F5. Állapítsuk meg egy számról, hogy prím-e!
+F6. Az év hónapjainak ismeretében, állapítsuk meg egy szóról, hogy egy hónap neve vagy sem!
+F7. Június folyamán megmérték a Fekete Tenger vizének hőmérsékletét Mamaián. Vajon, a hónap folyamán naponta emelkedett-e a hőmérséklet?
+F8. Ismerjük egy osztály tanulóinak neveit és év végi átlagait. Állapítsuk meg, hogy egy adott nevű tanuló az első három díjazott között van-e?
+
+F9. Adott egy szó, amely egy hónapnak a neve. Írjuk ki a sorszámát!
+F10. Határozzuk meg egy adott természetes szám legkisebb osztóját, amely nagyobb mint 1!
+F11. Adott egy naptár, amelyben több keresztnév és az adott keresztnévhez tartozó névnap található. Írjuk ki egy adott keresztnevű személy névnapját (a név biztos megtalálható a naptárban)!
+
+F12. Egy cég nyilvántartásában a hónap minden napján feljegyzik az inkasszált, illetve a kifizetett összegeket. Keressük meg azt a napot, ha létezik ilyen, amely a cég számára veszteséggel zárult (amikor a kifizetett összeg nagyobb volt, mint az inkasszálás).
+
+F13. Adott n család jövedelme és a megélhe-téshez szükséges minimális összeg értéke. Állapítsuk meg a minimális megélhetési szint alatt élő családok számát!
+F14. Adott egy programozási verseny eredmény-listája, valamint az a legkisebb pontszám, amellyel be lehet nevezni a következő forduló-ra. Hány százalékot képez a következő fordu-lóra beiratkozók száma?
+F15. Számoljuk meg egy adott szövegben a magánhangzók számát!
+
+F16. Ismerjük n beteg hőmérsékletét. Határozzuk meg a leglázasabb beteg hőmérsékletét!
+F17. Ismerjük n elsőéves egyetemista nevét és a felvételi vizsgaátlagukat. Határozzuk meg annak az egyetemistának a nevét, akivel az ábécé sorrendű táblázat kezdődni fog (legkisebb név)!
+F18. A szociális ösztöndíj kiosztása céljából össze-írták az egyetemisták családjainak jövedelmére vonatkozó adatokat. Határozzuk meg a legkisebb jövedelmet!
+
+F19. Készítsünk táblázatot egy diákcsoport lánytagjainak nevével!
+F20. Adva van egy természetes szám. Generáljuk az osztóinak sorozatát!
+
+F21. Abból a célból, hogy kiszámítsák az első év végén a csoport átlagát, egy kimutatásban feltüntették az első év végén szerzett vizsgajegyeket, de beírták az 5-ösnél kisebb jegyeket is. Mivel az átlagba nem számítanak be a nem átmenő jegyek, javítsuk ki a kimutatást úgy, hogy ezeket a jegyeket írjuk felül 0-val!
+
+F22. Válogassuk szét egy n elemű, természetes számokból álló sorozatban a páros számokat a páratlan számoktól!
+F23. Válogassunk szét n személyt a nyelvtudásuk alapján (az angol nyelvet, vagy a németet beszélik jobban)!
+F24. Adott n programozó fizetése. Válogassuk szét őket a fizetésük alapján. Az első csoportba azok kerülnek, akiknek a fizetésük nagyobb mint 1000 EUR, a másodikba a megmaradtak közül azok, akiknek a fizetése nagyobb mint 700 EUR, a harmadikban maradnak a többiek.
+
+F25. Határozzuk meg két szám valamennyi közös osztóját!
+F26. k kutató, egyenként feljegyezte a Duna Deltában megfigyelt madárfajokat nyáron is, meg télen is. Határozzuk meg a nem költöző madárfajok halmazát!
+F27. Ismerjük négy személy heti programját. Állapítsuk meg, mely napok estéin szervezhetnek kártyapartit!
+
+F28. Ismerjük két szám prímszám osztóit. Határozzuk meg a két szám legkisebb közös többszörösének prímszám osztóit!
+F29. Legyen két tanár órarendje! Határozzuk meg azokat az órákat, amikor legalább egyikük helyettesíthet egy esetleg hiányzó másik tanárt!
+
+F30. Legyenek az elsőéves egyetemisták névsorai, csoportonként. Állítsunk elő ezekből egyetlen névsort!
+
