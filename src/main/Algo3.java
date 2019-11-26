@@ -6,7 +6,112 @@ public class Algo3 {
 
     public static void main (String [] args) {
         Algo3 t = new Algo3();
-        t.a310();
+        t.a317();
+    }
+
+    private void a316() {
+        // knowing patients' temperatures get the max
+        int patientCount = 100;
+        double [] temps = new double[patientCount];
+        for(int i = 0; i < patientCount; i++) {
+            temps[i] = Math.random() * (42 - 35) + 35;
+        }
+        a316(temps);
+    }
+
+    private void a316(double[] temps) {
+        double max = Arrays.stream(temps).max().getAsDouble();
+        System.out.println(max);
+    }
+
+    private void a317() {
+        // given students, who is the first in alphabetic order
+        int studentCount  = 100;
+        double [] names = new double[studentCount];
+
+    }
+
+    private void a315() {
+        // count the number of vowels in a text
+        String text = "asdfasdfasdfasdfasdfasdf";
+        a315(text);
+    }
+
+    private void a315(String text) {
+        int vowelCount = 0;
+        String [] syl = text.split("");
+        for(int i = 0; i < text.length(); i++) {
+            if(syl[i].toUpperCase().matches("[AEUIOQ]")) {
+                vowelCount++;
+            }
+        }
+        System.out.println("Text : " + text + "\r\n No. of vowels : " + vowelCount);
+    }
+
+    private void a314() {
+        // count numbers which are higher then a given value
+        // how much percentage is it presenting in the total
+        int n = 100;
+        double [] grades = new double[n];
+        double minGrade = 80;
+        for(int i = 0 ; i < n; i++ ) {
+            grades[i] = Math.random() * 100;
+        }
+        a314(grades,minGrade);
+    }
+
+    private void a314(double[] grades, double minGrade) {
+        double moreThenCount = 0;
+        for(int i = 0; i < grades.length; i++) {
+            if(grades[i] > minGrade) {
+                moreThenCount++;
+            }
+        }
+        System.out.println("Studnents how got through to the second round in percentage : " + grades.length / moreThenCount);
+    }
+
+    private void a313() {
+        // calculate how many values are below a given number
+        int iCount = 100;
+        double [] incomes = new double[iCount];
+        for(int i = 0; i < iCount; i++) {
+            incomes[i] = Math.random() * 1000;
+        }
+        int minIncome = 500;
+        a313(incomes,minIncome);
+    }
+
+    private void a313(double[] incomes, int minIncome) {
+        int lessIncomeCount = 0;
+        for(int i = 0; i < incomes.length; i++) {
+            if(incomes[i] < minIncome) {
+                lessIncomeCount++;
+            }
+        }
+        System.out.println("Number of ppl below minimal income : " + lessIncomeCount);
+    }
+
+    private void a312() {
+
+        int dayCount = 30;
+        double [] income = new double[dayCount];
+        double [] spending = new double[dayCount];
+        for(int i = 0; i < dayCount; i++) {
+            income[i] = Math.random() * 100;
+            spending[i] = Math.random() * 100;
+        }
+        a312(income,spending);
+    }
+
+    private void a312(double[] income, double[] spending) {
+        List<Integer> badDays = new LinkedList<>();
+        for(int i = 0; i < income.length; i++) {
+            if (income[i] < spending[i]) {
+                badDays.add(i);
+            }
+        }
+        badDays.forEach(System.out::println);
+
     }
 
     private void a310() {

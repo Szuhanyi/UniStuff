@@ -16,10 +16,12 @@ F9. Adott egy szó, amely egy hónapnak a neve. Írjuk ki a sorszámát!
 F10. Határozzuk meg egy adott természetes szám legkisebb osztóját, amely nagyobb mint 1!
 F11. Adott egy naptár, amelyben több keresztnév és az adott keresztnévhez tartozó névnap található. Írjuk ki egy adott keresztnevű személy névnapját (a név biztos megtalálható a naptárban)!
 
-F12. Egy cég nyilvántartásában a hónap minden napján feljegyzik az inkasszált, illetve a kifizetett összegeket. Keressük meg azt a napot, ha létezik ilyen, amely a cég számára veszteséggel zárult (amikor a kifizetett összeg nagyobb volt, mint az inkasszálás).
+F12. Egy cég nyilvántartásában a hónap minden napján feljegyzik az inkasszált, illetve a kifizetett összegeket. Keressük meg azt a napot, ha létezik ilyen, amely a cég
+számára veszteséggel zárult (amikor a kifizetett összeg nagyobb volt, mint az inkasszálás).
 
 F13. Adott n család jövedelme és a megélhe-téshez szükséges minimális összeg értéke. Állapítsuk meg a minimális megélhetési szint alatt élő családok számát!
-F14. Adott egy programozási verseny eredmény-listája, valamint az a legkisebb pontszám, amellyel be lehet nevezni a következő forduló-ra. Hány százalékot képez a következő fordu-lóra beiratkozók száma?
+F14. Adott egy programozási verseny eredmény-listája, valamint az a legkisebb pontszám, amellyel be lehet nevezni a következő forduló-ra. Hány százalékot képez
+ a következő fordu-lóra beiratkozók száma?
 F15. Számoljuk meg egy adott szövegben a magánhangzók számát!
 
 F16. Ismerjük n beteg hőmérsékletét. Határozzuk meg a leglázasabb beteg hőmérsékletét!
