@@ -27,7 +27,11 @@ public class Algo3 {
     private void a317() {
         // given students, who is the first in alphabetic order
         int studentCount  = 100;
-        double [] names = new double[studentCount];
+        String [] names = new String[studentCount];
+
+        for (int i = 0; i < studentCount; i++) {
+            names[i] = " 1 " + i;
+        }
 
     }
 
