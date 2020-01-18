@@ -1,12 +1,174 @@
 package main;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Algo3 {
 
     public static void main (String [] args) {
         Algo3 t = new Algo3();
-        t.a317();
+        t.a325();
+    }
+
+    private void a325() {
+        // get two given number's divisors
+        int a = 12;
+        int b = 100;
+        if(a < b) {
+            a325(a, b);
+        }
+        else {
+            a325(b, a);
+        }
+    }
+
+    private void a325(int a, int b) {
+
+        List<Integer> divisors = new LinkedList<>();
+        for(int i = 2; i  < a; i++) {
+            if(a % i == 0 && b % i == 0) {
+                divisors.add(i);
+            }
+        }
+        System.out.println(divisors);
+    }
+
+    private void a324() {
+        // n programmer, sort them based on earnings
+        int [] salaries = new int [20];
+        for(int i = 0; i < salaries.length; i++) {
+            salaries[i] = (int)(Math.random() * 1000 + 200);
+        }
+        a324(salaries);
+    }
+
+    private void a324(int[] salaries) {
+        List<Integer> first = new LinkedList<>();
+        List<Integer> second = new LinkedList<>();
+        List<Integer> third = new LinkedList<>();
+        for(int i : salaries) {
+            if(i > 1000) {
+                first.add(i);
+            }
+            else {
+                if (i < 1000 && i > 300) {
+                    second.add(i);
+                }
+                else {
+                    third.add(i);
+                }
+            }
+        }
+
+    }
+
+    private void a323() {
+        // separate based on attribute (language grades)
+        int n = 11;
+        int [] german = new int[n];
+        int [] english = new int[n];
+
+        for(int i = 0; i < n; i++) {
+            german[i] = (int) (Math.random() * 5 + 5);
+            english[i] = (int) (Math.random() * 5 + 5);
+        }
+        a323(german,english);
+    }
+
+    private void a323(int[] german, int[] english) {
+        int [] better = new int[german.length];
+        for(int i = 0; i < better.length; i++) {
+            if(german[i] > english[i]) {
+                better[i] = 1;
+            }
+            else {
+                better[i] = 2;
+            }
+        }
+        for(int i = 0; i < better.length; i++) {
+            if(better[i] == 1) {
+                System.out.println("The " + i + "th student is better at german.");
+            }
+            else {
+                System.out.println("The " + i + "th student is better at english.");
+            }
+        }
+    }
+
+    private void a322() {
+        // sort the odd numbers from the even ones
+
+        int [] x = new int[10];
+        for(int i = 0; i < x.length; i++) {
+            x[i] = (int) (Math.random() * 100);
+        }
+        a322(x);
+    }
+
+    private void a322(int[] x) {
+        List <Integer> oddOnes = new LinkedList<>();
+        List <Integer> evenOnes = new LinkedList<>();
+
+        for(int i = 0; i < x.length; i++) {
+            if(x[i] % 2 == 1) {
+                oddOnes.add(x[i]);
+            }
+            else {
+                evenOnes.add(x[i]);
+            }
+        }
+        System.out.println(oddOnes);
+    }
+
+    private void a321() {
+        // grades ..
+        // which are less then 5, replace it with 0
+        // ok ?
+        int [] grades = new int[30];
+        for(int i = 0; i < grades.length; i++) {
+            grades[i] = (int) (Math.random() * 10);
+        }
+        a321(grades);
+    }
+
+    private void a321(int[] grades) {
+        for(int i = 0; i < grades.length; i++) {
+            if(grades[i] < 5) {
+                grades[i] = 0;
+            }
+            System.out.println(grades[i]);
+        }
+    }
+
+
+    private void a320() {
+        // given natural number, calculate the product of it's divisors
+        int n = 100;
+        a320(n);
+    }
+
+    private void a320(int n) {
+        int product = 1;
+        for(int i = 2; i < n; i++) {
+            if( n % i == 0) {
+                product *= i;
+            }
+        }
+        System.out.println(product + " is the product of n= " + n + "'s divisors. have fun");
+    }
+
+    private void a319() {
+        // create a table with a student group's female member's  names
+        // won't do, doesn't make any sense
+
+    }
+
+    private void a318() {
+        // n incomes, get the lowest
+        double[] incomes = new double[100];
+        Arrays.stream(incomes).forEach(p-> p = Math.random() * 100 + 10);
+        double min = Arrays.stream(incomes).min().getAsDouble();
+        System.out.println("Min : " + min);
     }
 
     private void a316() {
@@ -30,9 +192,15 @@ public class Algo3 {
         String [] names = new String[studentCount];
 
         for (int i = 0; i < studentCount; i++) {
-            names[i] = " 1 " + i;
+            names[i] = " Student " + i;
         }
+        a317(names);
+    }
 
+    private void a317(String[] names) {
+ //        how to do this ? with lambda, and java 8 streams.. huh ?
+        List<String> asdf = Arrays.stream(names).sorted().collect(Collectors.toUnmodifiableList());
+        System.out.println(asdf.get(3));
     }
 
     private void a315() {

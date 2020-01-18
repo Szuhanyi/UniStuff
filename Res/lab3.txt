@@ -31,7 +31,8 @@ F18. A szociális ösztöndíj kiosztása céljából össze-írták az egyetemi
 F19. Készítsünk táblázatot egy diákcsoport lánytagjainak nevével!
 F20. Adva van egy természetes szám. Generáljuk az osztóinak sorozatát!
 
-F21. Abból a célból, hogy kiszámítsák az első év végén a csoport átlagát, egy kimutatásban feltüntették az első év végén szerzett vizsgajegyeket, de beírták az 5-ösnél kisebb jegyeket is. Mivel az átlagba nem számítanak be a nem átmenő jegyek, javítsuk ki a kimutatást úgy, hogy ezeket a jegyeket írjuk felül 0-val!
+F21. Abból a célból, hogy kiszámítsák az első év végén a csoport átlagát, egy kimutatásban feltüntették az első év végén szerzett vizsgajegyeket, de beírták az 5-ösnél kisebb jegyeket is. Mivel az átlagba nem számítanak be a nem átmenő jegyek, javítsuk ki a kimutatást úgy,
+ hogy ezeket a jegyeket írjuk felül 0-val!
 
 F22. Válogassuk szét egy n elemű, természetes számokból álló sorozatban a páros számokat a páratlan számoktól!
 F23. Válogassunk szét n személyt a nyelvtudásuk alapján (az angol nyelvet, vagy a németet beszélik jobban)!
