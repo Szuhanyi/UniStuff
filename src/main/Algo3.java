@@ -1,17 +1,230 @@
 package main;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class Algo3 {
 
-    public static void main (String [] args) {
-        Algo3 t = new Algo3();
-        t.a325();
+//    public static void main (String [] args) {
+//        Algo3 t = new Algo3();
+//        t.a330();
+//    }
+
+    private void a330() {
+
+        List<String> class1 = new ArrayList<>();
+        class1.add("Balint Jeno");
+        class1.add("Pal Balazs");
+        List<String> class2 = new ArrayList<>();
+        class2.add("Aladar Jeno");
+        class2.add("Valter Hitler");
+
+        a330(class1,class2);
+
+
+    }
+
+    private void a330(List<String> class1, List<String> class2) {
+        List<String> faculty = new ArrayList<>();
+        class1.forEach(faculty::add);
+        class2.forEach(faculty::add);
+        faculty.stream().sorted().forEachOrdered(System.out::println);
+    }
+
+    private void a329() {
+        // two teachers' calendars
+        // get hours on which at least one of them could substitute for another teacher
+        // in other words , get the sum of the two sets..
+        // calendar of five days
+        // availability from 8:00 till 18:00
+        int [][]  cal1= new int[5][13];
+        assignHours(cal1);
+
+        int [][]  cal2= new int[5][13];
+        assignHours(cal2);
+
+        a329(cal1,cal2);
+    }
+
+    private void a329(int[][] cal1, int[][] cal2) {
+        int [][] calSubstitute = new int[5][13];
+        for(int i = 0 ; i < 5; i++ ) {
+            for(int j = 0; j < 13; j++) {
+                // if it is 1 , then there is capacity for substitution
+                // ok ? ty
+                if(cal1[i][j] + cal2[i][j] < 2) {
+                    calSubstitute[i][j] = 1;
+                }
+            }
+        }
+        Arrays.stream(calSubstitute).forEach(p ->
+            {
+                System.out.println();
+                Arrays.stream(p).forEach(System.out::print);
+            });
+    }
+
+    private void assignHours(int[][] cal1) {
+        //hours in twos
+        // total hours : 5 x 12 = 60
+        // working hours : 30
+        for(int i = 0; i < 15; i++ ) {
+            //create and index randomly
+            boolean picked = false;
+            while(!picked) {
+                int hour = (int) (Math.random() * 60.0);
+                int day = hour / 12;
+                int actHour = hour % 12;
+                if(cal1[day][actHour] == 0) {
+                    picked = true;
+                    cal1[day][actHour] = 1;
+                    cal1[day][actHour+1] = 1;
+                }
+            }
+        }
+
+
+    }
+
+
+    private void a328() {
+        int [] primeDivisors1 = new int[] {2,5,7,11};
+        int [] primeDivisors2 = new int[] {2,11,121};
+        a328(primeDivisors1,primeDivisors2);
+    }
+
+    private void a328(int[] pd1, int[] pd2) {
+        Set<Integer> leastCommonMultiple = new HashSet<>();
+        for(int i = 0; i < pd1.length; i++) {
+            leastCommonMultiple.add(pd1[i]);
+        }
+        for(int i = 0; i < pd2.length; i++) {
+            leastCommonMultiple.add(pd2[i]);
+        }
+        System.out.println(leastCommonMultiple);
+    }
+
+
+    private void a327() {
+        // we know four people's calendar. Find out which days are available for a cards game.
+        int [][] calendarPeti = new int[5][];
+        calendarPeti[0] = new int[24];
+        busy(8,18,calendarPeti[0]);
+        calendarPeti[1]= new int[24];
+        busy(8,18,calendarPeti[1]);
+        busy(19,21,calendarPeti[1]);
+        System.out.println(calendarPeti[1][18]);
+
+        calendarPeti[2] = new int[24];
+        busy(8,18,calendarPeti[2]);
+        calendarPeti[3] = new int[24];
+        busy(8,18,calendarPeti[3]);
+        calendarPeti[4] = new int[24];
+        busy(8,18, calendarPeti[4]);
+
+
+        int [][] calendarJancsi = new int[5][];
+        calendarJancsi[0] = new int[24];
+        busy(8,18,calendarJancsi[0]);
+        calendarJancsi[1]= new int[24];
+        busy(8,18,calendarJancsi[1]);
+        calendarJancsi[2] = new int[24];
+        busy(8,18,calendarJancsi[2]);
+        calendarJancsi[3] = new int[24];
+        busy(8,18,calendarJancsi[3]);
+        calendarJancsi[4] = new int[24];
+        busy(8,18, calendarJancsi[4]);
+
+        List<int[][]> calendars = new LinkedList<>();
+        calendars.add(calendarJancsi);
+        calendars.add(calendarPeti);
+        a327(calendars);
+
+    }
+
+    private void a327(List<int[][]> calendars) {
+        // we are interested on which day are they free on 19.00  hours
+        int partyTime = 19;
+        List<Integer> freeDays = new LinkedList<>();
+
+        for (int days = 0; days < 5; days++) {
+            boolean freeday = true;
+            for( int[][] calendar : calendars) {
+                if(calendar[days][partyTime] > 0) {
+                    freeday = false;
+                }
+            }
+            if(freeday) {
+                freeDays.add(days);
+            }
+        }
+
+        System.out.println(freeDays);
+
+        // facking piece of shit
+
+    }
+
+
+    private void busy(int i1, int i2, int[] hours) {
+        for(int i = i1; i < i2 && i < 24; i++ ){
+            hours[i] = 1;
+        }
+    }
+
+    private void a326() {
+
+        // k researchers    went to document species of Duna Delta, at times of winter and summer
+        // get the set of birds which are not moving between seasons / nonMigratory birds
+
+        String[][] researcher1 = new String[2][10];
+        researcher1[0] = new String[] {"Snipe","Crow","Vulture","Raven"};
+        researcher1[1] = new String[] {"Stork","Vulture"};
+
+        String[][] researcher2 = new String[2][10];
+        researcher2[0] = new String[] {"Snipe","Crow","Vulture","Raven","Swallow"};
+        researcher2[1] = new String[] {"Stork","Vulture"};
+
+        List<String[][]> researchers = new ArrayList<>();
+        researchers.add(researcher1);
+        researchers.add(researcher2);
+        a326(researchers);
+
+    }
+
+    private void a326(List<String[][]> researchers) {
+        int WINTER = 1;
+        int SUMMER = 0;
+        Set<String> nonMigratoryBirds = new HashSet<>();
+
+        for(String [][] k : researchers) {
+
+            for (String  bird : k[SUMMER]) {
+                if(!nonMigratoryBirds.contains(bird)) {
+                    for(int i = 0; i < researchers.size(); i++ ) {
+                        for (String tempBird : k[WINTER]) {
+                            if (bird.equalsIgnoreCase(tempBird)) {
+                                nonMigratoryBirds.add(bird);
+                                break;
+                            }
+                        }
+                    }
+                }
+
+
+            }
+
+        }
+
+        System.out.println(nonMigratoryBirds);
+
     }
 
     private void a325() {
         // get two given number's divisors
+
         int a = 12;
         int b = 100;
         if(a < b) {
@@ -34,6 +247,7 @@ public class Algo3 {
     }
 
     private void a324() {
+
         // n programmer, sort them based on earnings
         int [] salaries = new int [20];
         for(int i = 0; i < salaries.length; i++) {
@@ -43,6 +257,7 @@ public class Algo3 {
     }
 
     private void a324(int[] salaries) {
+
         List<Integer> first = new LinkedList<>();
         List<Integer> second = new LinkedList<>();
         List<Integer> third = new LinkedList<>();

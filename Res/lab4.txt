@@ -1,0 +1,86 @@
+
+
+    Due Dec 2, 2012 by 11:59pm Points 10 Submitting a file upload
+
+1.    Olvassunk be n valós számot! Határozzuk meg a beolvasott számok abszolút értékeinek számtani középarányosát!
+
+2.    Egyenként beolvasunk n valós számot. Számítsuk ki a szigorúan pozitív számok szorzatát, valamint a negatív számok számtani középarányosát!
+
+3.    Olvassunk be n természetes számot! Határozzuk meg a 7-nél kisebb számok szorzatát, valamint a 10-nél nagyobb számok összegét!
+
+4.    Számítsuk ki a következő ö  sszegeket:
+
+    a) S1 = 12 + 32 + 52 +...+ (2n – 1)2;
+
+    b) S2 = 1 + 1 · 2 + 1 · 2 · 3 + ... + 1 · 2 · 3 · ... · n.
+
+    ha tudjuk, hogy n egy 10-nél kisebb természetes szám.
+
+    Útmutatás: A második feladatnál észrevesszük, hogy az összeg olyan egymásután következő tagokból áll, amelyek csak egyetlen szorzótényezőben különböznek. Ebből következik, hogy egy-egy tag kiszámítását nem kezdjük mindig elölről, hanem az előző lépésben kiszámolt tagot „visszük tovább”.
+
+5.   Számítsuk ki az első n természetes szám összegét és szorzatát!
+
+    Figyelem: Gondoljunk egy nem hozzáértő felhasználóra is. Előbb számítsuk ki melyik az a legnagyobb szám, amelynek ki lehet számítani a faktoriálisát,
+    figyelembe véve annak a legnagyobb egész számnak az értékét, amit a használt programozási nyelv megfelelő típusa ábrázolni képes.
+
+6. Tegyük fel, hogy félévi vizsgára készülünk és a laborjegyek már megvannak. Számítsuk ki az 5-ösnél nagyobb laborjegyek átlagát.
+
+    Útmutatás: Nincs szükség tömbre, mivel a jegyeket egymás után dolgozzuk fel. Meg kell számolni, hány tagja van az összegnek, egyébként nem tudjuk mennyivel kell osztani.
+     Vigyázat: előfordulhat, hogy nincs egyetlen átmenő jegy sem!
+
+7.    Számítsuk ki a következő összeget:
+
+    S = 1 + 1 / 2! + 1 / 3! + … + 1/ n!
+
+    Útmutatás:A faktoriálist nem számoljuk ki, hanem minden lépésnél elosztjuk az előző tagot az aktuális lépésszámmal.
+
+8.    Számítsuk ki a következő összeget:
+    [1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+...+\left(-1\right)^n\:\cdot\frac{x^{2n}}{\left(2n\right)!}]
+
+    Útmutatás:
+
+    [-\frac{x^2}{2!}=\frac{x^2}{1\cdot2}=1\:\cdot\left(-\frac{x^2}{2!}\right);\:\:\frac{x^4}{4!}=\frac{x^2\cdot x^2}{1\cdot2\cdot3\cdot4}=\left(-\frac{x^2}{1\cdot2}\right)\cdot\left(-\frac{x^2}{3\cdot4}\right);] [-\frac{x^6}{6!}=-\frac{x^4\cdot\:x^2}{1\cdot2\cdot3\cdot4\cdot5\cdot6}=-\frac{x^4}{4!}\cdot\frac{x^2}{5\cdot6}=\frac{x^4}{4!}\cdot\left(-\frac{x^2}{5\cdot6}\right)] ;
+
+    Írjunk programot, amely megállapítja, hogy legkevesebb hány számot kell összeadni ahhoz, hogy az 1 + 2 + 3 + ... összeg nagyobb vagy egyenlő legyen egy adott n  N* számnál.
+
+    Erősen összetett számnak nevezzük azt a természetes számot, amelynek több osztója van, mint bármely, nála kisebb természetes számnak. Írjunk programot, amely adott n-ig erősen összetett számokat keres!
+
+    Két természetes számot rokonnak nevezünk, ha van legalább két (különböző) közös számjegyük. Döntsük el adott két számról, hogy rokonok-e vagy sem!
+
+    Két természetes számot barátnak nevezünk, ha a 10-es számrendszerben felírva van legalább egy közös számjegyük. Határozzuk meg két adott szám számjegyeit a 10-es számrendszerben, majd döntsük el, hogy a két szám barát-e.
+
+    Adva van egy n elemű természetes számokat tartalmazó sorozat. Keressük meg és írjuk ki azt a leghosszabb sb, sb+1, …, sj tömbszakaszt, amely csak prímszámokat tartalmaz!
+
+    Útmutatás: Elemezzük a következő eseteket:
+
+    - Ha minden szám prím?
+
+    - Ha nincs egyetlen prímszám sem?
+
+    - Ha az aktuális részsorozathoz hozzátartozik az adott sorozat utolsó eleme is?
+
+    Ismert, hogy, ha egy adott n természetes számot ismételten alávetünk a következő feldolgozásnak, eljutunk az 1-es számhoz: ha n páros, akkor elosztjuk 2-vel, ha n páratlan, megszorozzuk 3-mal és az eredményhez hozzáadunk 1-et. Azoknak a lépéseknek a számát, amelyek egy adott n-ből az 1-hez vezetnek, karakterisztikának nevezzük.
+
+    Írjunk programot, amely meghatározza azt az n számot, amely az [a, b] intervallumhoz tartozik és amelynek a karakterisztikája a legnagyobb.
+
+    Adott a következő sorozat, amelynek minden elemét – az elsőt kivéve – az előző elem segítségével generáljuk: 1, 11, 21, 1211, 111221, ...
+
+    A generálási szabály a következő:
+
+    - megszámoljuk, balról jobbra haladva az előző érték számjegyeit;
+
+    - az új értéket úgy kapjuk meg, hogy beírjuk a régi érték összes számjegyeinek előfordulási számát és az illető számjegyet.
+
+    Határozzuk meg az n-edik (n  20) elemét a sorozatnak!
+
+    Útmutatás: Mivel a generálási szabályt ismerjük a feladat szövegéből, lássuk a megoldáshoz vezető algoritmust. Feltételezzük, hogy a sorozat 6-dik elemét akarjuk kiírni. Generáljuk egyenként az elemeket a 6-dikig:
+
+              - T1 = 1 tartalmaz egy számjegyet, egy egyest, tehát T2 = 11.
+
+              - T2 tartalmaz két számjegyet, két egyest, tehát T3 = 21.
+
+              - Mivel T3-ban van egy kettesünk és egy egyesünk, T4 = 1211 lesz.
+
+              - T4-ben van egy egyes és egy kettes, majd még két darab egyes, tehát T5 = 111221 lesz.
+
+              - T6 = 312211, mivel T5-ben volt három darab egyes, két darab kettes, és egy darab egyes.
