@@ -12,6 +12,7 @@ public class Algo3 {
 //        t.a330();
 //    }
 
+
     private void a330() {
 
         List<String> class1 = new ArrayList<>();
@@ -25,6 +26,7 @@ public class Algo3 {
 
 
     }
+
 
     private void a330(List<String> class1, List<String> class2) {
         List<String> faculty = new ArrayList<>();

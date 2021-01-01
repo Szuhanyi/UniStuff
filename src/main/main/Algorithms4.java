@@ -2,27 +2,54 @@ package main;
 
 import java.util.Arrays;
 
+
+
+
 public class Algorithms4 {
 
-    public static void main(String[] args) {
-        Algorithms4 alg = new Algorithms4();
-        alg.a410();
+    public static void main(String[] args) {    	
+        Algorithms4 alg = new Algorithms4();        
+        alg.a410();       
+        
     }
 
-    private void a410() {
-
+    private void a410() {    	
+    	// find all strongly complex numbers in N interval    	 
+    	int n = 1000;    	
+    	System.out.println("Biggest complex number : " + a410_impl(n));    	
+    }
+    
+    private int a410_impl(int threshold) {    	
+    	int result = 0;
+    	int divisorMax = 0;    	
+    	for(int i = 2; i < threshold; i++) {
+    		int iCount = getDivisorCount(i);
+    		if (iCount > divisorMax) {
+    			divisorMax = iCount;
+    			result = i;
+    		}
+    	}    	
+    	return result;   	
+    }
+    
+    // returns zero if it's a prime
+    private int getDivisorCount(int x) {
+    	int count = 0;
+    	for(int i = 2; i < x-1; i++) {
+    		if( x % i == 0) {
+    			count++;
+    		}
+    	}   	
+    	return count;
     }
 
 
     private void a409() {
         // 1 + 2 + 3
         // how many numbers has to be added   to get at least sum N
-
         int n = 100;
         int c = (int)Math.floor(Math.sqrt(2*n));
         System.out.printf("%d is the length of the sum: 1 + 2 + ... + %d",c,c);
-
-
     }
 
     private void a408() {

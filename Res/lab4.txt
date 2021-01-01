@@ -45,11 +45,11 @@
 
 10.    Erősen összetett számnak nevezzük azt a természetes számot, amelynek több osztója van, mint bármely, nála kisebb természetes számnak. Írjunk programot, amely adott n-ig erősen összetett számokat keres!
 
-   ukjhg Két természetes számot rokonnak nevezünk, ha van legalább két (különböző) közös számjegyük. Döntsük el adott két számról, hogy rokonok-e vagy sem!
+11.    Két természetes számot rokonnak nevezünk, ha van legalább két (különböző) közös számjegyük. Döntsük el adott két számról, hogy rokonok-e vagy sem!
 
-    Két természetes számot barátnak nevezünk, ha a 10-es számrendszerben felírva van legalább egy közös számjegyük. Határozzuk meg két adott szám számjegyeit a 10-es számrendszerben, majd döntsük el, hogy a két szám barát-e.
+12.    Két természetes számot barátnak nevezünk, ha a 10-es számrendszerben felírva van legalább egy közös számjegyük. Határozzuk meg két adott szám számjegyeit a 10-es számrendszerben, majd döntsük el, hogy a két szám barát-e.
 
-    Adva van egy n elemű természetes számokat tartalmazó sorozat. Keressük meg és írjuk ki azt a leghosszabb sb, sb+1, …, sj tömbszakaszt, amely csak prímszámokat tartalmaz!
+13.    Adva van egy n elemű természetes számokat tartalmazó sorozat. Keressük meg és írjuk ki azt a leghosszabb sb, sb+1, …, sj tömbszakaszt, amely csak prímszámokat tartalmaz!
 
     Útmutatás: Elemezzük a következő eseteket:
 
