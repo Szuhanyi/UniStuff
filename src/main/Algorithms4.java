@@ -6,14 +6,30 @@ public class Algorithms4 {
 
     public static void main(String[] args) {
         Algorithms4 alg = new Algorithms4();
-        alg.a408();
+        alg.a410();
+    }
+
+    private void a410() {
+
+    }
+
+
+    private void a409() {
+        // 1 + 2 + 3
+        // how many numbers has to be added   to get at least sum N
+
+        int n = 100;
+        int c = (int)Math.floor(Math.sqrt(2*n));
+        System.out.printf("%d is the length of the sum: 1 + 2 + ... + %d",c,c);
+
+
     }
 
     private void a408() {
         // what not. so what is not is not in not a wawht
         int n = 10;
         double x = 2;
-        a408(n,x);
+        a408(n, x);
     }
 
     private void a408(int n, double x) {
@@ -25,6 +41,7 @@ public class Algorithms4 {
             current *= (-1) * (Math.pow(x,2) / (2*n* (n-1)));
 
         }
+        System.out.println(sum);
 
     }
 
@@ -189,8 +206,4 @@ public class Algorithms4 {
         System.out.println(s / ns.length);
     }
 
-
 }
-
-
-

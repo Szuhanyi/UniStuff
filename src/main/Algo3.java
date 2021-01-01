@@ -414,8 +414,8 @@ public class Algo3 {
 
     private void a317(String[] names) {
  //        how to do this ? with lambda, and java 8 streams.. huh ?
-        List<String> asdf = Arrays.stream(names).sorted().collect(Collectors.toUnmodifiableList());
-        System.out.println(asdf.get(3));
+        //List<String> asdf = Arrays.stream(names).sorted().collect(Collectors.toUnmodifiableList());
+        //System.out.println(asdf.get(3));
     }
 
     private void a315() {

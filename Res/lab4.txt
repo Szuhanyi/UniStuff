@@ -41,11 +41,11 @@
 
     [-\frac{x^2}{2!}=\frac{x^2}{1\cdot2}=1\:\cdot\left(-\frac{x^2}{2!}\right);\:\:\frac{x^4}{4!}=\frac{x^2\cdot x^2}{1\cdot2\cdot3\cdot4}=\left(-\frac{x^2}{1\cdot2}\right)\cdot\left(-\frac{x^2}{3\cdot4}\right);] [-\frac{x^6}{6!}=-\frac{x^4\cdot\:x^2}{1\cdot2\cdot3\cdot4\cdot5\cdot6}=-\frac{x^4}{4!}\cdot\frac{x^2}{5\cdot6}=\frac{x^4}{4!}\cdot\left(-\frac{x^2}{5\cdot6}\right)] ;
 
-    Írjunk programot, amely megállapítja, hogy legkevesebb hány számot kell összeadni ahhoz, hogy az 1 + 2 + 3 + ... összeg nagyobb vagy egyenlő legyen egy adott n  N* számnál.
+9.  Írjunk programot, amely megállapítja, hogy legkevesebb hány számot kell összeadni ahhoz, hogy az 1 + 2 + 3 + ... összeg nagyobb vagy egyenlő legyen egy adott n  N* számnál.
 
-    Erősen összetett számnak nevezzük azt a természetes számot, amelynek több osztója van, mint bármely, nála kisebb természetes számnak. Írjunk programot, amely adott n-ig erősen összetett számokat keres!
+10.    Erősen összetett számnak nevezzük azt a természetes számot, amelynek több osztója van, mint bármely, nála kisebb természetes számnak. Írjunk programot, amely adott n-ig erősen összetett számokat keres!
 
-    Két természetes számot rokonnak nevezünk, ha van legalább két (különböző) közös számjegyük. Döntsük el adott két számról, hogy rokonok-e vagy sem!
+   ukjhg Két természetes számot rokonnak nevezünk, ha van legalább két (különböző) közös számjegyük. Döntsük el adott két számról, hogy rokonok-e vagy sem!
 
     Két természetes számot barátnak nevezünk, ha a 10-es számrendszerben felírva van legalább egy közös számjegyük. Határozzuk meg két adott szám számjegyeit a 10-es számrendszerben, majd döntsük el, hogy a két szám barát-e.
 
