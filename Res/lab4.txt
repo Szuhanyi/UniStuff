@@ -59,11 +59,12 @@
 
     - Ha az aktuális részsorozathoz hozzátartozik az adott sorozat utolsó eleme is?
 
-    Ismert, hogy, ha egy adott n természetes számot ismételten alávetünk a következő feldolgozásnak, eljutunk az 1-es számhoz: ha n páros, akkor elosztjuk 2-vel, ha n páratlan, megszorozzuk 3-mal és az eredményhez hozzáadunk 1-et. Azoknak a lépéseknek a számát, amelyek egy adott n-ből az 1-hez vezetnek, karakterisztikának nevezzük.
+14.    Ismert, hogy, ha egy adott n természetes számot ismételten alávetünk a következő feldolgozásnak, eljutunk az 1-es számhoz: ha n páros, akkor elosztjuk 2-vel, ha n páratlan, megszorozzuk 3-mal és az eredményhez hozzáadunk 1-et.
+Azoknak a lépéseknek a számát, amelyek egy adott n-ből az 1-hez vezetnek, karakterisztikának nevezzük.
 
     Írjunk programot, amely meghatározza azt az n számot, amely az [a, b] intervallumhoz tartozik és amelynek a karakterisztikája a legnagyobb.
 
-    Adott a következő sorozat, amelynek minden elemét – az elsőt kivéve – az előző elem segítségével generáljuk: 1, 11, 21, 1211, 111221, ...
+15.    Adott a következő sorozat, amelynek minden elemét – az elsőt kivéve – az előző elem segítségével generáljuk: 1, 11, 21, 1211, 111221, ...
 
     A generálási szabály a következő:
 
