@@ -3,6 +3,18 @@ package main;
 public class NumberService {
 
 
+
+
+    public static int getMin(int[] x) {
+        int min = Integer.MAX_VALUE;
+        for(int i = 0; i < x.length; i++) {
+            if(min > x[i]) {
+                min = x[i];
+            }
+        }
+        return min;
+    }
+
     public static int[] generateIntegers(int count,int a, int b) {
         int [] x = new int[count];
 

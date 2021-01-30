@@ -12,8 +12,57 @@ public class Lab5 {
 
     public static void main (String [] args) {
         Lab5 l = new Lab5();
-        l.a008();
+        l.a010();
+    }
 
+    private void a010() {
+        // find the max element, from under the second diagonal
+        int x[][] = NumberService.generateMatrixIntegers(n,a,b);
+        int max = a010_impl(x);
+        NumberService.printMatrix(x);
+        System.out.println(max);
+    }
+
+    private int a010_impl(int[][] x) {
+        int max = 0;
+
+        for(int i = 0; i < x.length; i++) {
+            for(int j = 0; j < i + 1; j++) {
+                int e = x[i][n-j-1];
+                if(e > max) {
+                    max = e;
+                }
+            }
+        }
+
+        return max;
+    }
+
+    private void a009() {
+        // not making much sense, but yeah, it is still good
+        int [][] x = NumberService.generateMatrixIntegers(2,n,a,b);
+        int [][]y = a009_impl(x);
+        NumberService.printMatrix(y);
+    }
+
+    private int[][] a009_impl(int[][]x) {
+        int[][] y = new int[x.length][x[0].length];
+        for(int k = 0; k < x.length; k++) {
+            for (int i = 0; i < x[0].length; i++) {
+                //find min
+                int min = Integer.MAX_VALUE;
+                for (int j = 0; j < x.length; j++) {
+                    if (min > x[j][i]) {
+                        min = x[j][i];
+                    }
+                }
+                //now subtract from every column
+                for (int j = 0; j < x[0].length; j++) {
+                    y[k][j] = x[k][j] - min;
+                }
+            }
+        }
+        return y;
     }
 
     private void a008() {
@@ -33,7 +82,7 @@ public class Lab5 {
         while(currentLength-- > 0) {
 
             // do a round..  //nice go down
-            for(int i = (n/2 - currentLength); i < n - (n/2-currentLength);) {
+            for(int i = (n/2 - currentLength); i < n - (n/2-currentLength); i++) {
 
 
             }
