@@ -32,9 +32,20 @@ public class NumberService {
      for(int i =     0; i < count; i++) {
          x[i] = generateIntegers(count,a,b);
      }
-
      return x;
     }
+
+    public static int[][] generateMatrixOderedIntegers(int count , int a, int b) {
+        int [][]x = new int[count][count];
+        int counter = 0;
+        for(int i = 0; i < count; i++) {
+            for(int j = 0; j < count; j++) {
+                x[i][j] = counter++;
+            }
+        }
+        return x;
+    }
+
 
 
     public static int[][] generateMatrixIntegers(int n, int m , int a, int b) {
@@ -68,5 +79,14 @@ public class NumberService {
             }
         }
         return z;
+    }
+
+    public static void printArray(int[] snake) {
+        System.out.println();
+        for(int i = 0; i < snake.length;i++) {
+            System.out.print(snake[i] + " ");
+        }
+        System.out.println();
+
     }
 }

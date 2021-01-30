@@ -65,41 +65,60 @@ public class Lab5 {
         return y;
     }
 
+
     private void a008() {
         // print a matrix as a snake.. oh man
-        int[][] x = NumberService.generateMatrixIntegers(n,a,b);
+        int[][] x = NumberService.generateMatrixOderedIntegers(n,a,b);
         int [] y = a008_impl(x);
-
-
     }
 
-
     private int[] a008_impl(int[][] x) {
-        int [] snake = new int[n*n];
+        int [] snake = new int[n*n+10];
         int counter = 0;
         int currentLength = n / 2;
-
-        while(currentLength-- > 0) {
+        int [][] copy = new int[n][n];
+        while(currentLength > 0) {
 
             // do a round..  //nice go down
-            for(int i = (n/2 - currentLength); i < n - (n/2-currentLength); i++) {
-
-
+            for(int i = (n/2-currentLength); i < n - n/2+currentLength-1; i++) {
+                int c =  n/2-currentLength;
+                snake[counter++]       = x[i][c];
+                copy[i][c] = x[i][c];
             }
 
 
             // go right;
-
+            for(int i = (n/2-currentLength); i < n - n/2+currentLength-1; i++) {
+                int c = n - n/2+currentLength-1;
+                snake[counter++]           = x[c][i];
+                copy[c][i] = x[c][i];
+            }
 
 
             // go up
-
-
+            for(int i = (n/2-currentLength); i < n - n/2+currentLength-1; i++) {
+                int c = n - n/2+currentLength-1;
+                snake[counter++]           = x[n-i-1][c];
+                copy[n-i-1][c] = x[n-i-1][c];
+            }
 
             // go left
 
-        }
+            for(int i = (n/2-currentLength); i < n - n/2+currentLength-1; i++) {
+                int c =  n/2-currentLength;
+                snake[counter++]           = x[c][n-i-1];
+                copy[c][n-i-1] = x[c][n-1-i];
+            }
+            currentLength--;
 
+        }
+        if(n % 2 == 1) {
+            int center = n/2;
+            snake[counter++] = x[center][center];
+            copy[center][center] = x[center][center];
+        }
+        NumberService.printMatrix(copy);
+        NumberService.printArray(snake);
         return snake;
     }
 
