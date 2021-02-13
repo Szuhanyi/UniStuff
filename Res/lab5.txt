@@ -110,15 +110,14 @@
     4
 
 
-    Helyezzük el sorról-sorra egy n  n-es tömbbe az első n2 Fibonacci-számot! (f0 = 1, f1 = 1, fn = fn–1 + fn–2)
+13.    Helyezzük el sorról-sorra egy n  n-es tömbbe az első n2 Fibonacci-számot! (f0 = 1, f1 = 1, fn = fn–1 + fn–2)
 
-    Egy adott [x, y] intervallum Fibonacci-számaiból készítsük el a lehetséges legnagyobb négyzetes tömböt! Az esetlegesen hiányzó elemek helyére írjunk 0-t.
+14.    Egy adott [x, y] intervallum Fibonacci-számaiból készítsük el a lehetséges legnagyobb négyzetes tömböt! Az esetlegesen hiányzó elemek helyére írjunk 0-t.
 
-    Adott egy szöveg, amelyben számjegyek is szerepelnek. Alakítsuk át a szöveget úgy, hogy a számjegyek helyett annak neve szerepeljen.
-
+15.    Adott egy szöveg, amelyben számjegyek is szerepelnek. Alakítsuk át a szöveget úgy, hogy a számjegyek helyett annak neve szerepeljen.
     Példa ■ „ez 1 szam” => „ez egy szam”
 
-    Adott egy n elemű, egész számokból álló sorozat. Írjunk programot, amely szétrendezi a sorozatot! Szétrendezés alatt azt a műveletsort értjük, amelynek elvégzése után a legkisebb elem az első helyen, az érték szerint következő az utolsó helyen stb. helyezkedik el. A szétrendezést orgonasíp-rendezésnek is nevezzük.
+16.   Adott egy n elemű, egész számokból álló sorozat. Írjunk programot, amely szétrendezi a sorozatot! Szétrendezés alatt azt a műveletsort értjük, amelynek elvégzése után a legkisebb elem az első helyen, az érték szerint következő az utolsó helyen stb. helyezkedik el. A szétrendezést orgonasíp-rendezésnek is nevezzük.
 
     Példa
 
@@ -126,7 +125,8 @@
 
     Szétrendezés után : 0, 2, 6, 9, 7, 5, 1
 
-    Palindromszámnak nevezzük azt a számot, amely balról jobbra és jobbról balra olvasva ugyanazt az értéket eredményezi. Például a 101 palindromszám, de a 102 nem az.
+17.  Palindromszámnak nevezzük azt a számot, amely balról jobbra és jobbról balra olvasva ugyanazt az értéket eredményezi. Például a 101 palindromszám, de a 102 nem az.
+
 
     Alakítsunk át egy nem palindrom számot palindrom számmá a következő módon: megfordítjuk a számjegyek sorrendjét az adott számban, és az így kapott számot hozzáadjuk az eredetihez. Ezt az eljárást addig folytatjuk, míg az összeg palindrom nem lesz.
 
@@ -134,7 +134,7 @@
 
     Írjunk programot, amely megkeresi azokat az n (n ≤ 104) jegyű számokat, amelyeket n lépésben palindrommá lehet varázsolni! A számolás az első összeadás≤sal kezdődik.
 
-    Ha egy szám számjegyeinek összege osztható magával a számmal, akkor a számot Niven-számnak nevezzük. A 21 Niven szám, mivel 2 + 1 = 3, és a 3 osztja a 21-t. A fenti megállapítás kiterjeszthető más számrendszerekre is. Például a 2-es alapú számrendszerben a 110 Niven-szám, mivel 1 + 1 + 0 = 2 és (110)2 = 6 osztható 2-vel.
+18.    Ha egy szám számjegyeinek összege osztható magával a számmal, akkor a számot Niven-számnak nevezzük. A 21 Niven szám, mivel 2 + 1 = 3, és a 3 osztja a 21-t. A fenti megállapítás kiterjeszthető más számrendszerekre is. Például a 2-es alapú számrendszerben a 110 Niven-szám, mivel 1 + 1 + 0 = 2 és (110)2 = 6 osztható 2-vel.
 
     Írjunk programot, amely egy adott, b (2 ≤ b ≤ 10) számrendszerben felírt számról eldönti, hogy Niven-szám-e vagy sem! A bemeneti adatokat a billentyűzetről olvassuk be, minden sorból egy-egy számpárt: a számrendszert jelölő számot és egy számot az adott számrendszerben. A sorok száma ismeretlen. A program írjon ki egy megfelelő üzenetet (igen/nem)!
 
@@ -144,11 +144,11 @@
 
     10123 nem
 
-    Döntsük el egy adott számról, hogy völgyszám-e vagy hegyszám. Egy völgyszám számjegyei csökkenő sorrendben követik egymást egy bizonyos elemmel bezárólag, azután növekvő sorozatot alkotnak. A hegyszám számjegyei növekvő sorrendben követik egymást egy bizonyos elemmel bezárólag, azután csökkenő sorozatot alkotnak. Például 13752 hegyszám, 85369 völgyszám, 1234 nem völgyszám és nem hegyszám.
+19.    Döntsük el egy adott számról, hogy völgyszám-e vagy hegyszám. Egy völgyszám számjegyei csökkenő sorrendben követik egymást egy bizonyos elemmel bezárólag, azután növekvő sorozatot alkotnak. A hegyszám számjegyei növekvő sorrendben követik egymást egy bizonyos elemmel bezárólag, azután csökkenő sorozatot alkotnak. Például 13752 hegyszám, 85369 völgyszám, 1234 nem völgyszám és nem hegyszám.
 
     Írjunk ki egy megfelelő üzenetet, aszerint hogy az adott szám völgyszám-e vagy hegyszám. Ha a szám nem völgyszám és nem hegyszám, vágjuk le a szám első néhány számjegyét amíg az így kapott szám völgyszámmá vagy hegyszámmá válik. Ha a válasz „nem völgyszám” és „nem hegyszám”, írjuk ki az adott szám azon részét, amely völgyszám vagy hegyszám. Nem számít a levágott számjegyek száma.
 
-    Olvassunk be soronként több karakterláncot. A karakterláncok kisbetűket és számjegyeket tartalmaznak. Írjunk programot, amely kiszámolja minden karakterlánc esetében a bennük esetlegesen előforduló számok összegét!
+20.    Olvassunk be soronként több karakterláncot. A karakterláncok kisbetűket és számjegyeket tartalmaznak. Írjunk programot, amely kiszámolja minden karakterlánc esetében a bennük esetlegesen előforduló számok összegét!
 
     Példa
 
@@ -156,15 +156,15 @@
 
     x               0
 
-    Olvassunk be több, természetes számokból álló növekvően rendezett számsorozatot. A sorozatok száma ismeretlen, a számsorozatok végét egy üres sor jelzi. A sorozatokban levő számok száma ismeretlen, egy számsorozat a sorvége jellel ér véget.
+21.    Olvassunk be több, természetes számokból álló növekvően rendezett számsorozatot. A sorozatok száma ismeretlen, a számsorozatok végét egy üres sor jelzi. A sorozatokban levő számok száma ismeretlen, egy számsorozat a sorvége jellel ér véget.
 
     Hozzunk létre ezekből a sorozatokból egy új sorozatot, amely tartalmazni fogja az összes számot, növekvő sorrendben. Írjuk ki az így kapott sorozatot, majd hozzunk létre ebből egy újat, amely csak különböző számokból áll. Írjuk ki az így kapott sorozatot, majd minden szám esetében írjuk ki előfordulásainak számát az előbb kiírt sorozatban.
 
-    Adott egy kétdimenziós tömb, amelynek elemei egész számok. Döntsük el, hogy létezik-e nyeregpont a mátrixban vagy sem. Nyeregpont alatt azt az aij elemet értjük, amely a legkisebb a mátrix i-edik sorában és legnagyobb a j-edik oszlopban, vagy legnagyobb a mátrix i-edik sorában és legkisebb a j-edik oszlopban. A program egy megfelelő üzenettel válaszoljon a kérdésre. Igenlő válasz esetén a program írja ki a nyeregpont koordinátáit, vagyis a megfelelő elem sor- és oszlopindexét.
+22.    Adott egy kétdimenziós tömb, amelynek elemei egész számok. Döntsük el, hogy létezik-e nyeregpont a mátrixban vagy sem. Nyeregpont alatt azt az aij elemet értjük, amely a legkisebb a mátrix i-edik sorában és legnagyobb a j-edik oszlopban, vagy legnagyobb a mátrix i-edik sorában és legkisebb a j-edik oszlopban. A program egy megfelelő üzenettel válaszoljon a kérdésre. Igenlő válasz esetén a program írja ki a nyeregpont koordinátáit, vagyis a megfelelő elem sor- és oszlopindexét.
 
-    Egy adott szöveg szavakat tartalmaz, ismeretlen számú szóközzel elválasztva. Írjunk programot, amely törli a szöveg leghosszabb szavát! Több azonos hosszúságú szó esetén töröljük mindeniket! A kimeneti szövegben a szavak egy-egy szóközzel legyenek elválasztva!
+23    Egy adott szöveg szavakat tartalmaz, ismeretlen számú szóközzel elválasztva. Írjunk programot, amely törli a szöveg leghosszabb szavát! Több azonos hosszúságú szó esetén töröljük mindeniket! A kimeneti szövegben a szavak egy-egy szóközzel legyenek elválasztva!
 
-    Adva van több valós együtthatójú polinom. A polinomok száma ismeretlen. Írjunk programot, amellyel kiszámítjuk az összegüket és kiválasztjuk azt a polinomot, amelynek az a pontban kiszámított értéke a legnagyobb az összes megadott polinom ugyanazon a pontban kiszámított értékei között.
+24    Adva van több valós együtthatójú polinom. A polinomok száma ismeretlen. Írjunk programot, amellyel kiszámítjuk az összegüket és kiválasztjuk azt a polinomot, amelynek az a pontban kiszámított értéke a legnagyobb az összes megadott polinom ugyanazon a pontban kiszámított értékei között.
 
     Egy polinomot kétféleképpen adhatunk meg:
 
@@ -174,15 +174,15 @@
 
     Az adatok beolvasása előtt a program kérdezze meg, milyen alakban lesz megadva a polinom. Írjuk ki a megadott polinomok összegét, valamint azt a polinomot, amelynek az értéke maximális az adott a pontban.
 
-    Egy számot szerencsésnek nevezünk, ha számjegyei két csoportba oszthatók úgy, hogy a két csoportban levő számjegyek összege azonos. Ilyen szám például a 32843, mert 8 + 2 = 3 + 4 + 3.
+25    Egy számot szerencsésnek nevezünk, ha számjegyei két csoportba oszthatók úgy, hogy a két csoportban levő számjegyek összege azonos. Ilyen szám például a 32843, mert 8 + 2 = 3 + 4 + 3.
 
     Írjunk programot, amely kiírja azokat a szerencsés számokat, amelyek egy adott intervallumon belül találhatók!
 
-    Írjunk programot, amely beolvas több, természetes számokból álló számsorozatot. A sorozatok száma ismeretlen, a számsorozatok végét egy üres sor jelzi. A sorozatokban levő számok száma ismeretlen, a számsorozat a sorvége jellel ér véget.
+26.    Írjunk programot, amely beolvas több, természetes számokból álló számsorozatot. A sorozatok száma ismeretlen, a számsorozatok végét egy üres sor jelzi. A sorozatokban levő számok száma ismeretlen, a számsorozat a sorvége jellel ér véget.
 
     Minden sorozat esetében határozzuk meg azt a leghosszabb, egymás utáni elemekből álló részsorozatot, amely csak prímszámokat tartalmaz. Írjuk ki a sorozat sorszámát, a részsorozat első elemének indexét, valamint az utolsó elem indexét. Ezután írjunk ki minden előforduló prímszámot egyszer.
 
-    Ali Baba rajtakapta a 40 rablót, miközben ezek a kincsei között kotorásztak. A rablók sokan voltak, ő egyedül, ezért megpróbált egyezkedni velük. Volt egy különleges láda, amelyre fel volt írva a benne levő gyémántok száma, egy (legtöbb) 40 számjegyes szám egy, a rablók által ismeretlen számrendszerben (b < 10). Ali Baba felajánlotta a rablók vezérének, hogy vágjon ki b számjegyet a számjegysorból, mert a megmaradó számjegyekből összeálló számnak megfelelő számú gyémántot átenged neki.
+27    Ali Baba rajtakapta a 40 rablót, miközben ezek a kincsei között kotorásztak. A rablók sokan voltak, ő egyedül, ezért megpróbált egyezkedni velük. Volt egy különleges láda, amelyre fel volt írva a benne levő gyémántok száma, egy (legtöbb) 40 számjegyes szám egy, a rablók által ismeretlen számrendszerben (b < 10). Ali Baba felajánlotta a rablók vezérének, hogy vágjon ki b számjegyet a számjegysorból, mert a megmaradó számjegyekből összeálló számnak megfelelő számú gyémántot átenged neki.
 
     A rabló előbb megállapította a legkisebb lehetséges b-t, mivel minél kevesebb számjegyet akart kivágni, majd elkezdődött a „faricskálás”. Természetesen, a célja az volt, hogy a megmaradó számjegyekből összeálló szám a lehető legnagyobb legyen.
 

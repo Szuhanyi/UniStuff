@@ -1,18 +1,259 @@
 package main;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.awt.font.NumericShaper;
+import java.util.*;
 
 public class Lab5 { 
 
-    private int n = 10;
+    private int n = 20;
     private int a = 1;
     private int b = 100;
 
     public static void main (String [] args) {
         Lab5 l = new Lab5();
-        l.a010();
+        l.a018();
+    }
+
+    private void a018() {
+        // do a Niven numbers...
+        // digits sum should divide the actual number, even in different systems
+
+
+        //read from console while there is input ?
+
+        boolean read = true;
+        while(read) {
+            int system = 10; // read teh system
+            int number = 10; // read number from console
+            boolean status = a018_impl(system,number);
+
+        }
+
+    }
+
+    private boolean a018_impl(int system, int number) {
+        boolean result = false;
+        int digitSum = NumberService.getSumOfDigits(number);
+
+        return result;
+    }
+
+
+    private void a017() {
+        //decide if a number is palindrome..
+        // then find the first magic plaindromes/ which can be made palindrome by adding the opposite of htem
+        int i1 = 10;
+        int i2 = 10000;
+        int nn = 12;
+        int[] r2 = a017_impl(i1, i2,nn);
+        NumberService.printArray(r2);
+    }
+
+
+    private int[] a017_impl(int i1, int i2, int nn) {
+        int[] result  = new int[10000];
+        int index = 0;
+        for(int i = i1; i <= i2; i++) {
+            int number = i;
+            int counter = 0;
+            while(NumberService.isPalindrom(number) && counter++ < nn) {
+                number += NumberService.getOppositlyOrderedNumber(number);
+            }
+            if(counter < 15) {
+                result[index++] = i;
+            }
+        }
+        int [] numbers = new int[index];
+        for(int i = 0; i < numbers.length; i++) {
+            numbers[i] = result[i];
+        }
+        return numbers;
+    }
+
+
+    private void a016() {
+        // write something that would splitorder something
+        // szet rendez.. hehe
+        int [] x = NumberService.generateIntegers(n,a,b);
+        int [] y = a016_impl(x);
+        NumberService.printArray(y);
+
+    }
+
+    private int[] a016_impl(int[] x) {
+        int [] hehe = new int[x.length];
+        for(int i = 0; i < x.length-1; i++ ) {
+            for(int j = i+1; j < x.length; j++) {
+                if(x[i] > x[j]) {
+                    int t = x[i];
+                    x[i] = x[j];
+                    x[j] = t;
+                }
+            }
+        }
+        for(int i = 0; i < x.length; i++) {
+            if(i % 2 == 0) {
+                hehe[i] = x[i];
+            }
+            else {
+                hehe[x.length - i] = x[i];
+            }
+        }
+
+        return hehe;
+    }
+
+
+    private void a015() {
+        // translate numbers into text.. thx .. bb
+        String text = "We are number 1!";
+        a015_impl(text);
+    }
+
+    private void a015_impl(String text) {
+        String result = "";
+        String [] numbers = {"zero","one","two","three","four","five","six","seven","eight","nine"};
+        for(int i = 0; i < text.length(); i++) {
+            int s = 0;
+            try {
+                s = Integer.parseInt(text.substring(i, i+1));
+                result += numbers[s];
+            }
+            catch (Exception e) {
+                String normal = text.substring(i,i+1);
+                result += normal;
+            }
+
+        }
+        System.out.println(result);
+    }
+
+    private void a014() {
+        // what you have always known, just hidden it away
+        // say it. they are dead
+        // there are  x ,y, and find all fibos, then do the biggest square matrix that there is ..
+        int x = 10;
+        int y = 1000;
+        a014_impl(x,y);
+
+
+    }
+
+    private void a014_impl(int x, int y) {
+        // what else can LoL offer for me ?  not much excitment to be sure.. but what else  ?
+        int j = 2;
+        boolean weCool = false;
+        int[][] fibos = new int[n][n];
+        while (j <= 10 && !weCool) {
+             fibos = new int[j][j];
+            fibos = a013_impl(j);
+            int max  = fibos[j-1][j-1];
+            if (max > y) {
+                weCool = true;
+            }
+            j++;
+        }
+        j -= 2;
+        fibos = a013_impl(j);
+        if(weCool) {
+            for(int i = 0; i < j; i++) {
+                for(int k = 0; k < j; k++) {
+                    if(fibos[i][k] < x) {
+                        fibos[i][k] = 0;
+                    }
+                }
+            }
+        }
+        NumberService.printMatrix(fibos);
+    }
+
+    private void a013() {
+        // do fibonacci
+        int [][] fibo = a013_impl(n);
+        NumberService.printMatrix(fibo);
+    }
+
+
+    private int[][] a013_impl(int n) {
+        int[][] fibo = new int[n][n];
+        int f1 = 0;
+        int f2 = 1;
+        int f3 = f1 + f2;
+        for(int i = 0; i < n; i++)
+        {
+            for(int j = 0; j < n; j++){
+            f1 = f2;
+            f2 = f3;
+            f3 = f1 + f2;
+            fibo[i][j] = f1;
+            }
+        }
+        return fibo;
+    }
+
+
+    private void a012() {
+        //  order columns based on their sum
+        int [][] x = NumberService.generateMatrixIntegers(n,a,b);
+        NumberService.printMatrix(x);
+
+        int[][] y = a012_impl(x);
+        NumberService.printMatrix(y);
+    }
+
+
+    private int[][] a012_impl(int[][] x) {
+        //int[][] y = new int[x.length][x.length];
+        int [] sums = new int[x.length];
+
+        for(int i = 0; i < x.length; i++) {
+            sums[i] = NumberService.matrixSumOfColumn(x,i);
+        }
+        for(int i = 0; i < x.length - 1; i++) {
+            for(int j = i+1; j < x.length; j++) {
+                if( sums[i] < sums[j]) {
+                    int t = sums[i];
+                    sums[i] = sums[j];
+                    sums[j] = t;
+                    x = NumberService.matrixSwapColumns(x,i,j);
+                }
+            }
+        }
+
+        return x;
+    }
+
+
+    private void a011() {
+        //given matrix, get the most used number
+        int [][] x = NumberService.generateMatrixIntegers(n,n*2,a,b);
+        int highStat = a011_impl(x);
+        System.out.println(highStat + " was the most popular element. Nice");
+
+    }
+
+
+    private int a011_impl(int[][] x) {
+        int number = 0;
+        int nCounter = 0;
+        Map<Integer, Integer> stats = new HashMap<>();
+        for(int i = 0; i < x.length; i++) {
+            for(int j = 0 ; j < x[0].length; j++) {
+                int counter = 1;
+                if(stats.containsKey(x[i][j])) {
+                    counter = stats.get(x[i][j]);
+                    counter++;
+                }
+                stats.put(x[i][j], counter);
+            }
+        }
+        for(Map.Entry e : stats.entrySet()) {
+            if((Integer)e.getValue() > nCounter) {
+                nCounter = (Integer)e.getValue();
+                number = (Integer)e.getKey();
+            }
+        }
+        return number;
     }
 
     private void a010() {
