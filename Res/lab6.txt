@@ -1,0 +1,23 @@
+1. Írjunk rekurzív algoritmust, amely kiír egy n természetes számot törzstényezőkre bontva!
+
+2. Írjunk rekurzív algoritmust, amely ellenőrzi, hogy egy beolvasott szám tökéletes szám-e
+ (egyenlő-e a nála kisebb osztóinak összegével)!
+
+
+3. Írjunk rekurzív algoritmust, amely kiszámítja egy n-ed fokú polinom értékét egy adott x pontban!
+
+4. Írjunk rekurzív algoritmust, amely kiszámítja n természetes szám legnagyobb közös osztóját!
+
+5. Írjunk rekurzív algoritmust, amely kiszámítja az Ackermann-függvény értékét adott m és n értékekre:
+
+    Ack(0, n) = n + 1, nN
+
+    Ack(m, 0) = Ack(m – 1, 1) mN*
+
+    Ack(m, n) = Ack(m – 1, Ack(m, n – 1)) m, nN*.
+
+6. Írjunk rekurzív algoritmust, amely kiszámítja az n-edik Fibonacci-számot. Hasonlítsuk össze a megfelelő iteratív algoritmus futási idejét ennek az algoritmusnak a futási idejével!
+
+7. Írjunk rekurzív algoritmust, amely átalakít egy, a 16-os számrendszerben megadott számot a 10-es számrendszerbe!
+
+8. Írjunk rekurzív algoritmust, amely generálja egy adott n szám minden partícióját. Azok közül a partíciók közül, amelyek csak a tagok sorrendjében különböznek, csak egyet kell kiírnunk.

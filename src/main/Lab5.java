@@ -9,10 +9,7 @@ public class Lab5 {
     private int a = 1;
     private int b = 100;
 
-    public static void main (String [] args) {
-        Lab5 l = new Lab5();
-        l.a018();
-    }
+
 
     private void a018() {
         // do a Niven numbers...
