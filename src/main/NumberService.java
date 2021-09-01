@@ -1,5 +1,10 @@
 package main;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Optional;
+
 public class NumberService {
 
 
@@ -12,6 +17,30 @@ public class NumberService {
         }
         return sum;
     }
+
+    public static List<Integer> mergeLists(List<Integer> left, List<Integer> right) {
+        List<Integer> result = new ArrayList<>();
+        result.addAll(left);
+        if(result.size() == 0) {
+            result.addAll(right);
+        }
+        else {
+            right.forEach(p -> result.add(findIndex(result, p), p));
+        }
+        return result;
+    }
+
+    public static int findIndex(List<Integer> x, int e) {
+        int result = 0;
+        for(Integer i : x) {
+            if(i < e) {
+                result++;
+            }
+        }
+        return result;
+    }
+
+
 
     public static int matrixSumOfColumn(int[][]x, int column) {
         int sum = 0;
@@ -122,7 +151,6 @@ public class NumberService {
         return x;
     }
 
-
     public static void printMatrix(int[][] NxM) {
 
          for(int i = 0; i < NxM.length;i++) {
@@ -152,5 +180,45 @@ public class NumberService {
         }
         System.out.println();
 
+    }
+
+    /**
+     * convert to 10 numeric system
+     * @param system
+     * @param number
+     * @return
+     */
+    public static int convertToDecimalSystem(int system, int number) {
+        int result = 0;
+        List<Integer> digits = new ArrayList<>();
+        while(number > 0) {
+            digits.add(number % 10);
+            number /= 10;
+        }
+        for(Integer n : digits) {
+            result *= system;
+            result += n;
+        }
+
+        return result;
+    }
+
+    public static List<Integer> getDigits(int n) {
+        LinkedList<Integer> digits = new LinkedList<>();
+        while(n > 0) {
+            int digit = n % 10;
+            n /= 10;
+            //digits.add(digit);
+            digits.addFirst(digit);
+        }
+        return digits;
+    }
+
+    public static int createNumber(List<Integer> digits) {
+        int result = 0;
+        for(int i = 0; i < digits.size(); i++) {
+            result = result * 10 + digits.get(i);
+        }
+        return result;
     }
 }

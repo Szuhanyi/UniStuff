@@ -1,0 +1,143 @@
+
+Z
+java:S3518Ë"CMake sure "moreThenCount" can't be zero before doing this division.(‰®ß¿
+d
+java:S1192‡"HDefine a constant instead of duplicating this literal "January" 3 times.(Ê¥¹Àúÿÿÿÿ
+b
+java:S1192º"FDefine a constant instead of duplicating this literal "Stork" 4 times.(ÆÓ¬Ğùÿÿÿÿ
+]
+java:S1192¥"FDefine a constant instead of duplicating this literal "Jerry" 6 times.(´×‚ô
+d
+java:S1192¹"HDefine a constant instead of duplicating this literal "Vulture" 4 times.(»üàíøÿÿÿÿ
+8
+java:S1643Ò"Use a StringBuilder instead.(ßòÉÑøÿÿÿÿ
+
+java:S1157"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(¢²Ğâøÿÿÿÿ
+l	java:S117È"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æö’€øÿÿÿÿ
+l	java:S117É"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§÷±™şÿÿÿÿ
+U
+java:S4973¾"9Use the "equals" method if value comparison was intended.(ÒÉÇ¨ıÿÿÿÿ
+J
+java:S1128"4Remove this unused import 'org.w3c.dom.ls.LSOutput'.(Ò½¾Š
+
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(©Ï¶êûÿÿÿÿ
+V	java:S125
+"<This block of commented-out lines of code should be removed.(»•ûÿÿÿÿ
+S	java:S106#"9Replace this use of System.out or System.err by a logger.(ğ¼öúÿÿÿÿ
+S	java:S106B"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ
+N	java:S106C"9Replace this use of System.out or System.err by a logger.(‰–Ûä
+?
+java:S2140O")Use "java.util.Random.nextInt()" instead.(Á¦·
+S	java:S106l"9Replace this use of System.out or System.err by a logger.(¨ÿÖöøÿÿÿÿ
+S	java:S106x"9Replace this use of System.out or System.err by a logger.(íŒ‹Ìúÿÿÿÿ
+O	java:S106¦"9Replace this use of System.out or System.err by a logger.(ÛŸ¯Œ
+i
+java:S3776Ç"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(Íûï†
+T	java:S106ß"9Replace this use of System.out or System.err by a logger.(ÜÀÅ‰úÿÿÿÿ
+r
+java:S2234ì"VParameters to a325 have the same names but not the same order as the method arguments.(ÛÕ¢Ïûÿÿÿÿ
+O	java:S106ø"9Replace this use of System.out or System.err by a logger.(ˆôÇˆ
+E
+java:S2140€")Use "java.util.Random.nextInt()" instead.(ÖÖØ€ûÿÿÿÿ
+E
+java:S2140¡")Use "java.util.Random.nextInt()" instead.(É£Ï—şÿÿÿÿ
+@
+java:S2140¢")Use "java.util.Random.nextInt()" instead.(´œÈŠ
+O	java:S106³"9Replace this use of System.out or System.err by a logger.(«Ú¯Ô
+O	java:S106¶"9Replace this use of System.out or System.err by a logger.(ŒØ£Ò
+E
+java:S2140À")Use "java.util.Random.nextInt()" instead.(•á›½şÿÿÿÿ
+O	java:S106Ñ"9Replace this use of System.out or System.err by a logger.(ìêèº
+E
+java:S2140Ú")Use "java.util.Random.nextInt()" instead.(ãøç¿ıÿÿÿÿ
+T	java:S106ä"9Replace this use of System.out or System.err by a logger.(Ø»Ö¬øÿÿÿÿ
+T	java:S106ö"9Replace this use of System.out or System.err by a logger.(´ƒíÀùÿÿÿÿ
+T	java:S106„"9Replace this use of System.out or System.err by a logger.(ƒöØóıÿÿÿÿ
+T	java:S106“"9Replace this use of System.out or System.err by a logger.(¾ùôŒùÿÿÿÿ
+H
+java:S1172¡",Remove this unused method parameter "names".(€ó–Ìşÿÿÿÿ
+W	java:S125£"<This block of commented-out lines of code should be removed.(ßÄ ±úÿÿÿÿ
+T	java:S106µ"9Replace this use of System.out or System.err by a logger.(Úº³ƒûÿÿÿÿ
+O	java:S106Ë"9Replace this use of System.out or System.err by a logger.(‰®ß¿
+T	java:S106à"9Replace this use of System.out or System.err by a logger.(½ô˜úÿÿÿÿ
+O	java:S106ö"9Replace this use of System.out or System.err by a logger.(û°•©
+I
+java:S1172"-Remove this unused method parameter "number".(©Ï¶êûÿÿÿÿ
+O	java:S106”"9Replace this use of System.out or System.err by a logger.(·Š¡ş
+T	java:S106—"9Replace this use of System.out or System.err by a logger.(°ÆûÚúÿÿÿÿ
+T	java:S106Ã"9Replace this use of System.out or System.err by a logger.(»‰ÉÎÿÿÿÿÿ
+T	java:S106È"9Replace this use of System.out or System.err by a logger.(æú½—şÿÿÿÿ
+T	java:S106Ë"9Replace this use of System.out or System.err by a logger.(×ùÂáüÿÿÿÿ
+T	java:S106Û"9Replace this use of System.out or System.err by a logger.(ê¾¶†ùÿÿÿÿ
+O	java:S106æ"9Replace this use of System.out or System.err by a logger.(¥š×Ò
+T	java:S106é"9Replace this use of System.out or System.err by a logger.(Ä¨Õÿÿÿÿÿ
+O	java:S106ô"9Replace this use of System.out or System.err by a logger.(éÔê
+O	java:S106÷"9Replace this use of System.out or System.err by a logger.(ŞâÂ
+O	java:S106’"9Replace this use of System.out or System.err by a logger.(³œ‘ã
+O	java:S106•"9Replace this use of System.out or System.err by a logger.(˜¤Ú
+N	java:S106®"9Replace this use of System.out or System.err by a logger.(ıÅG
+T	java:S106Ä"9Replace this use of System.out or System.err by a logger.(Í–Œ‡úÿÿÿÿ
+Q
+java:S1854Ë"5Remove this useless assignment to local variable "m".(ì‰ÙÎüÿÿÿÿ
+T	java:S106Õ"9Replace this use of System.out or System.err by a logger.(®ıáëûÿÿÿÿ
+O	java:S106İ"9Replace this use of System.out or System.err by a logger.(›Åşë
+B
+java:S1481Ë"&Remove this unused "m" local variable.(ì‰ÙÎüÿÿÿÿ
+D
+java:S1144")Remove this unused private "a330" method.(Ù©§Ùùÿÿÿÿ
+?
+java:S1144&")Remove this unused private "a329" method.(Æ¼èÍ
+D
+java:S1144^")Remove this unused private "a328" method.(ğ¥Öïùÿÿÿÿ
+D
+java:S1144p")Remove this unused private "a327" method.(ˆ•úŸÿÿÿÿÿ
+E
+java:S1144³")Remove this unused private "a326" method.(»ÄòŸøÿÿÿÿ
+E
+java:S1144ã")Remove this unused private "a325" method.(«‡äìÿÿÿÿÿ
+E
+java:S1144û")Remove this unused private "a324" method.(Ÿ÷«”øÿÿÿÿ
+E
+java:S1144š")Remove this unused private "a323" method.(êµıìùÿÿÿÿ
+E
+java:S1144»")Remove this unused private "a322" method.(‚¢ü»ùÿÿÿÿ
+E
+java:S1144Ô")Remove this unused private "a321" method.(ÖÎ»˜ıÿÿÿÿ
+@
+java:S1144é")Remove this unused private "a320" method.(íÃµ
+@
+java:S1144ù")Remove this unused private "a319" method.(‡æâ
+@
+java:S1144ÿ")Remove this unused private "a318" method.(”ü‚±
+E
+java:S1144‡")Remove this unused private "a316" method.(è«œèÿÿÿÿÿ
+@
+java:S1144–")Remove this unused private "a317" method.(¶ü±Ï
+E
+java:S1144§")Remove this unused private "a315" method.(¸Ö¾Îÿÿÿÿÿ
+E
+java:S1144¸")Remove this unused private "a314" method.(ëÕ¨úÿÿÿÿ
+@
+java:S1144Î")Remove this unused private "a313" method.(É¢º³
+@
+java:S1144ã")Remove this unused private "a312" method.(ØÇÈ°
+E
+java:S1144ú")Remove this unused private "a310" method.(Ùˆƒûÿÿÿÿ
+E
+java:S1144…")Remove this unused private "a309" method.(¹ëÒÍüÿÿÿÿ
+@
+java:S1144œ")Remove this unused private "a308" method.(œğ»
+@
+java:S1144Ñ")Remove this unused private "a307" method.(¡Ÿ–ƒ
+E
+java:S1144î")Remove this unused private "a306" method.(†Ã¦æüÿÿÿÿ
+E
+java:S1144")Remove this unused private "a305" method.(Ä——¬ùÿÿÿÿ
+E
+java:S1144£")Remove this unused private "a304" method.(êö« ÿÿÿÿÿ
+@
+java:S1144±")Remove this unused private "a303" method.(¸‘ì
+E
+java:S1144È")Remove this unused private "a302" method.(…µÉûÿÿÿÿ
+E
+java:S1144Ø")Remove this unused private "a301" method.(½‰«úÿÿÿÿ

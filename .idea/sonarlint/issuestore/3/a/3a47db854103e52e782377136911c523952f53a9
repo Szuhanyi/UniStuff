@@ -1,0 +1,155 @@
+
+7
+java:S1643>"Use a StringBuilder instead.(ö«Üûúÿÿÿÿ
+O	java:S106"9Replace this use of System.out or System.err by a logger.(ìÃÜ
+7
+java:S1643C"Use a StringBuilder instead.( şÉÑşÿÿÿÿ
+O	java:S106”"9Replace this use of System.out or System.err by a logger.(¬‡¢õ
+1
+java:S16435"Use a StringBuilder instead.(Íÿœ'
+O	java:S106ô"9Replace this use of System.out or System.err by a logger.(Ó„öº
+i
+java:S3776‘"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(ÍÃÙ
+B
+java:S1481ë"+Remove this unused "number" local variable.(ºµµŒ
+T	java:S106­"9Replace this use of System.out or System.err by a logger.(¼Ä¶ëüÿÿÿÿ
+@
+java:S1144Å")Remove this unused private "a223" method.(Ñ…œì
+Z
+java:S1226Ú">Introduce a new variable instead of reusing the parameter "b".(ˆ˜ı‡úÿÿÿÿ
+O	java:S106É"9Replace this use of System.out or System.err by a logger.(üï–
+N	java:S106’"9Replace this use of System.out or System.err by a logger.(“ºíy
+O	java:S106‡"9Replace this use of System.out or System.err by a logger.(„ÕÜ
+R	java:S125Á"<This block of commented-out lines of code should be removed.(•û¼Ø
+v
+java:S2234¤"ZParameters to printOut have the same names but not the same order as the method arguments.(’ĞøÊüÿÿÿÿ
+O	java:S106‡"9Replace this use of System.out or System.err by a logger.(»ËöÛ
+V
+java:S1854ñ":Remove this useless assignment to local variable "result".(üø¤ğùÿÿÿÿ
+Z
+java:S2184Ò"CCast one of the operands of this subtraction operation to a "long".(Ëˆş¡
+T	java:S106¶"9Replace this use of System.out or System.err by a logger.(æ¨¤šøÿÿÿÿ
+N
+java:S1144„"2Remove this unused private "a225Redefined" method.(´ÎŠŒúÿÿÿÿ
+O	java:S106Ô"9Replace this use of System.out or System.err by a logger.(á‹Øò
+N	java:S106Ç"9Replace this use of System.out or System.err by a logger.(İ æz
+T	java:S106Ú"9Replace this use of System.out or System.err by a logger.(²ùóşÿÿÿÿ
+T	java:S106´"9Replace this use of System.out or System.err by a logger.(ÖŞéøÿÿÿÿ
+T	java:S106­"9Replace this use of System.out or System.err by a logger.(æŸ´ğúÿÿÿÿ
+T	java:S106õ"9Replace this use of System.out or System.err by a logger.(ãéÅ€úÿÿÿÿ
+G
+java:S1144½"0Remove this unused private "sumOfDigits" method.(Èöæ
+T	java:S106½"9Replace this use of System.out or System.err by a logger.(š—°øÿÿÿÿ
+a
+java:S2184"ECast one of the operands of this subtraction operation to a "double".(ÕÉıÿÿÿÿ
+T	java:S106—"9Replace this use of System.out or System.err by a logger.(Ÿ˜´øÿÿÿÿ
+O	java:S106¬"9Replace this use of System.out or System.err by a logger.(ĞÂû·
+?
+java:S1144Æ")Remove this unused private "a219" method.(ËÂşG
+O	java:S106Ú"9Replace this use of System.out or System.err by a logger.(ÀÈ´Œ
+V	java:S125"<This block of commented-out lines of code should be removed.(Â¾µúÿÿÿÿ
+7
+java:S1643@"Use a StringBuilder instead.(áŒË®ûÿÿÿÿ
+T	java:S106·"9Replace this use of System.out or System.err by a logger.(š—°øÿÿÿÿ
+O	java:S106’"9Replace this use of System.out or System.err by a logger.(ÓÈÜ„
+O	java:S106É"9Replace this use of System.out or System.err by a logger.(ˆéë
+\
+java:S2184ş"ECast one of the operands of this subtraction operation to a "double".(†Òâ£
+T	java:S106¸"9Replace this use of System.out or System.err by a logger.(´‹¹öşÿÿÿÿ
+T	java:S106"9Replace this use of System.out or System.err by a logger.(ÍÀ·‰ÿÿÿÿÿ
+W
+java:S2184Ò"@Cast one of the operands of this integer division to a "double".(Ì«Ï¸
+C
+java:S1612¬",Replace this lambda with a method reference.(ĞÂû·
+T	java:S106±"9Replace this use of System.out or System.err by a logger.(àö•œşÿÿÿÿ
+T	java:S106È"9Replace this use of System.out or System.err by a logger.(ÄÁÊÏûÿÿÿÿ
+T	java:S106ƒ"9Replace this use of System.out or System.err by a logger.(“í¡Ìüÿÿÿÿ
+2
+java:S3626—"Remove this redundant jump.(ûÁİ…
+R
+java:S1854÷"6Remove this useless assignment to local variable "o2".(Ù¥³šüÿÿÿÿ
+T	java:S106À"9Replace this use of System.out or System.err by a logger.(°Æ°ìúÿÿÿÿ
+O	java:S106Ÿ"9Replace this use of System.out or System.err by a logger.(çîùš
+a	java:S112ã"FDefine and throw a dedicated exception instead of using a generic one.(ø¡Ôúÿÿÿÿ
+E
+java:S1144”")Remove this unused private "a225" method.(ƒúßºøÿÿÿÿ
+O	java:S106á"9Replace this use of System.out or System.err by a logger.(†™ñ‹
+T	java:S106ƒ"9Replace this use of System.out or System.err by a logger.(½£Ã’ùÿÿÿÿ
+O	java:S106œ"9Replace this use of System.out or System.err by a logger.(ÆÓÀÍ
+O	java:S106İ"9Replace this use of System.out or System.err by a logger.(ŒÆãˆ
+O	java:S106–"9Replace this use of System.out or System.err by a logger.(·ıİ–
+T	java:S106Ä"9Replace this use of System.out or System.err by a logger.(ş¹Æşÿÿÿÿ
+T	java:S106¯"9Replace this use of System.out or System.err by a logger.(ê´Ù‰ÿÿÿÿÿ
+?
+java:S1144¨")Remove this unused private "a220" method.(Ùœ´]
+O	java:S106ƒ"9Replace this use of System.out or System.err by a logger.(ïš¤Ã
+T	java:S106†"9Replace this use of System.out or System.err by a logger.(¨¡ß±ùÿÿÿÿ
+N	java:S106p"9Replace this use of System.out or System.err by a logger.(‰›™
+?
+java:S1144s")Remove this unused private "a226" method.(éï£§
+?
+java:S1144")Remove this unused private "a228" method.(£®Üã
+O	java:S106ç"9Replace this use of System.out or System.err by a logger.(á‹Øò
+E
+java:S1144Š")Remove this unused private "a221" method.(Êı÷ûÿÿÿÿ
+Q
+java:S1854ë":Remove this useless assignment to local variable "number".(ºµµŒ
+O	java:S106®"9Replace this use of System.out or System.err by a logger.(°ÚÍİ
+V	java:S125	"<This block of commented-out lines of code should be removed.(»•ûÿÿÿÿ
+N	java:S106Ë"9Replace this use of System.out or System.err by a logger.(ÌÜß
+T	java:S106Ç"9Replace this use of System.out or System.err by a logger.(’íÏûÿÿÿÿ
+@
+java:S1144 ")Remove this unused private "a216" method.(ò¬ÕÈ
+?
+java:S1144é")Remove this unused private "a222" method.(ü…ÙD
+O	java:S106™"9Replace this use of System.out or System.err by a logger.(õóÔ
+m
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(„ºÅşÿÿÿÿ
+@
+java:S1144ø")Remove this unused private "a218" method.(¦í½
+T	java:S106ï"9Replace this use of System.out or System.err by a logger.(›ÀÚ÷úÿÿÿÿ
+T	java:S106Æ"9Replace this use of System.out or System.err by a logger.(“ÌÎõùÿÿÿÿ
+T	java:S106"9Replace this use of System.out or System.err by a logger.(ÕÉıÿÿÿÿ
+O	java:S106„"9Replace this use of System.out or System.err by a logger.(›†·ù
+7
+java:S16439"Use a StringBuilder instead.(ãÒƒªùÿÿÿÿ
+T	java:S106•"9Replace this use of System.out or System.err by a logger.(ªÂøşÿÿÿÿ
+D
+java:S1144L")Remove this unused private "a227" method.(»ûÔùÿÿÿÿÿ
+T	java:S106Â"9Replace this use of System.out or System.err by a logger.(øÈ¤üÿÿÿÿ
+O	java:S106"9Replace this use of System.out or System.err by a logger.(³†ƒ¨
+E
+java:S1144Š")Remove this unused private "a217" method.(Š×ùÆÿÿÿÿÿ
+T	java:S106œ"9Replace this use of System.out or System.err by a logger.(¢ì¾âüÿÿÿÿ
+T	java:S106Û"9Replace this use of System.out or System.err by a logger.(³±Á‹ıÿÿÿÿ
+S	java:S106I"9Replace this use of System.out or System.err by a logger.(úÌÿÿÿÿÿ
+T	java:S106¦"9Replace this use of System.out or System.err by a logger.(×¬‹úıÿÿÿÿ
+O	java:S106º"9Replace this use of System.out or System.err by a logger.(’€ïÂ
+T	java:S106Ö"9Replace this use of System.out or System.err by a logger.(Îˆàûÿÿÿÿ
+T	java:S106ˆ"9Replace this use of System.out or System.err by a logger.(ÓŒ²çøÿÿÿÿ
+T	java:S106¼"9Replace this use of System.out or System.err by a logger.(æ¨¤šøÿÿÿÿ
+O	java:S106¡"9Replace this use of System.out or System.err by a logger.(Å£±Ğ
+T	java:S106‚"9Replace this use of System.out or System.err by a logger.(µ‡õÿÿÿÿÿ
+T	java:S106Ş"9Replace this use of System.out or System.err by a logger.(º‘Ô‹úÿÿÿÿ
+7
+java:S1643/"Use a StringBuilder instead.(×•éúÿÿÿÿ
+
+java:S1186‰"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÕÔ·ñúÿÿÿÿ
+O	java:S106Û"9Replace this use of System.out or System.err by a logger.(ÙÑôÛ
+O	java:S106ú"9Replace this use of System.out or System.err by a logger.(€’›ù
+N	java:S106¸"9Replace this use of System.out or System.err by a logger.(Ù¬Æ|
+O	java:S106÷"9Replace this use of System.out or System.err by a logger.(Ú‡—
+O	java:S106¾"9Replace this use of System.out or System.err by a logger.(‹¢„
+T
+java:S1197¯"8Move the array designator from the variable to the type.(Ó†Íšøÿÿÿÿ
+E
+java:S1144µ")Remove this unused private "a224" method.(—†Äìşÿÿÿÿ
+p
+java:S2234¦"ZParameters to printOut have the same names but not the same order as the method arguments.(…¯ù]
+T	java:S106¢"9Replace this use of System.out or System.err by a logger.(Ä¬†üÿÿÿÿ
+T	java:S106¥"9Replace this use of System.out or System.err by a logger.(£ñÿÿÿÿÿ
+O	java:S106û"9Replace this use of System.out or System.err by a logger.(ëàóš
+O	java:S106Å"9Replace this use of System.out or System.err by a logger.(ÁÀ
+O	java:S106ì"9Replace this use of System.out or System.err by a logger.(Ù²†¼
+O	java:S106ê"9Replace this use of System.out or System.err by a logger.(¦¡òî
+T	java:S106€"9Replace this use of System.out or System.err by a logger.(‰€şÿÿÿÿ

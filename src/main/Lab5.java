@@ -1,37 +1,234 @@
 package main;
 
-import java.awt.font.NumericShaper;
+import java.io.*;
 import java.util.*;
+import java.util.stream.Collectors;
 
-public class Lab5 { 
+public class Lab5 extends Lab{
 
     private int n = 20;
-    private int a = 1;
-    private int b = 100;
+    private int a = 1;    private int b = 100;
 
+
+    /**
+     *
+     * fck me oh yeah 
+     */
+    public void a022() {
+
+    }
+
+
+    @Override
+    public void a021() {
+        // read in ordered number arrays
+        // then merge them
+        // then make statistics
+        // then create a set of them
+
+        //read in from file, then process
+
+        File file = null;
+        BufferedReader bufferedReader = null;
+        StringBuffer sb = new StringBuffer();
+        String line = null;
+        try {
+            file = new File("input/input21.txt");
+            FileReader fileReader = new FileReader(file);
+            bufferedReader = new BufferedReader(fileReader);
+            sb = new StringBuffer();
+            List<Integer> allNumbers = new ArrayList<>();
+            List<Integer> stats = new ArrayList<>();
+            while((line= bufferedReader.readLine())!=null  && !line.equals("")) {
+                sb.append(line);
+                sb.append("\n");
+                String [] numbers = line.split(" ");
+                List<Integer> asdf = new ArrayList<>();
+                Arrays.stream(numbers).forEach(p-> asdf.add(Integer.parseInt(p)));
+                allNumbers = NumberService.mergeLists(allNumbers,asdf);
+            }
+            System.out.println(allNumbers);
+            Set<Integer> sett = new HashSet<>(allNumbers);
+            for(Integer i : sett) {
+                List<Integer> asd = allNumbers.stream().filter(p->p.equals(i)).collect(Collectors.toList());
+                stats.add(asd.size());
+            }
+            System.out.println(sett);
+            System.out.println(stats);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
+    private void a020() {
+        // read in text, then sum up the numbers
+        String slsl = "asfr";
+        int number = a020_impl(slsl);
+        System.out.println(number);
+
+    }
+
+    private int a020_impl(String slsl) {
+        int result = 0;
+        String[] letters = slsl.split("[^0-9]");
+        for(int i = 0; i < letters.length; i++) {
+            if(letters[i] != null && letters[i] != "" && !letters[i].equals("")) {
+                result += Integer.parseInt(letters[i]);
+            }
+        }
+        return result;
+    }
+
+    private void a019() {
+        // decide whether a number is a Vale number or a mountain number...
+        int n1 = 1234321;
+        int n2 = 43212345;
+        int n3 = 123123;
+
+        int r1 = a019_impl(n1);
+        int r2 = a019_impl(n2);
+        int r3 = a019_impl(n3);
+        System.out.println(n1 + " is " + r1);
+        System.out.println(n2 + " is " + r2);
+
+
+        System.out.println(n3 + " is " + r3);
+
+    }
+
+    private int a019_impl(int n) {
+        int result = 0;
+        boolean isVale = isValeNumber(n);
+        boolean isMountain = isMountainNumber(n);
+        if(isVale) {
+            result = 1;
+        }
+        if(isMountain) {
+            result = 2;
+        }
+        // if 0 then it is neither
+        // create one... hehehehehehehh
+        if(result == 0) {
+            boolean isValeOrMountain = false;
+            List<Integer> digits = NumberService.getDigits(n);
+            while (!isValeOrMountain && !digits.isEmpty()) {
+                digits.remove(digits.get(0));
+                int cutNumber = NumberService.createNumber(digits);
+                if (isValeNumber(cutNumber) || isMountainNumber(cutNumber)) {
+                    isValeOrMountain = true;
+                    if(isValeNumber(cutNumber))
+                        result = 1;
+                    else
+                        result = 2;
+                }
+            }
+            System.out.println("created from : " + n + " : " + NumberService.createNumber(digits) + " is " + result);
+            result = 0;
+        }
+
+        return result;
+    }
+
+    private boolean isMountainNumber(int n) {
+        List<Integer> digits = NumberService.getDigits(n);
+        int i = 0;
+        boolean isOrdered = true;
+        boolean isMountain = false;
+
+        while (i < digits.size()-1 && isOrdered) {
+            if(digits.get(i) > digits.get(i+1))
+                isOrdered = false;
+            i++;
+        }
+
+        if(!isOrdered) {
+            while( i < digits.size() - 1) {
+                if(digits.get(i) <digits.get(i+1))
+                    isOrdered = true;
+                i++;
+            }
+            if(!isOrdered) {
+                isMountain = true;
+            }
+        }
+        else {
+            isMountain = false;
+        }
+
+        return isMountain;
+    }
+
+    private boolean isValeNumber(int n) {
+        List<Integer> digits = NumberService.getDigits(n);
+        int i = 0;
+        boolean isOrdered = true;
+        boolean isVale = false;
+
+        while (i < digits.size()-1 && isOrdered) {
+            if(digits.get(i) < digits.get(i+1))
+                isOrdered = false;
+            i++;
+        }
+
+        if(!isOrdered) {
+            while( i < digits.size() - 1) {
+                if(digits.get(i) > digits.get(i+1))
+                    isOrdered = true;
+                i++;
+            }
+            if(!isOrdered) {
+                isVale = true;
+            }
+        }
+        else {
+            isVale = false;
+        }
+
+        return isVale;
+    }
 
 
     private void a018() {
         // do a Niven numbers...
         // digits sum should divide the actual number, even in different systems
-
-
         //read from console while there is input ?
-
         boolean read = true;
+        BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
         while(read) {
-            int system = 10; // read teh system
-            int number = 10; // read number from console
-            boolean status = a018_impl(system,number);
-
+            System.out.println("Gimme a pair of numbers : system , number");
+            String[] input = new String[0];
+            try {
+                input = bufferRead.readLine().split(" ");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if(input.length == 2) {
+                int system = Integer.parseInt(input[0]);
+                int number = Integer.parseInt(input[1]);
+                boolean status = a018_impl(system, number);
+                System.out.println("The number : " + number + " is Niven ? " + status);
+            }
+            else {
+                read = false;
+                System.out.println("The end is near.");
+            }
         }
-
+        System.out.println("This is the end");
     }
+
 
     private boolean a018_impl(int system, int number) {
         boolean result = false;
         int digitSum = NumberService.getSumOfDigits(number);
-
+        int numberInDecim = NumberService.convertToDecimalSystem(system,number);
+        if (numberInDecim % digitSum == 0) {
+            result = true;
+        }
         return result;
     }
 
@@ -552,7 +749,7 @@ public class Lab5 {
     }
 
 
-    private void a003() {
+    public void a003() {
         // given N matrix, rotate it, thx
         int n = 10;
         int[][] x = new int[n][];
@@ -581,7 +778,7 @@ public class Lab5 {
     }
 
 
-    private void a002() {
+    public void a002() {
         int n = 10;
         int [] x = NumberService.generateIntegers(n,1,100);
         a002_impl(x);
@@ -602,7 +799,7 @@ public class Lab5 {
     }
 
 
-    private void a001() {
+    public  void a001() {
         // given X array
         // get the average of the numbers between a,b
         // the rest should be put into another array
@@ -633,5 +830,5 @@ public class Lab5 {
         System.out.println(y);
     }
 
-    
 }
+

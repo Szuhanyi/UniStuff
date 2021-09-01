@@ -12,7 +12,7 @@ public class Lab6 extends Lab{
     /**
      * Print n into the product of prime dividents
      */
-    public void a01() {
+    public void a001() {
         // gotta use recursive function
         // n = R(i-1) * R(i-2) * R(1);
         List<Integer> x = new LinkedList<>();
@@ -49,7 +49,7 @@ public class Lab6 extends Lab{
     /**
      * Check if the number is perfect ( it equals to the sum of the smaller dividents)
      */
-    public void a02() {
+    public void a002() {
         int n = 10;
         a02_impl(n);
         n = 4;
@@ -61,9 +61,11 @@ public class Lab6 extends Lab{
      * calculate a polinom's value in a given point
      */
     @Override
-    void a03() {
+    void a003() {
         // 1 + 2x + 2 x*x
         int [] x = new int []{1, 2, 2};
+
+
 
 
     }
