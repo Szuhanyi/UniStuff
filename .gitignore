@@ -3,12 +3,4 @@ out/
 *.class
 *.xml
 *.pb
-.idea/sonarlint/issuestore/d/a/dab6d25bbaef3fd028c88e80e7f199b56cf9be54
-.idea/sonarlint/issuestore/d/9/d9d84ef9cd599ecccabb7f6ae75ba66aee2a3c15
-.idea/sonarlint/issuestore/c/f/cf73fdb485d2102c213ab630032c5d9940f4596a
-.idea/sonarlint/issuestore/a/8/a8783a2ef55aec1be3a3dd0fdcb3fedff36e7d4e
-.idea/sonarlint/issuestore/9/8/98e7800a6d461953fc149e7ffb5541520268f1d7
-.idea/sonarlint/issuestore/9/6/96e00f8f2fa07f892d8c4cc3b3fc28f5926bbc22
-.idea/sonarlint/issuestore/7/8/78235a56616690d142ede6aaf82e3d9ca19c9504
-.idea/sonarlint/issuestore/7/2/72b93be4b8bfba17b0ae2f4a13e81f3cf441ed22
-.idea/sonarlint/issuestore/3/a/3a47db854103e52e782377136911c523952f53a9
+.idea/sonarlint/*
