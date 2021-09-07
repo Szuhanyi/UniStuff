@@ -6,4 +6,11 @@ public  abstract class Lab {
     abstract void a002() ;
     void a003() {}
     public  void a021() {}
+    public  void a022() {}
+
+    public void a023() {
+    }
+
+    public void a024() {
+    }
 }

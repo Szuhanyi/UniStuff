@@ -179,7 +179,14 @@ public class NumberService {
             System.out.print(snake[i] + " ");
         }
         System.out.println();
+    }
 
+    public static void printArray(double[] snake) {
+        System.out.println();
+        for(int i = 0; i < snake.length;i++) {
+            System.out.print(snake[i] + " ");
+        }
+        System.out.println();
     }
 
     /**

@@ -1,7 +1,11 @@
 package main;
 
+import com.sun.corba.se.spi.orbutil.fsm.Input;
+
+import javax.print.attribute.standard.NumberOfInterveningJobs;
 import java.io.*;
 import java.util.*;
+import java.util.logging.ConsoleHandler;
 import java.util.stream.Collectors;
 
 public class Lab5 extends Lab{
@@ -10,12 +14,207 @@ public class Lab5 extends Lab{
     private int a = 1;    private int b = 100;
 
 
+    @Override
+    public void a024() {
+        // there are two methods to read data in
+        // ask user which one to use
+
+        System.out.println("Gimme the format for reading in the polinoms (1/2): ? ");
+        List<double[]> polis = new LinkedList<>();
+        double t = -2;
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        String mode = "";
+        try {
+            boolean cond = true;
+            while (cond) {
+                mode = br.readLine();
+                try {
+                    int c = Integer.parseInt(mode);
+                    if (c == 1 || c == 2)
+                    {cond = false; }
+                    else
+                    {
+                        System.out.println("try again (1/2): gl");
+                    }
+                }
+                catch(NumberFormatException e) {
+                    System.out.println("try again, (1/2): gf");
+                }
+            }
+
+            System.out.println("Chosen way is " + mode);
+
+            // now for the good port,
+            // read in all the polinoms which you wanna use
+            System.out.println("Start introducing the polinoms.");
+
+            cond = true;
+            while(cond) {
+                try {
+                    System.out.println("Need power t: ");
+                    String power = br.readLine();
+                    t = Integer.parseInt(power);
+
+                    System.out.println("Polinom : ");
+                    power = br.readLine();
+
+                    String [] digits = power.split(" ");
+                    double[] vex = new double[digits.length +1];
+                    for(int i = 0; i < digits.length; i++) {
+                        vex[i] = Double.parseDouble(digits[i]);
+                    }
+                    polis.add(vex);
+                    System.out.println(" ");
+                    System.out.println("You have entered : ");
+                    NumberService.printArray(vex);
+
+                    System.out.println("enter 0 to stop introducing polinoms.");
+                    power = br.readLine();
+                    if(power.equals("0") ) {
+                       cond = false;
+                    }
+                }
+                catch (NumberFormatException e) {
+                    System.out.println("Wrong input try again");
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Fck me , it is not working.");
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                br.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        System.out.println("All arrays introduced: ");
+        for(double[] d : polis) {
+            NumberService.printArray(d);
+        }
+
+        double x1 = -2;
+
+         a024_impl(polis,x1);
+    }
+
+
+    private void a024_impl(List<double[]> polis, double t) {
+        double sum = 0 ;
+        double max = 0;
+        if(polis.size() == 0) {
+            System.out.println("no polis given, u fat fck");
+            return ;
+        }
+        double[] maxPoli = polis.get(0);
+        max = getValueInPoint(polis.get(0),t);
+        for(double [] x : polis) {
+            double value = getValueInPoint(x,t);
+            sum += value;
+            if(value > max) {
+                max = value;
+                maxPoli = x;
+            }
+        }
+        System.out.println(" sum  is : " + sum);
+        System.out.println("value is highest in : " + max);
+        Arrays.stream(maxPoli).forEach(System.out::print);
+    }
+
+
+    private double getValueInPoint(double [] polinom, double x) {
+        double sum = 0;
+        double d = 1;
+        for(int i = 0; i < polinom.length; i++) {
+            sum += polinom[i] * d;
+            d *= x;
+        }
+        return sum;
+    }
+
+
     /**
+     * remove the longest word
+     * but why ?
      *
-     * fck me oh yeah 
      */
+    @Override
+    public void a023() {
+        // what gives ????
+        String s = "s s  ss  ss     ss     ss    s";
+        System.out.println(a023_impl(s));
+        String s2 = "s s  ss  ss   ssss           ss     ss    s";
+        System.out.println(a023_impl(s2));
+    }
+
+
+    public String a023_impl(String input) {
+        String output = "";
+        String [] words = input.split(" ");
+        int max = 0;
+        for(int i = 0; i < words.length; i++) {
+            if(max < words[i].length()) {
+                max = words[i].length();
+            }
+        }
+        for(int i = 0;  i < words.length; i++) {
+            if(words[i].length() != max && words[i].length() > 0) {
+                output += words[i] + " ";
+            }
+        }
+        return output;
+    }
+
+
+    /**
+     * get the saddle point
+     */
+    @Override
     public void a022() {
 
+        int [][] x = NumberService.generateMatrixIntegers(n,a,b);
+        int [] points = a022_impl(x);
+        NumberService.printMatrix(x);
+        Arrays.stream(points).forEach(System.out::print);
+        // note : not tested yet. Too lazy genereate a correct input
+        // perhaps introduce a fuction to read input from file, as matrix . right  ?
+        //whatever ;
+    }
+
+    private int[] a022_impl(int [][] x ) {
+        // max in i , and min in j
+        int resultI = 0;
+        int resultJ = 0;
+        for(int i = 0; i < x.length; i++) {
+            int min = b+1;
+            int indexJ = 0;
+            for(int j = 0; j < x.length; j++) {
+                //whatever
+                 if (min > x[i][j]) {
+                     min = x[i][j];
+                     indexJ = j;
+                 }
+            }
+            // we have the min in x[i][indexJ]
+            // now check weather that is the max in the column
+            int max = 0;
+            int indexI = 0;
+            for(int k = 0; k < x.length; k++) {
+                if(x[k][indexJ] > max) {
+                    max = x[k][indexJ];
+                    indexI = k;
+                }
+            }
+            if(max == min && (i == indexI || x[i][indexJ]==max)) {
+                // return true
+                resultI = indexI;
+                resultJ = indexJ;
+            }
+        }
+        return new int[]{resultI,resultJ};
     }
 
 

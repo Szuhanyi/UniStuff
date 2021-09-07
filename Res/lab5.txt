@@ -177,13 +177,18 @@ A sorozatokban levő számok száma ismeretlen, egy számsorozat a sorvége jell
     majd hozzunk létre ebből egy újat, amely csak különböző számokból áll.
     Írjuk ki az így kapott sorozatot, majd minden szám esetében írjuk ki előfordulásainak számát az előbb kiírt sorozatban.
 
+
 22.    Adott egy kétdimenziós tömb, amelynek elemei egész számok. Döntsük el, hogy létezik-e nyeregpont a mátrixban vagy sem. Nyeregpont alatt azt az aij elemet
 értjük, amely a legkisebb a mátrix i-edik sorában és legnagyobb a j-edik oszlopban,
  vagy legnagyobb a mátrix i-edik sorában és legkisebb a j-edik oszlopban. A program egy megfelelő üzenettel válaszoljon a kérdésre. Igenlő válasz esetén a program
   írja ki a nyeregpont koordinátáit, vagyis a megfelelő elem sor- és oszlopindexét.
 
+
+
 23    Egy adott szöveg szavakat tartalmaz, ismeretlen számú szóközzel elválasztva. Írjunk programot, amely törli a szöveg leghosszabb szavát! Több azonos hosszúságú
  szó esetén töröljük mindeniket! A kimeneti szövegben a szavak egy-egy szóközzel legyenek elválasztva!
+
+
 
 24    Adva van több valós együtthatójú polinom. A polinomok száma ismeretlen. Írjunk programot, amellyel kiszámítjuk az összegüket és kiválasztjuk azt a polinomot,
  amelynek az a pontban kiszámított értéke a legnagyobb az összes megadott polinom ugyanazon a pontban kiszámított
@@ -195,16 +200,23 @@ A sorozatokban levő számok száma ismeretlen, egy számsorozat a sorvége jell
 
     - a monomjain keresztül (fokszám és együttható).
 
-    Az adatok beolvasása előtt a program kérdezze meg, milyen alakban lesz megadva a polinom. Írjuk ki a megadott polinomok összegét, valamint azt a polinomot, amelynek az értéke maximális az adott a pontban.
+    Az adatok beolvasása előtt a program kérdezze meg, milyen alakban lesz megadva a polinom.  Írjuk ki a megadott polinomok összegét, valamint azt a polinomot, amelynek az értéke maximális az adott a pontban.
+
+
+
 
 25    Egy számot szerencsésnek nevezünk, ha számjegyei két csoportba oszthatók úgy, hogy a két csoportban levő számjegyek összege azonos. Ilyen szám például a 32843, mert 8 + 2 = 3 + 4 + 3.
 
     Írjunk programot, amely kiírja azokat a szerencsés számokat, amelyek egy adott intervallumon belül találhatók!
 
+
+
 26.    Írjunk programot, amely beolvas több, természetes számokból álló számsorozatot. A sorozatok száma ismeretlen, a számsorozatok végét egy üres sor jelzi. A sorozatokban levő számok száma ismeretlen, a számsorozat a sorvége jellel ér véget.
 
     Minden sorozat esetében határozzuk meg azt a leghosszabb, egymás utáni elemekből álló részsorozatot, amely csak prímszámokat tartalmaz. Írjuk ki a sorozat sorszámát, a részsorozat első elemének indexét, valamint az utolsó elem indexét. Ezután írjunk ki minden előforduló prímszámot
      egyszer.
+
+
 
 27    Ali Baba rajtakapta a 40 rablót, miközben ezek a kincsei között kotorásztak. A rablók sokan voltak, ő egyedül, ezért megpróbált egyezkedni velük. Volt egy különleges láda, amelyre fel volt írva a benne levő gyémántok száma, egy (legtöbb) 40 számjegyes szám egy, a rablók által
  ismeretlen számrendszerben (b < 10). Ali Baba felajánlotta a rablók vezérének, hogy vágjon ki b számjegyet a számjegysorból, mert a megmaradó számjegyekből összeálló számnak megfelelő számú gyémántot átenged neki.
