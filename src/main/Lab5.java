@@ -1,17 +1,49 @@
 package main;
 
-import com.sun.corba.se.spi.orbutil.fsm.Input;
 
+import com.sun.corba.se.spi.orbutil.fsm.Input;
 import javax.print.attribute.standard.NumberOfInterveningJobs;
+import java.util.logging.ConsoleHandler;
+
 import java.io.*;
 import java.util.*;
-import java.util.logging.ConsoleHandler;
 import java.util.stream.Collectors;
+
 
 public class Lab5 extends Lab{
 
+    private int a = 1;
     private int n = 20;
-    private int a = 1;    private int b = 100;
+    private int b = 100;
+
+    /**
+     * Find all the lucky numbers in [a,b] interval
+     */
+    @Override
+    public void a025() {
+        List<Integer> luckyNumbers = a025_impl(a,b);
+        luckyNumbers.stream().forEach(System.out::println);
+    }
+
+    // a lucky number is number whose digits  can be separated to  two groups with equal sum
+    private List<Integer> a025_impl(int a, int b) {
+        List<Integer> newList = new LinkedList<>();
+        // we can try every posibility.. which would yield the 8! factorial -> 1x2x3x...x8
+        for(int i = a; i <=b; i++) {
+            if (isLucky(i)) {
+                newList.add(i);
+            }
+        }
+        return newList;
+    }
+
+    // return if the number is lucky
+    private boolean isLucky(int i) {
+        boolean result = false;
+        // but what about this result// why do we acare aobut him ?
+
+        return result;
+    }
 
 
     @Override
@@ -97,7 +129,6 @@ public class Lab5 extends Lab{
         }
 
         double x1 = -2;
-
          a024_impl(polis,x1);
     }
 
@@ -259,7 +290,6 @@ public class Lab5 extends Lab{
         } catch (IOException e) {
             e.printStackTrace();
         }
-
 
     }
 

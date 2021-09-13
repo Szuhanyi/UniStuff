@@ -204,17 +204,23 @@ A sorozatokban levő számok száma ismeretlen, egy számsorozat a sorvége jell
 
 
 
+25.
+     Egy számot szerencsésnek nevezünk, ha számjegyei két csoportba oszthatók úgy, hogy a két csoportban levő számjegyek összege azonos.
+     Ilyen szám például a 32843, mert 8 + 2 = 3 + 4 + 3.
+     Írjunk programot, amely kiírja azokat a szerencsés számokat, amelyek egy adott intervallumon belül találhatók!
 
-25    Egy számot szerencsésnek nevezünk, ha számjegyei két csoportba oszthatók úgy, hogy a két csoportban levő számjegyek összege azonos. Ilyen szám például a 32843, mert 8 + 2 = 3 + 4 + 3.
-
-    Írjunk programot, amely kiírja azokat a szerencsés számokat, amelyek egy adott intervallumon belül találhatók!
 
 
+26.
+    Írjunk programot, amely beolvas több, természetes számokból álló számsorozatot.
+    A sorozatok száma ismeretlen, a számsorozatok végét egy üres sor jelzi.
+    A sorozatokban levő számok száma ismeretlen, a számsorozat a sorvége jellel ér véget.
 
-26.    Írjunk programot, amely beolvas több, természetes számokból álló számsorozatot. A sorozatok száma ismeretlen, a számsorozatok végét egy üres sor jelzi. A sorozatokban levő számok száma ismeretlen, a számsorozat a sorvége jellel ér véget.
+    Minden sorozat esetében határozzuk meg azt a leghosszabb, egymás utáni elemekből álló részsorozatot, amely csak prímszámokat tartalmaz.
+    Írjuk ki a sorozat sorszámát, a részsorozat első elemének indexét, valamint az utolsó elem indexét.
+    Ezután írjunk ki minden előforduló prímszámot egyszer.
 
-    Minden sorozat esetében határozzuk meg azt a leghosszabb, egymás utáni elemekből álló részsorozatot, amely csak prímszámokat tartalmaz. Írjuk ki a sorozat sorszámát, a részsorozat első elemének indexét, valamint az utolsó elem indexét. Ezután írjunk ki minden előforduló prímszámot
-     egyszer.
+
 
 
 
@@ -224,3 +230,15 @@ A sorozatokban levő számok száma ismeretlen, egy számsorozat a sorvége jell
     A rabló előbb megállapította a legkisebb lehetséges b-t, mivel minél kevesebb számjegyet akart kivágni, majd elkezdődött a „faricskálás”. Természetesen, a célja az volt, hogy a megmaradó számjegyekből összeálló szám a lehető legnagyobb legyen.
 
     Írjunk programot, amely „súg” a rablónak! Írjuk ki a számrendszer alapját, a számjegyeket és helyüket a számban abban a sorrendben, ahogy a rablónak azokat ki kell vágnia, majd azoknak a gyémántoknak a számát, amelyeket Ali Baba át kell neki engedjen.
+
+
+
+
+
+
+
+
+
+
+
+
