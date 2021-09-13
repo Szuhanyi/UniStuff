@@ -9,6 +9,14 @@ public class NumberService {
 
 
 
+    public static int getSumOfList(List<Integer> x) {
+        int sum = 0;
+        for(Integer i : x) {
+            sum += i;
+        }
+        return sum;
+    }
+
     public static int getSumOfDigits(int i) {
         int sum  = 0;
         while(i > 0) {

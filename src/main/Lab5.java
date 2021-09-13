@@ -10,11 +10,11 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 
-public class Lab5 extends Lab{
+public class Lab5 extends Lab {
 
     private int a = 1;
     private int n = 20;
-    private int b = 100;
+    private int b = 10000;
 
     /**
      * Find all the lucky numbers in [a,b] interval
@@ -22,13 +22,13 @@ public class Lab5 extends Lab{
     @Override
     public void a025() {
         List<Integer> luckyNumbers = a025_impl(a,b);
-        luckyNumbers.stream().forEach(System.out::println);
+       // luckyNumbers.stream().forEach(System.out::println);
     }
 
     // a lucky number is number whose digits  can be separated to  two groups with equal sum
     private List<Integer> a025_impl(int a, int b) {
         List<Integer> newList = new LinkedList<>();
-        // we can try every posibility.. which would yield the 8! factorial -> 1x2x3x...x8
+        // we can try every possibility... which would yield 2^n possibilities
         for(int i = a; i <=b; i++) {
             if (isLucky(i)) {
                 newList.add(i);
@@ -38,11 +38,48 @@ public class Lab5 extends Lab{
     }
 
     // return if the number is lucky
-    private boolean isLucky(int i) {
+    private boolean isLucky(int x) {
         boolean result = false;
-        // but what about this result// why do we acare aobut him ?
+        List<Integer> digits = NumberService.getDigits(x);
+        List<String> possibilities = new LinkedList<>();
+        int t = digits.size();
+        generateVariation("",t,possibilities);
 
+        List<Integer> list1 = new LinkedList<>();
+        List<Integer> list2 = new LinkedList<>();
+        for(int i = 0; i < possibilities.size(); i++) {
+            String item = possibilities.get(i);
+            list1.clear();
+            list2.clear();
+            for(int j = 0;  j < item.length(); j++) {
+                if(item.charAt(j) == '0') {
+                    list1.add(digits.get(j));
+                }
+                else {
+                    list2.add(digits.get(j));
+                }
+            }
+            if(NumberService.getSumOfList(list1) == NumberService.getSumOfList(list2)){
+                result = true;
+                System.out.println(x + " is lucky cause : ");
+                list1.forEach(System.out::print);
+                System.out.print("  ");
+                list2.forEach(System.out::print);
+                System.out.println();
+            }
+        }
         return result;
+    }
+
+
+    private String generateVariation(String current, int threshold, List<String> result) {
+        if(threshold > 0 ) {
+            generateVariation(current+0,threshold-1, result);
+            generateVariation(current+1,threshold-1, result);
+        }
+        if(threshold == 0)
+            result.add(current);
+        return "";
     }
 
 
