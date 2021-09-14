@@ -189,6 +189,22 @@ public class NumberService {
         System.out.println();
     }
 
+    public static boolean isPrime(int x) {
+
+        int numberOfDivisors = 0;
+        int divisor = 2;
+        while(divisor < x) {
+            if ( (x%divisor)==0) {
+               numberOfDivisors++;
+            }
+            divisor++;
+        }
+        if(x == 1 || x == 0) {
+            numberOfDivisors++;
+        }
+        return numberOfDivisors == 0;
+    }
+
     public static void printArray(double[] snake) {
         System.out.println();
         for(int i = 0; i < snake.length;i++) {

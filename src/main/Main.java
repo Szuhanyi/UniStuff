@@ -4,6 +4,6 @@ public class Main {
 
     public static void main (String [] args) {
         Lab l = new Lab5();
-        l.a025();
+        l.a027();
     }
 }

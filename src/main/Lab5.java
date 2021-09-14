@@ -1,10 +1,6 @@
 package main;
 
 
-import com.sun.corba.se.spi.orbutil.fsm.Input;
-import javax.print.attribute.standard.NumberOfInterveningJobs;
-import java.util.logging.ConsoleHandler;
-
 import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -14,7 +10,162 @@ public class Lab5 extends Lab {
 
     private int a = 1;
     private int n = 20;
-    private int b = 10000;
+    private int b = 100;
+
+    /**
+     * ali baba and the 40 cat-burglars
+     *
+     */
+    @Override
+    public void a027() {
+        File file = null;
+        BufferedReader bufferedReader = null;
+        StringBuffer sb = new StringBuffer();
+        String line = null;
+        List<Integer> allNumbers = new ArrayList<>();
+        try {
+            file = new File("input/input27.txt");
+            FileReader fileReader = new FileReader(file);
+            bufferedReader = new BufferedReader(fileReader);
+            sb = new StringBuffer();
+
+            while((line= bufferedReader.readLine())!=null  && !line.equals("")) {
+                sb.append(line);
+                sb.append("\n");
+                String [] numbers = line.split("");
+                List<Integer> asdf = new ArrayList<>();
+                Arrays.stream(numbers).forEach(p-> asdf.add(Integer.parseInt(p)));
+                allNumbers.addAll(asdf);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(allNumbers);
+        a027_impl(allNumbers);
+    }
+
+    private void a027_impl(List<Integer> allNumbers) {
+        // find the min numberic system
+        int max = 0;
+        for (int i = 0; i < allNumbers.size(); i++) {
+            if(allNumbers.get(i) > max ) {
+                max = allNumbers.get(i);
+            }
+        }
+        int nSystem = max + 1;
+        // not cut out nSystem count digits, or more like mark them, then print out the indexes
+        List<Integer> marks = markCuttings(allNumbers, nSystem);
+        List<Integer> remainder = cutMarkings(allNumbers,marks);
+        System.out.println(nSystem);
+        System.out.println(marks);
+        System.out.println(remainder);
+    }
+
+    private List<Integer> cutMarkings(List<Integer> allNumbers, List<Integer> marks) {
+        List<Integer> result = new LinkedList<>();
+        for(int i = 0; i < allNumbers.size(); i++) {
+            if(!marks.contains(i)) {
+                result.add(allNumbers.get(i));
+            }
+        }
+        return result;
+    }
+
+    private List<Integer> markCuttings(List<Integer> allNumbers, int count) {
+        int min = 9;
+        List<Integer> indexes = new LinkedList<>();
+        int max = 0;
+        int index = 0;
+        int spot = 0;
+        int start= 0;
+        while(count > 0) {
+            for (int i = start++; i < count + start; i++) {
+                if (max < allNumbers.get(i) && !indexes.contains(i  )) {
+                    max = allNumbers.get(i);
+                    index = i;
+                }
+            }
+            for (int i = 0; i < index; i++) {
+                indexes.add(i);
+                count--;
+            }
+        }
+        return indexes;
+    }
+
+    /**
+     * read in multiple arrays, then find some interesting data
+     */
+    @Override
+    public void a026() {
+        File file = null;
+        BufferedReader bufferedReader = null;
+        StringBuffer sb = new StringBuffer();
+        String line = null;
+        List<List<Integer>> allNumbers = new ArrayList<>();
+        try {
+            file = new File("input/input26.txt");
+            FileReader fileReader = new FileReader(file);
+            bufferedReader = new BufferedReader(fileReader);
+            sb = new StringBuffer();
+            List<Integer> stats = new ArrayList<>();
+            while((line= bufferedReader.readLine())!=null  && !line.equals("")) {
+                sb.append(line);
+                sb.append("\n");
+                String [] numbers = line.split(" ");
+                List<Integer> asdf = new ArrayList<>();
+                Arrays.stream(numbers).forEach(p-> asdf.add(Integer.parseInt(p)));
+                allNumbers.add(asdf);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // data is read in
+        // not call the processing
+        a026_impl(allNumbers);
+
+    }
+
+    private void a026_impl(List<List<Integer>> allNumbers) {
+        if(allNumbers == null) {
+            return;
+        }
+        Set<Integer> primeNumbers = new HashSet<>();
+        //find for each array the longest sequence of prime numbers
+        for(int j = 0; j < allNumbers.size(); j++) {
+            List<Integer> x = allNumbers.get(j);
+            int max = 0;
+            int i1 = 0;
+            int i2 = 0;
+            int maxI1 = 0;
+            int maxI2 = 0;
+            for(int i = 0; i < x.size(); i++) {
+                if(NumberService.isPrime(x.get(i))) {
+                    primeNumbers.add(x.get(i));
+                    i2 = i;
+                }
+                else {
+                    int distance = i2 - i1;
+                    if(distance > max) {
+                        maxI1 = i1;
+                        maxI2 = i2;
+                        max = distance;
+                    }
+                    i1 = i+1;
+                    i2 = i+1;
+                }
+            }
+            System.out.println(j+ " :  (" + maxI1 + "," + maxI2 +");");
+        }
+        System.out.println("The set of the prime numbers : " );
+        System.out.println(primeNumbers);
+    }
+
 
     /**
      * Find all the lucky numbers in [a,b] interval
@@ -22,7 +173,7 @@ public class Lab5 extends Lab {
     @Override
     public void a025() {
         List<Integer> luckyNumbers = a025_impl(a,b);
-       // luckyNumbers.stream().forEach(System.out::println);
+        luckyNumbers.stream().forEach(System.out::println);
     }
 
     // a lucky number is number whose digits  can be separated to  two groups with equal sum
@@ -61,11 +212,6 @@ public class Lab5 extends Lab {
             }
             if(NumberService.getSumOfList(list1) == NumberService.getSumOfList(list2)){
                 result = true;
-                System.out.println(x + " is lucky cause : ");
-                list1.forEach(System.out::print);
-                System.out.print("  ");
-                list2.forEach(System.out::print);
-                System.out.println();
             }
         }
         return result;
