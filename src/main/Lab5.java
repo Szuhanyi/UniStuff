@@ -47,7 +47,6 @@ public class Lab5 extends Lab {
     }
 
     private void a027_impl(List<Integer> allNumbers) {
-        // find the min numberic system
         int max = 0;
         for (int i = 0; i < allNumbers.size(); i++) {
             if(allNumbers.get(i) > max ) {
@@ -74,23 +73,25 @@ public class Lab5 extends Lab {
     }
 
     private List<Integer> markCuttings(List<Integer> allNumbers, int count) {
-        int min = 9;
         List<Integer> indexes = new LinkedList<>();
-        int max = 0;
+
         int index = 0;
-        int spot = 0;
-        int start= 0;
+        int start = 0;
+        int end = count;
         while(count > 0) {
-            for (int i = start++; i < count + start; i++) {
-                if (max < allNumbers.get(i) && !indexes.contains(i  )) {
+            int max = 0;
+            for (int i = start; i < end; i++) {
+                if (max < allNumbers.get(i) && !indexes.contains(i)) {
                     max = allNumbers.get(i);
                     index = i;
                 }
             }
-            for (int i = 0; i < index; i++) {
+            for (int i = start; i < index; i++) {
                 indexes.add(i);
                 count--;
             }
+            start = index+1 ;
+            end = count + start+1;
         }
         return indexes;
     }
