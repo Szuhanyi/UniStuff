@@ -63,11 +63,24 @@ public class Lab6 extends Lab{
     @Override
     void a003() {
         // 1 + 2x + 2 x*x
-        int [] x = new int []{1, 2, 2};
+        double [] x = new double []{1, 2, 2};
+        double point =2;
+        int i = 0;
+        double value = evaluatePolinom(x,point,i);
+        System.out.println(value);
+        // the plunging attack. oh my
 
 
+    }
 
+    private double evaluatePolinom(double[] x, double point, int index) {
+        // haha
+        // escape
+        if(x.length > index) {
+            return x[index] * Math.pow(point,(double)index) + evaluatePolinom(x,point,index + 1);
+        }
 
+        return 0;
     }
 
     private void a03_impl(int[] x) {
@@ -97,6 +110,50 @@ public class Lab6 extends Lab{
             result = true;
 
         return result;
+
+    }
+
+    /**
+     * Calculate the biggest shared divisor of n numbers
+     */
+    @Override
+    public void a004() {
+//        int[] x  = new int[] {12,16,100};
+        int[] x  = new int[] {20,40,90};
+        int ln = a004_impl(x);
+        System.out.println(ln);
+
+    }
+
+    private int a004_impl(int[] x) {
+        int[] ln = new int[1];
+        ln[0] = x[0];
+        manyLnko(x,0,ln);
+
+        return ln[0];
+    }
+
+    private void manyLnko(int[]x, int index ,int[] ln) {
+        if(x.length > index ) {
+            int[] rez = new int[1];
+            lnko(x[index],ln[0], rez);
+            ln[0] = rez[0];
+            manyLnko(x,index+1,ln);
+        }
+    }
+
+    private void lnko(int a, int b, int[] rez) {
+        if (a != b) {
+            if (a > b ) {
+                lnko(a - b, b,rez);
+            }
+            else {
+                lnko(a,b -a,rez);
+            }
+        }
+        else {
+            rez[0] = a;
+        }
     }
 
 

@@ -1144,7 +1144,8 @@ public class Lab5 extends Lab {
         return result;
     }
 
-    private void a004() {
+    @Override
+    public void a004() {
         // add n matrixes
 
         int[][] m1 = NumberService.generateMatrixIntegers(n,a,b);

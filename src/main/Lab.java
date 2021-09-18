@@ -22,4 +22,7 @@ public  abstract class Lab {
 
     public void a027() {
     }
+
+    public void a004() {
+    }
 }
