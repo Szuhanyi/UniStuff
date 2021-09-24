@@ -914,7 +914,7 @@ public class Lab5 extends Lab {
     }
 
 
-    private void a008() {
+    public void a008() {
         // print a matrix as a snake.. oh man
         int[][] x = NumberService.generateMatrixOderedIntegers(n,a,b);
         int [] y = a008_impl(x);
@@ -971,7 +971,7 @@ public class Lab5 extends Lab {
     }
 
 
-    private void a007() {
+    public void a007() {
         // whatnot
         // find items where x[i][j] mod i+j = 0
         int[][] x = NumberService.generateMatrixIntegers(n,a,b);
@@ -999,7 +999,7 @@ public class Lab5 extends Lab {
     }
 
 
-    private void a006() {
+    public void a006() {
     // this is not a game //
         // same as 005, but now we will have items without prices
         int n = 5;
@@ -1056,7 +1056,7 @@ public class Lab5 extends Lab {
         return rubbishStore;
     }
 
-    private void a005() {
+    public void a005() {
         int n = 10;
         int m = 5;
         int[][] data = NumberService.generateMatrixIntegers(n,m,a,b);

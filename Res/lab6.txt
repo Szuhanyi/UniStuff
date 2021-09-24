@@ -16,8 +16,16 @@
 
     Ack(m, n) = Ack(m – 1, Ack(m, n – 1)) m, nN*.
 
-6. Írjunk rekurzív algoritmust, amely kiszámítja az n-edik Fibonacci-számot. Hasonlítsuk össze a megfelelő iteratív algoritmus futási idejét ennek az algoritmusnak a futási idejével!
+
+6. Írjunk rekurzív algoritmust, amely kiszámítja az n-edik Fibonacci-számot.
+    Hasonlítsuk össze a megfelelő iteratív algoritmus futási idejét ennek az algoritmusnak a futási idejével!
+
 
 7. Írjunk rekurzív algoritmust, amely átalakít egy, a 16-os számrendszerben megadott számot a 10-es számrendszerbe!
 
-8. Írjunk rekurzív algoritmust, amely generálja egy adott n szám minden partícióját. Azok közül a partíciók közül, amelyek csak a tagok sorrendjében különböznek, csak egyet kell kiírnunk.
+
+8. Írjunk rekurzív algoritmust, amely generálja egy adott n szám minden partícióját. Azok közül a partíciók közül,
+    amelyek csak a tagok sorrendjében különböznek, csak egyet kell kiírnunk.
+
+
+

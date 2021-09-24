@@ -25,4 +25,10 @@ public  abstract class Lab {
 
     public void a004() {
     }
+
+    public void a005() {}
+
+    public void a006() {}
+    public void a007() {}
+    public void a008() {}
 }

@@ -22,6 +22,7 @@ public class Lab6 extends Lab{
         System.out.println(x);
     }
 
+
     private void primeDivident(int n, List<Integer> x) {
         if(n > 1) {
             int k = 2;
@@ -35,6 +36,7 @@ public class Lab6 extends Lab{
         return ;
     }
 
+
     private int sumArray(List<Integer> arr) {
         if(arr.size() > 0)
         {
@@ -45,6 +47,7 @@ public class Lab6 extends Lab{
         else
             return 0;
     }
+
 
     /**
      * Check if the number is perfect ( it equals to the sum of the smaller dividents)
@@ -82,12 +85,6 @@ public class Lab6 extends Lab{
 
         return 0;
     }
-
-    private void a03_impl(int[] x) {
-
-    }
-
-
 
     private void a02_impl(int n ) {
         String s = "";
@@ -153,6 +150,110 @@ public class Lab6 extends Lab{
         }
         else {
             rez[0] = a;
+        }
+    }
+
+
+    @Override
+    public void a005() {
+        int m = 2;
+        int n = 2;
+        int c = ack(m,n);
+        System.out.println(c);
+    }
+
+
+    private int ack(int m, int n) {
+        if(m == 0) {
+            return n + 1;
+        }
+        else
+            if(n == 0) {
+                return ack(m-1,0);
+            }
+            else
+                return ack(m - 1, ack(m,n - 1));
+
+    }
+
+
+    /**
+     * calculate the fibonacci number  (the nth one)
+     */
+    @Override
+    public void a006() {
+        int n = 100;
+        // what not ..
+        int c = recursiveFibo(n,1,1,2);
+        System.out.println(c);
+    }
+
+
+    private int recursiveFibo(int n, int f1, int f2, int f3 ) {
+        if (n ==  0 ) {
+            return f3;
+        }
+        else {
+            return recursiveFibo(n -1,f2,f3,f1+f2);
+        }
+    }
+
+
+    /**
+     *  change number system from 16 to 10
+     */
+    @Override
+    public void a007() {
+        // what is going on
+        String x1 = "AA";
+        String x2 = "B";
+        String x3 = "11";
+        // what has happened here ?
+        final String []  system = new String[]{"0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"};
+        int x1Ten = toSystemTen(x1,0,system);
+        int x2Ten = toSystemTen(x2,0,system);
+        int x3Ten = toSystemTen(x3,0,system);
+        System.out.println(x1Ten);
+        System.out.println(x2Ten);
+        System.out.println(x3Ten);
+    }
+
+
+    private int toSystemTen(String x1, int i, String[] system) {
+       if(x1.length() > 0) {
+            for(int j = 0; j < system.length; j++) {
+                if(system[j].equals(x1.substring(x1.length()-1))) {
+                    // a contender
+                    int pp = (int) (Math.pow(16,i));
+                    return  j * pp + toSystemTen(x1.substring(0,x1.length()-1),i+1,system);
+                }
+            }
+       }
+       return 0;
+    }
+
+    /**
+     * generate the partitions of number n
+     */
+    public void a008() {
+        int n = 4;
+        partitions(n,1 , new LinkedList<>());
+    }
+
+    private void partitions(int n, int i, List<Integer> l) {
+        if(n >= i) {
+            while( n >= i) {
+                l.add(i);
+                partitions(n - i, i,l);
+                l.remove(l.size()-1);
+                i++;
+            }
+        }
+        else {
+            if(n == 0) {
+                System.out.println(l);
+            }
+
         }
     }
 
