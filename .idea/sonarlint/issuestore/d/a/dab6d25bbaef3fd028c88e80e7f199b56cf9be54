@@ -1,21 +1,16 @@
 
-N
-java:S3518è"7Make sure "c" can't be zero before doing this division.(±µ·
 J
 java:S3740"/Provide the parametrized type for this generic.(Ã‰å¬ÿÿÿÿÿ
-_
-java:S2184©"HCast one of the operands of this multiplication operation to a "double".(ëÇÍ
-Y
-java:S1155 ">Use isEmpty() to check whether the collection is empty or not.(«ö¡µüÿÿÿÿ
-Y
-java:S1155$">Use isEmpty() to check whether the collection is empty or not.(ßÂ€­úÿÿÿÿ
-f	java:S117?"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›¢¯Ó
 U
 java:S1854":Remove this useless assignment to local variable "result".(ÅÆÂóùÿÿÿÿ
 Q	java:S125"<This block of commented-out lines of code should be removed.(Õÿ»š
+F
+java:S1481"+Remove this unused "result" local variable.(ÅÆÂóùÿÿÿÿ
 h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íµ€şÿÿÿÿ
 P
 java:S1854$"5Remove this useless assignment to local variable "p".(ßÂ€­úÿÿÿÿ
+C
+java:S1481#"&Remove this unused "p" local variable.(Ğ•Ï8¶›ËàÊ/
 S	java:S106+"9Replace this use of System.out or System.err by a logger.(ÁÖ£ûÿÿÿÿ
 M	java:S106@"9Replace this use of System.out or System.err by a logger.(İçÌ
 c	java:S100S"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şåÀ”
@@ -36,6 +31,8 @@ T	java:S106é"9Replace this use of System.out or System.err by a logger.(ªÓ¼áş
 java:S3457ê"AFormat specifiers should be used instead of string concatenation.(òô±ºıÿÿÿÿ
 T	java:S106ê"9Replace this use of System.out or System.err by a logger.(òô±ºıÿÿÿÿ
 i	java:S100î"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰‘Íƒûÿÿÿÿ
+B
+java:S1481ò"&Remove this unused "i" local variable.(ùó›Ìøÿÿÿÿ
 O	java:S106‰"9Replace this use of System.out or System.err by a logger.(Ç¿Ÿ
 d	java:S100Œ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€±Øé
 O	java:S106ª"9Replace this use of System.out or System.err by a logger.(ÔÎğÎ
@@ -50,6 +47,8 @@ O	java:S106ù"9Replace this use of System.out or System.err by a logger.(ËÓÓ
 T	java:S106ú"9Replace this use of System.out or System.err by a logger.(ØİÀ¢şÿÿÿÿ
 W	java:S125‡"<This block of commented-out lines of code should be removed.(¤ÙÿÉûÿÿÿÿ
 T	java:S106‹"9Replace this use of System.out or System.err by a logger.(”ìïøÿÿÿÿ
+@
+java:S1481Œ")Remove this unused "sum2" local variable.(Íãã„
 E
 java:S2140Ÿ")Use "java.util.Random.nextInt()" instead.(£¦…ìşÿÿÿÿ
 T	java:S106±"9Replace this use of System.out or System.err by a logger.(ÜÇçˆÿÿÿÿÿ
@@ -61,12 +60,6 @@ O	java:S106Ğ"9Replace this use of System.out or System.err by a logger.(×‘¼Ç
 @
 java:S2140Ø")Use "java.util.Random.nextInt()" instead.(¦Âş
 T	java:S106ß"9Replace this use of System.out or System.err by a logger.(’·Ê¸üÿÿÿÿ
-F
-java:S1481"+Remove this unused "result" local variable.(ÅÆÂóùÿÿÿÿ
-B
-java:S1481ò"&Remove this unused "i" local variable.(ùó›Ìøÿÿÿÿ
-@
-java:S1481Œ")Remove this unused "sum2" local variable.(Íãã„
 D
 java:S1144")Remove this unused private "a415" method.(íèÕ³úÿÿÿÿ
 ?
@@ -97,3 +90,12 @@ E
 java:S1144µ")Remove this unused private "a402" method.(«Èğ”şÿÿÿÿ
 @
 java:S1144Ô")Remove this unused private "a401" method.(”‡âÖ
+f	java:S117?"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›¢¯Ó
+Y
+java:S1155 ">Use isEmpty() to check whether the collection is empty or not.(«ö¡µüÿÿÿÿ
+Y
+java:S1155$">Use isEmpty() to check whether the collection is empty or not.(ßÂ€­úÿÿÿÿ
+_
+java:S2184©"HCast one of the operands of this multiplication operation to a "double".(ëÇÍ
+N
+java:S3518è"7Make sure "c" can't be zero before doing this division.(±µ·

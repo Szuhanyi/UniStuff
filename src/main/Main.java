@@ -3,7 +3,7 @@ package main;
 public class Main {
 
     public static void main (String [] args) {
-        Lab l = new Lab6();
-        l.a008();
+        Lab l = new Lab7();
+        l.a002();
     }
 }

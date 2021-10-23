@@ -1,6 +1,7 @@
-.idea/*.xml
 out/
 *.class
 *.xml
 *.pb
-.idea/sonarlint/*
+.idea/sonarlint
+.idea/sonarlint/issuestore/*
+.idea/sonarlint/issuestore/d/a/dab6d25bbaef3fd028c88e80e7f199b56cf9be54
