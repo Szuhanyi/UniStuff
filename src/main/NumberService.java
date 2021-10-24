@@ -1,9 +1,7 @@
 package main;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class NumberService {
 
@@ -251,5 +249,13 @@ public class NumberService {
             result = result * 10 + digits.get(i);
         }
         return result;
+    }
+
+    public static List<Integer> toSet(List<Integer> list) {
+        Set<Integer> xSet = new HashSet<>();
+        for(Integer i : list) {
+            xSet.add(i);
+        }
+        return  new ArrayList<>(xSet);
     }
 }
