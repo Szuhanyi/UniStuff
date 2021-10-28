@@ -1,11 +1,7 @@
 package main;
 
-import sun.awt.image.ImageWatched;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Algorithmic assignment, no 7 .
@@ -18,6 +14,176 @@ public class Lab7  extends Lab {
     boolean[] column = new boolean[n];
     private final List<List<Integer>> queenResults = new LinkedList<>();
     private long queenSolutionCount = 0;
+
+    private enum colors  {red, green, blue};
+    /**
+     * N cubes are available. marked with length and color.
+     * Generate all towers with k length, where cube lengths are in descending order, and without mixing colors
+     */
+    @Override
+    public void a005() {
+        int cubeCount = 15;
+        Map<colors, List<Integer>> cubeProperties = new HashMap<>();
+        int[] cubeSizes = NumberService.generateIntegers(cubeCount,1,100);
+        System.out.print("Cube sizes : ");
+        for(int i : cubeSizes) {
+            System.out.print(i + ", ");
+        }
+        System.out.println();
+        divideColors(cubeProperties,cubeSizes);
+        List<Integer> emptyList = new LinkedList<>();
+        int k = 3;
+        a005_impl(cubeProperties,cubeSizes, k, emptyList);
+    }
+
+    private void a005_impl(Map<colors, List<Integer>> cubeProperties, int[] cubeSizes, int threshold, List<Integer> currentTower) {
+        for(Map.Entry<colors,List<Integer>> fck : cubeProperties.entrySet()) {
+            buildCubes(fck.getKey(),fck.getValue(),cubeSizes,threshold,currentTower);
+        }
+    }
+
+    private void buildCubes(colors color, List<Integer> numbers, int[] cubeSizes, int threshold, List<Integer> currentTower) {
+        LinkedList<Integer> linkedCurrentList = (LinkedList)currentTower;
+        if(linkedCurrentList.size() == threshold) {
+            //halt
+            System.out.print(color);
+            System.out.println(linkedCurrentList);
+//            System.out.print(" ");
+//            for(Integer x : currentTower) {
+//                System.out.print(cubeSizes[x] + ", ");
+//            }
+//            System.out.println();
+        }
+        else {
+            for(int i = 0; i < numbers.size(); i++) {
+                Integer x = numbers.get(i);
+                
+                if(fitsTower(linkedCurrentList,x,cubeSizes)) {
+                    numbers.remove(i);
+                    linkedCurrentList.addLast(x);
+
+                    buildCubes(color,numbers, cubeSizes, threshold, linkedCurrentList);
+
+                    linkedCurrentList.removeLast();
+                    numbers.add(i,x);
+                }
+            }
+        }
+    }
+
+    private boolean fitsTower(List<Integer> currentTower, Integer newPiece, int[] cubeSizes) {
+        boolean result = true;
+        if(currentTower.size() > 0) {
+            Integer topOfTower = (Integer) ((LinkedList)currentTower).getLast();
+            Integer topOfTowerValue = cubeSizes[topOfTower];
+            Integer newPieceValue = cubeSizes[newPiece];
+            if(cubeSizes[topOfTower] < cubeSizes[newPiece]) {
+                result = false;
+            }
+        }
+        return result;
+    }
+
+    private void divideColors(Map<colors, List<Integer>> colorMap, int[] cubes) {
+        for(int i = 0; i < cubes.length; i+= colors.values().length) {
+            int j = 0;
+            for(colors c : colors.values()) {
+                List<Integer> length = colorMap.get(c);
+                if(length == null) {
+                    length = new LinkedList<>();
+                    colorMap.put(c,length);
+                }
+                length.add(i + j);
+                j++;
+            }
+        }
+        int remainder = cubes.length % colors.values().length;
+        if(remainder != 0) {
+            List<Integer> leftovers = new LinkedList<>();
+            for(int i = 0; i < remainder; i++) {
+                leftovers.add(cubes.length-1-i);
+            }
+            colorMap.get(colors.values()[0]).addAll(leftovers);
+        }
+    }
+
+    /**
+     * Find a series of operations which applied to a set of numbers will give K
+     */
+    @Override
+    public void a004() {
+        List<String> operators = new LinkedList<>();
+        operators.add("/");
+        operators.add("+");
+        operators.add("-");
+        operators.add("*");
+        List<Integer> numbers = new LinkedList<>();
+        numbers.add(12);
+        numbers.add(12);
+        numbers.add(1);
+        numbers.add(1);
+        int k = 24;
+        List<String> currentOperators = new LinkedList<>();
+        System.out.println(numbers);
+        a004_impl(operators,numbers,k,currentOperators);
+    }
+
+    private void a004_impl(List<String> operatorPool, List<Integer> numberArray, int  limit, List<String> currentOperators) {
+        if (currentOperators.size() + 1 == numberArray.size()) {
+            // print solution
+            if(limit == evaluateExpression(currentOperators, numberArray)) {
+                System.out.println(currentOperators);
+            }
+        } else {
+            for (String mark : operatorPool) {
+                currentOperators.add(mark);
+                a004_impl(operatorPool, numberArray, limit, currentOperators);
+                currentOperators.remove(currentOperators.size()-1);
+            }
+        }
+    }
+
+    private int evaluateExpression(List<String> currentOperators, List<Integer> numberArray) {
+        List<Integer> copyArray = new LinkedList<>();
+        copyArray.addAll(numberArray);
+
+        int sum  = copyArray.get(0);
+        copyArray.remove(0);
+        // this is cool
+        for(String operator : currentOperators) {
+            Integer x1 = copyArray.get(0);
+            copyArray.remove(0);
+            switch (operator) {
+                case "*": {
+                    sum *= x1;
+                    break;
+                }
+                case "+": {
+                    sum += x1;
+                    break;
+                }
+                case "-": {
+                    sum -= x1;
+                    break;
+                }
+                case "/": {
+                    if (x1 != 0
+                            && sum % x1 == 0)
+                        sum /= x1;
+                    else {
+                        // if cannot be divided cleanly, give error...  make sure the value would not fit
+                        sum = Integer.MAX_VALUE;
+                    }
+                    break;
+                }
+                default: {
+                    System.out.println("Operator not regonizable: " + operator);
+                }
+            }
+        }
+        return sum;
+    }
+
 
     /**
      * Have M set of numbers.
