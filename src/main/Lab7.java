@@ -16,6 +16,84 @@ public class Lab7  extends Lab {
     private long queenSolutionCount = 0;
 
     private enum colors  {red, green, blue};
+
+
+    /**
+     * N cubes are available. marked with length and color.
+     * Calculate the maximum length constructable
+     * while
+     *      using the same colors,
+     *      and the cubes can only be placed in descending order with, length onto each other
+     */
+    @Override
+    public void a006() {
+        int cubeCount = 15;
+        Map<colors, List<Integer>> cubeProperties = new HashMap<>();
+        int[] cubeSizes = NumberService.generateIntegers(cubeCount,1,100);
+        System.out.print("Cube sizes : ");
+        for(int i : cubeSizes) {
+            System.out.print(i + ", ");
+        }
+        System.out.println();
+        divideColors(cubeProperties,cubeSizes);
+        a006_impl(cubeProperties,cubeSizes);
+
+    }
+
+    private void a006_impl(Map<colors, List<Integer>> cubeProperties, int[] cubeSizes) {
+        List<Integer> currentTower = new LinkedList<>();
+        List<Integer> maxTower = new LinkedList<>();
+        for (Map.Entry<colors, List<Integer>> fck : cubeProperties.entrySet()) {
+            buildLongestCubes(fck.getKey(), fck.getValue(), cubeSizes, currentTower, maxTower);
+            System.out.print(fck.getKey());
+            System.out.print(" ");
+            System.out.println(maxTower);
+            System.out.println("Length = " + getSumOfCubes(cubeSizes,maxTower));
+            maxTower.clear();
+        }
+    }
+
+    /**
+     * Create the longest possible tower
+     *
+     */
+    private void buildLongestCubes(colors color, List<Integer> numbers, int[] cubeSizes, List<Integer> currentTower,List<Integer> maxTower) {
+        LinkedList<Integer> linkedCurrentList = (LinkedList)currentTower;
+        if(numbers.size() == 0) {
+            int maxLength = getSumOfCubes(cubeSizes,maxTower);
+            int currentLength = getSumOfCubes(cubeSizes,currentTower);
+            if(maxLength < currentLength) {
+                maxTower.clear();
+                maxTower.addAll(currentTower);
+            }
+        }
+        else {
+            for(int i = 0; i < numbers.size(); i++) {
+                Integer x = numbers.get(i);
+
+                if(fitsTower(linkedCurrentList,x,cubeSizes)) {
+                    numbers.remove(i);
+                    linkedCurrentList.addLast(x);
+
+                    buildLongestCubes(color,numbers, cubeSizes, linkedCurrentList,maxTower);
+
+                    linkedCurrentList.removeLast();
+                    numbers.add(i,x);
+                }
+            }
+        }
+    }
+
+    private int getSumOfCubes(int[] cubes, List<Integer> tower) {
+        int result = 0;
+        for(Integer c : tower) {
+            result += cubes[c];
+        }
+        return result;
+    }
+
+
+
     /**
      * N cubes are available. marked with length and color.
      * Generate all towers with k length, where cube lengths are in descending order, and without mixing colors
@@ -31,12 +109,12 @@ public class Lab7  extends Lab {
         }
         System.out.println();
         divideColors(cubeProperties,cubeSizes);
-        List<Integer> emptyList = new LinkedList<>();
         int k = 3;
-        a005_impl(cubeProperties,cubeSizes, k, emptyList);
+        a005_impl(cubeProperties,cubeSizes, k);
     }
 
-    private void a005_impl(Map<colors, List<Integer>> cubeProperties, int[] cubeSizes, int threshold, List<Integer> currentTower) {
+    private void a005_impl(Map<colors, List<Integer>> cubeProperties, int[] cubeSizes, int threshold) {
+        List<Integer> currentTower = new LinkedList<>();
         for(Map.Entry<colors,List<Integer>> fck : cubeProperties.entrySet()) {
             buildCubes(fck.getKey(),fck.getValue(),cubeSizes,threshold,currentTower);
         }

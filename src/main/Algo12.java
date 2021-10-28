@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.*;
 
 
-public class Algo1 {
+public class Algo12 {
 //
 //    public static void main(String[] args) {
 //        //we are who we are..
