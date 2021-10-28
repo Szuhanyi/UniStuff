@@ -118,7 +118,7 @@ public class NumberService {
         int [] x = new int[count];
 
         for(int i = 0; i < count;i++) {
-            x[i] = (int)  Math.floor((Math.random() * (b-a) + a));
+            x[i] = (int)  Math.round((Math.random() * (b-a) + a));
         }
 
         return x;

@@ -19,6 +19,89 @@ public class Lab7  extends Lab {
 
 
     /**
+     * There is a picture encoded with 0,1 in a matrix.
+     * Create a program that can answer if on the picture:
+     *     there is one object
+     *     there are more than one objects
+     * For one element there are eight neighbours.
+     */
+    @Override
+    public void a007() {
+        int n = 100;
+        int[][] picture = NumberService.generateMatrixIntegers(n,0,1);
+        a007_impl(picture);
+    }
+
+    private void a007_impl(int[][] data) {
+         // find a starting point
+        boolean found = false;
+        int row = 0;
+        int initCol = 0;
+        while(!found && row < data.length) {
+            int column = 0;
+            while(column < data.length  && !found) {
+                if(data[row][column] == 1) {
+                    found = true;
+                    initCol = column;
+                }
+                column ++;
+            }
+            row++;
+        }
+        int result = 0;
+
+        if (!found) {
+            result = 2;
+        }
+        else {
+            int initRow = row - 1;
+            boolean[][] mapOfWalk = new boolean[data.length][data.length];
+            exploreMap(data, initRow, initCol, mapOfWalk);
+            for (int i = 0; i < data.length; i++) {
+                for (int j = 0; j < data.length; j++) {
+                    if (data[i][j] == 1 && !mapOfWalk[i][j]) {
+                        // we have multiple objects
+                        result = 1;
+                    }
+                }
+            }
+        }
+        if(result == 0) {
+            System.out.println("1 object");
+        }
+        else {
+            if(result == 1) {
+                System.out.println("Multiple objects.");
+            }
+            else {
+                System.out.println("no objects.");
+            }
+        }
+
+
+
+
+    }
+
+    private void exploreMap(int[][] matrix, int row, int col, boolean[][] mapOfWalk) {
+        if(row >=0  && row < matrix.length && col >=0 && col < matrix.length) {
+            if (matrix[row][col] == 1 && !mapOfWalk[row][col]) {
+                mapOfWalk[row][col] = true;
+                exploreMap(matrix,row+1,col,mapOfWalk);
+                exploreMap(matrix,row+1,col+1,mapOfWalk);
+                exploreMap(matrix,row,col+1,mapOfWalk);
+                exploreMap(matrix,row-1,col+1,mapOfWalk);
+                exploreMap(matrix,row-1,col,mapOfWalk);
+                exploreMap(matrix,row-1,col-1,mapOfWalk);
+                exploreMap(matrix,row,col-1,mapOfWalk);
+                exploreMap(matrix,row+1,col-1,mapOfWalk);
+            }
+        }
+
+    }
+
+
+    /**
      * N cubes are available. marked with length and color.
      * Calculate the maximum length constructable
      * while
