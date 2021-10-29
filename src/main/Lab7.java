@@ -1,6 +1,8 @@
 package main;
 
 
+import sun.awt.image.ImageWatched;
+
 import java.util.*;
 
 /**
@@ -16,6 +18,77 @@ public class Lab7  extends Lab {
     private long queenSolutionCount = 0;
 
     private enum colors  {red, green, blue};
+
+
+    /**
+     * Take a skier skiing though the given course.
+     * Calculate all the possible routes that can be taken.
+     * Map looks like a map.
+     */
+    @Override
+    public void a008() {
+        // defend , defend, then strike
+        int n = 10;
+        int a = 70;
+        int b = 100;
+        int[][] matrix = NumberService.generateMatrixIntegers(n,a,b);
+        a008_impl(matrix);
+    }
+
+    private void a008_impl(int[][] matrix) {
+        LinkedList<LinkedList<Integer>> track = new LinkedList<>();
+        findTracks(matrix, track);
+    }
+
+
+    private void findTracks(int[][] matrix, LinkedList<LinkedList<Integer>> track) {
+        if (isTrackAtTheEnd(track,matrix)) {
+
+        } else {
+            if (currentTrackIsCorrect(track,matrix)) {
+                int[][] nextStepPossiblities = generateNextSteps(track.getLast());
+                for (int[] step : nextStepPossiblities) {
+                    LinkedList<Integer> stepOneList = new LinkedList<>();
+                    stepOneList.add(step[0]);
+                    stepOneList.add(step[1]);
+                    track.add(stepOneList);
+                    findTracks(matrix, track);
+                    track.removeLast();
+                }
+            }
+        }
+    }
+
+    private int[][] generateNextSteps(LinkedList<Integer> last) {
+        int [][] result  = new int[3][2];
+        int x = last.getFirst();
+        int y = last.getLast();
+        result[0][0] = x+1;
+        result[0][1] = y-1;
+        result[1][0] = x+1;
+        result[1][1] = y;
+        result[2][0] = x+1;
+        result[2][1] = y+1;
+        return result;
+    }
+
+    private boolean currentTrackIsCorrect(LinkedList<LinkedList<Integer>> track, int[][] matrix) {
+        boolean result = false;
+        LinkedList<Integer> step = track.getLast();
+        if(step.getFirst() >= 0 && step.getFirst() < matrix.length && step.getLast() >= 0 && step.getLast() < matrix.length) {
+            result = true;
+        }
+        return result;
+    }
+
+    private boolean isTrackAtTheEnd(LinkedList<LinkedList<Integer>> track, int[][] matrix) {
+        boolean result = false;
+        LinkedList<Integer> lastStep = track.getLast();
+        if(lastStep.getFirst() == matrix.length) {
+            result = true;
+        }
+        return result;
+    }
 
 
     /**
