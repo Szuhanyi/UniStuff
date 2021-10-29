@@ -21,3 +21,6 @@ C
 src/main/Basic.java,9\6\96e00f8f2fa07f892d8c4cc3b3fc28f5926bbc22
 D
 src/main/Algo12.java,a\9\a92f5ddd8fcb160382a5879da4636c38138f5644
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302

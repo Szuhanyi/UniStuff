@@ -1,8 +1,10 @@
 package main;
 
 
-import sun.awt.image.ImageWatched;
-
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -31,19 +33,49 @@ public class Lab7  extends Lab {
         int n = 10;
         int a = 70;
         int b = 100;
-        int[][] matrix = NumberService.generateMatrixIntegers(n,a,b);
+        // probably use predefined matrices.
+        int[][] matrix = readMatrixFromTextFile("input/input78.txt",n);
+        NumberService.printMatrix(matrix);
+
         a008_impl(matrix);
+    }
+
+    private int[][] readMatrixFromTextFile(String s, int n) {
+        int[][] result = new int[n][n];
+        try {
+            BufferedReader myReader = new BufferedReader(new FileReader(s));
+            String line = "";
+            int lineCount = 0;
+            while((line = myReader.readLine()) != null) {
+                String[] tokens = line.split(" ");
+                for(int i = 0; i < tokens.length; i++) {
+                    result[lineCount][i] = Integer.parseInt(tokens[i]);
+                }
+                lineCount++;
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
     private void a008_impl(int[][] matrix) {
         LinkedList<LinkedList<Integer>> track = new LinkedList<>();
-        findTracks(matrix, track);
+        for(int i = 0; i < matrix.length; i++) {
+            LinkedList<Integer> firstStep = new LinkedList<>();
+            firstStep.addFirst(0);
+            firstStep.addLast(i);
+            track.add(firstStep);
+            findTracks(matrix, track);
+            track.clear();
+        }
     }
-
 
     private void findTracks(int[][] matrix, LinkedList<LinkedList<Integer>> track) {
         if (isTrackAtTheEnd(track,matrix)) {
-
+            System.out.println(track);
         } else {
             if (currentTrackIsCorrect(track,matrix)) {
                 int[][] nextStepPossiblities = generateNextSteps(track.getLast());
@@ -74,18 +106,36 @@ public class Lab7  extends Lab {
 
     private boolean currentTrackIsCorrect(LinkedList<LinkedList<Integer>> track, int[][] matrix) {
         boolean result = false;
-        LinkedList<Integer> step = track.getLast();
-        if(step.getFirst() >= 0 && step.getFirst() < matrix.length && step.getLast() >= 0 && step.getLast() < matrix.length) {
-            result = true;
+        if(!track.isEmpty()) {
+            LinkedList<Integer> lastStep = track.getLast();
+            if (lastStep.getFirst() >= 0
+                    && lastStep.getFirst() < matrix.length
+                    && lastStep.getLast() >= 0
+                    && lastStep.getLast() < matrix.length
+            ) {
+                if(track.size() > 1) {
+                    LinkedList<Integer> prevoiusStep = track.get(track.size()-2);
+                    int lastStepValue = matrix[lastStep.getFirst()][lastStep.getLast()];
+                    int previousStepValue = matrix[prevoiusStep.getFirst()][prevoiusStep.getLast()];
+                    if(lastStepValue <= previousStepValue) {
+                        result = true;
+                    }
+                }
+                else {
+                    result = true;
+                }
+            }
         }
         return result;
     }
 
     private boolean isTrackAtTheEnd(LinkedList<LinkedList<Integer>> track, int[][] matrix) {
         boolean result = false;
-        LinkedList<Integer> lastStep = track.getLast();
-        if(lastStep.getFirst() == matrix.length) {
-            result = true;
+        if(track.size() > 0) {
+            LinkedList<Integer> lastStep = track.getLast();
+            if (lastStep.getFirst() == matrix.length-1) {
+                result = true;
+            }
         }
         return result;
     }
