@@ -1,24 +1,4 @@
 
-Z
-java:S3518Ë"CMake sure "moreThenCount" can't be zero before doing this division.(‰®ß¿
-d
-java:S1192‡"HDefine a constant instead of duplicating this literal "January" 3 times.(Ê¥¹Àúÿÿÿÿ
-b
-java:S1192º"FDefine a constant instead of duplicating this literal "Stork" 4 times.(ÆÓ¬Ğùÿÿÿÿ
-]
-java:S1192¥"FDefine a constant instead of duplicating this literal "Jerry" 6 times.(´×‚ô
-d
-java:S1192¹"HDefine a constant instead of duplicating this literal "Vulture" 4 times.(»üàíøÿÿÿÿ
-8
-java:S1643Ò"Use a StringBuilder instead.(ßòÉÑøÿÿÿÿ
-
-java:S1157"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(¢²Ğâøÿÿÿÿ
-l	java:S117È"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æö’€øÿÿÿÿ
-l	java:S117É"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§÷±™şÿÿÿÿ
-U
-java:S4973¾"9Use the "equals" method if value comparison was intended.(ÒÉÇ¨ıÿÿÿÿ
-J
-java:S1128"4Remove this unused import 'org.w3c.dom.ls.LSOutput'.(Ò½¾Š
 
 java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(©Ï¶êûÿÿÿÿ
 V	java:S125
@@ -63,6 +43,8 @@ T	java:S106à"9Replace this use of System.out or System.err by a logger.(½ô˜ú
 O	java:S106ö"9Replace this use of System.out or System.err by a logger.(û°•©
 I
 java:S1172"-Remove this unused method parameter "number".(©Ï¶êûÿÿÿÿ
+
+java:S1157"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(¢²Ğâøÿÿÿÿ
 O	java:S106”"9Replace this use of System.out or System.err by a logger.(·Š¡ş
 T	java:S106—"9Replace this use of System.out or System.err by a logger.(°ÆûÚúÿÿÿÿ
 T	java:S106Ã"9Replace this use of System.out or System.err by a logger.(»‰ÉÎÿÿÿÿÿ
@@ -79,10 +61,14 @@ N	java:S106®"9Replace this use of System.out or System.err by a logger.(ıÅG
 T	java:S106Ä"9Replace this use of System.out or System.err by a logger.(Í–Œ‡úÿÿÿÿ
 Q
 java:S1854Ë"5Remove this useless assignment to local variable "m".(ì‰ÙÎüÿÿÿÿ
-T	java:S106Õ"9Replace this use of System.out or System.err by a logger.(®ıáëûÿÿÿÿ
-O	java:S106İ"9Replace this use of System.out or System.err by a logger.(›Åşë
 B
 java:S1481Ë"&Remove this unused "m" local variable.(ì‰ÙÎüÿÿÿÿ
+T	java:S106Õ"9Replace this use of System.out or System.err by a logger.(®ıáëûÿÿÿÿ
+O	java:S106İ"9Replace this use of System.out or System.err by a logger.(›Åşë
+J
+java:S1128"4Remove this unused import 'org.w3c.dom.ls.LSOutput'.(Ò½¾Š
+Z
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8á¶Œ»Ì/
 D
 java:S1144")Remove this unused private "a330" method.(Ù©§Ùùÿÿÿÿ
 ?
@@ -141,3 +127,19 @@ E
 java:S1144È")Remove this unused private "a302" method.(…µÉûÿÿÿÿ
 E
 java:S1144Ø")Remove this unused private "a301" method.(½‰«úÿÿÿÿ
+d
+java:S1192¹"HDefine a constant instead of duplicating this literal "Vulture" 4 times.(»üàíøÿÿÿÿ
+b
+java:S1192º"FDefine a constant instead of duplicating this literal "Stork" 4 times.(ÆÓ¬Ğùÿÿÿÿ
+d
+java:S1192‡"HDefine a constant instead of duplicating this literal "January" 3 times.(Ê¥¹Àúÿÿÿÿ
+]
+java:S1192¥"FDefine a constant instead of duplicating this literal "Jerry" 6 times.(´×‚ô
+l	java:S117È"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æö’€øÿÿÿÿ
+l	java:S117É"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§÷±™şÿÿÿÿ
+8
+java:S1643Ò"Use a StringBuilder instead.(ßòÉÑøÿÿÿÿ
+U
+java:S4973¾"9Use the "equals" method if value comparison was intended.(ÒÉÇ¨ıÿÿÿÿ
+Z
+java:S3518Ë"CMake sure "moreThenCount" can't be zero before doing this division.(‰®ß¿
