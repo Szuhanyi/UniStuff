@@ -62,10 +62,10 @@ Egy adott pillanatban a síző csak olyan szomszédos négyzeten haladhat át, a
 Írjuk ki minden lehetséges módját annak, ahogy ez a sakkfigura bejárhatja a teljes sakktáblát úgy, hogy minden négyzetre lépjen, és mindegyikre csak egyszer.
 (Egy bizonyos helyről 8 lehetőség van továbblépni.)
 
-    Egy n  n méretű sakktáblán az (x, y) helyen található egy futár és az (x0, y0) helyen egy ló. A lónak el kell jutnia erről a helyről az (x1, y1) helyre, anélkül, hogy egy bizonyos négyzetre többször lépne illetve,
+10    Egy n  n méretű sakktáblán az (x, y) helyen található egy futár és az (x0, y0) helyen egy ló. A lónak el kell jutnia erről a helyről az (x1, y1) helyre, anélkül, hogy egy bizonyos négyzetre többször lépne illetve,
     hogy olyan helyen állna meg, ahonnan a futár kiütheti. Írjuk ki a ló útvonalát!
 
-10    Egy programozói versenyen több első, második és harmadik díjat osztanak ki. Ezeknek a száma x, y, z.
+11   Egy programozói versenyen több első, második és harmadik díjat osztanak ki. Ezeknek a száma x, y, z.
     A szponzoroktól kapott értéktárgyak mind különböző értékűek. A bizottság az x + y + z nyertesnek m darab értéki (i = 1, 2, ..., m) értékű tárgyat fog kiosztani, úgy hogy a díjak értéke csökkenő sorozatot alkot.
     Egy versenyző több tárgyat is kaphat. Az első díjak értéke legyen azonos, ugyanúgy a második díjak értéke, valamint a harmadik díjaké. Írjuk ki minden lehetséges módját annak, ahogy az m tárgy szétosztható a fenti követelményeknek megfelelően.
      Minden tárgyat át kell adni. Ha nem lehet tiszteletben tartani a díjkiosztás szabályait, írjunk megfelelő üzenetet.

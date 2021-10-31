@@ -31,4 +31,6 @@ public  abstract class Lab {
     public void a006() {}
     public void a007() {}
     public void a008() {}
+    public void a009() {}
+    public void a010() {}
 }

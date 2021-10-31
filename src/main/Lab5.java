@@ -863,7 +863,7 @@ public class Lab5 extends Lab {
         return number;
     }
 
-    private void a010() {
+    public void a010() {
         // find the max element, from under the second diagonal
         int x[][] = NumberService.generateMatrixIntegers(n,a,b);
         int max = a010_impl(x);
@@ -886,7 +886,7 @@ public class Lab5 extends Lab {
         return max;
     }
 
-    private void a009() {
+    public void a009() {
         // not making much sense, but yeah, it is still good
         int [][] x = NumberService.generateMatrixIntegers(2,n,a,b);
         int [][]y = a009_impl(x);
