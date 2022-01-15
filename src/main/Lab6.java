@@ -64,7 +64,7 @@ public class Lab6 extends Lab{
      * calculate a polinom's value in a given point
      */
     @Override
-    void a003() {
+    public void a003() {
         // 1 + 2x + 2 x*x
         double [] x = new double []{1, 2, 2};
         double point =2;

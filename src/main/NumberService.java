@@ -258,4 +258,49 @@ public class NumberService {
         }
         return  new ArrayList<>(xSet);
     }
+
+    public static int getMax(int[] x) {
+        int max = 0;
+        for(int i = 0; i < x.length; i++) {
+            if(max > x[i]) {
+                max = x[i];
+            }
+        }
+        return max;
+    }
+
+    /**
+     *
+     * @param valueSet values
+     * @param searchedValue given value
+     * @return return value if it is present, or try to create it from multiple values avaliable
+     */
+    public static LinkedList<Integer> findValueInList(LinkedList<Integer> valueSet, int searchedValue) {
+        LinkedList<Integer> result = new LinkedList<>();
+        LinkedList<Boolean> found = new LinkedList<>();
+        LinkedList<Integer> stack = new LinkedList<>();
+
+        findValueInList(valueSet,searchedValue,stack,result,found);
+        return result;
+    }
+
+
+    private static void findValueInList (LinkedList<Integer> prizeList, int searchedValue,LinkedList<Integer> stack, LinkedList<Integer> result, LinkedList<Boolean> found) {
+        Integer value = NumberService.getSumOfList(stack);
+
+        if( found.isEmpty() && value == searchedValue ) {
+            found.add(true);
+            result.addAll(stack);
+        }
+
+        if(found.isEmpty() && value < searchedValue) {
+            for(Integer f : prizeList) {
+                stack.add(f);
+                findValueInList(prizeList,searchedValue,stack, result, found);
+                stack.remove(f);
+            }
+        }
+
+    }
+
 }

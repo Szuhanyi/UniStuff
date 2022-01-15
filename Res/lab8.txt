@@ -1,0 +1,171 @@
+Due Jan 12, 2013 by 11:59pm Points 10 Submitting a file upload
+
+DIVIDE ET IMPERA
+
+    Írjunk programot a következő feladatok oszd meg és uralkodj módszerrel való megoldására! Legyen n természetes szám, állapítsuk meg:
+
+    a számok legnagyobb közös osztóját;
+
+    a számok összegét;
+
+    a számok legkisebb és legnagyobb elemét egyidőben.
+
+    tudva, hogy a sorozat nem rendezett, állapítsunk meg minden olyan helyet, ahol egy adott érték áll.
+
+    Legyen a következő játék: az egyik játékos gondol egy 0 és 1000 közötti természetes számra. A másik játékosnak ki kell találnia ezt a számot minél kevesebb próbálgatással. A titkos szám „birtokosa” egy-egy találgatásra csak annyit válaszol,
+    hogy a titkos szám kisebb vagy nagyobb mint a másik játékos által feltételezett szám.
+
+    Adott egy n egész számot tartalmazó sorozat. Határozzuk meg azt a legnagyobb összeget, amelyet a tömb egymás utáni elemeinek összeadásával kaphatunk.
+
+    Útmutatás ■ Szétbontjuk a tömböt résztömbökre. Ha a résztömb már csak egy elemet tartalmaz, akkor a maximális összeg ennek az elemnek az értéke.
+
+    A maximális összegű részsorozat helyzete háromféle lehet:
+
+    - az első résztömbben van;
+
+    - a második résztömbben van;
+
+    - a sorozat elemeinek egy része az első résztömbben van, a többi a másodikban.
+
+    Mivel csak a harmadik eset okoz gondot, lássuk, hogyan járunk el ebben az esetben: a középső elemtől jobbra és balra haladva keressük a legnagyobb képezhető összeget. A középső pozíciótól indulva kiszámítjuk az elemek összegét és minden egyes
+     érték hozzáadásakor ellenőrizzük, hogy a kapott összeg meghaladja-e az eddigi maximális összeget, ha igen akkor azt módosítjuk. Majd a két kiszámított összeget összeadva megkapjuk a maximális összeget.
+
+    Tehát a programnak „gondolnia kell” arra, hogy a maximális összegű részsorozat bármelyik helyzetben előfordulhat (az első résztömbben, a másodikban vagy a két résztömbben felosztva), ezért mindhárom eset által szolgáltatott maximális összeget
+    kiszámolja és a legnagyobbat választja. [25]
+
+    Adott egy ponthalmaz, amely 2n (n > 1) pontot tartalmaz. Ismerve a pontok koordinátáit, határozzuk meg a legközelebb eső két pont közötti távolságot!
+
+GREEDY
+
+    Legyen két, egész számokat tartalmazó halmaz: A = {a1, a2, ..., am} és B = {b1, b2, …, bn} (1  m  n  100). Határozzuk meg a B halmaz azon X = {x1, x2, …, xm} részhalmazát,
+    amelynek megfelelően az E = a1x1 + a2x2 + … + amxm kifejezés értéke a lehető legnagyobb.
+
+    Példa ■ Ha m =3, n = 5, A = (2, 4, 3) és B = (5, –3, 8, –1, 2)  E = 51.
+
+    Útmutatás ■ Növekvő sorrendbe rendezzük mindkét sorozatot. Az A halmaz negatív elemei mellé a B halmaz legkisebb elemeit, a pozitív elemek mellé a legnagyobbakat választjuk.
+
+    Adott n zeneszámot tartalmazó állomány hossza. Ezeket az állományokat ugyanazon a mágnes szalagon szeretnénk tárolni. Állapítsuk meg az állományok optimális elrendezését a szalagon ahhoz, hogy az átlagos elérési idő a lehető legkisebb legyen.
+
+    Megjegyzés ■ Egy állomány elérése érdekében minden előtte tárolt állományt el kell olvasnunk.
+
+    Egy országban van k olajfinomító és n benzinkút, ahova a benzint el kell juttatni. A csővezetékeket úgy kell megtervezni, hogy minimális hosszúságú csövet kelljen lefektetni. A csővezeték csak benzinkútnál vagy finomítónál ágazhat el.
+    Határozzuk meg, hogy mely csomópontok (olajfinomítók és/vagy benzinkútak) között kell kiépíteni a csővezetéket úgy, hogy a csővezeték hossza minimális legyen!
+
+    Beolvassuk az olajfinomítók és a benzinkutak számát, valamint az olajfinomítók és a benzinkutak koordinátáit.
+
+    Írjuk ki azon helyek indexeit, amelyek között csövet kell lefektetni a minimális hosszúságú csőhálózat kiépítéséhez. Az olajfinomítók indexét O, a benzinkutakét pedig B betű előzze meg!
+
+    Egy jótékonysági intézmény orvosi rendelőt működtet. Sajnos csak egyetlen rendelő áll rendelkezésre, ahol egy adott pillanatban egyetlen orvos rendelhet. Az intézmény felkért n különböző szakorvost, hogy közölje a nap mely óráiban
+    tudná fogadni a betegeket a rendelőben. Az n orvos megadta az [ei, vi] időintervallumokat. Határozzuk meg azt az órarendet, amelynek megfelelően a legtöbb orvos állhat majd a betegek rendelkezésére. [2]
+
+    Adva van n + 1 cipősdoboz és n pár cipő, amelyek meg vannak számozva 1-től n-ig. Az n pár cipő n dobozban található, a dobozok közül egy üres. Mivel a cipők nincsenek a megfelelő dobozban, el kell rendezni ezeket úgy, hogy minden cipő a
+    saját dobozába kerüljön. Munka közben csak egy pár cipőt szabad kivenni a dobozból, amelyben található, és azonnal be kell tenni az üres dobozba. Állapítsuk meg a költöztetések sorozatát minimális számú művelettel.
+
+    Beolvassuk a cipők számát. Feltételezzük, hogy az i-edik cipő eredetileg az i-edik dobozban van (i = 1, 2, ..., n) és az n + 1-edik doboz üres. Továbbá beolvasunk még n + 1 számot, amelyek közül az i-edik (i = 1, 2, ..., n) azt fejezi ki
+    , hogy az i-edik dobozban milyen sorszámú cipőnek kell lennie. Az üres doboznak megfelelő szám 0.
+
+    Példa
+
+    Cipők száma = 4.
+
+    Kívánt elrendezés: (2, 3, 1, 0)
+
+    Minimális költöztetések száma: 4
+
+    Magyarázat
+
+    1. lépés: a 3-as cipőt kivesszük a 3-as dobozból és betesszük a 4-esbe
+
+    2. lépés: az 1-es cipőt kivesszük az 1-es dobozból és betesszük a 3-asba
+
+    3. lépés: a 2-es cipőt kivesszük az 2-es dobozból és betesszük az 1-esbe
+
+    4. lépés: a 3-as cipőt kivesszük a 4-es dobozból és betesszük a 2-esbe
+
+    Útmutatás ■ Ahhoz, hogy rendet teremtsünk a dobozokban, minden p cipőt a kívánt dobozba kell tennünk, természetesen, ha már nincs ott. Két esetet különböztetünk meg:
+
+    A doboz ahova a p cipőt kell tennünk, üres;
+
+    A doboz ahova a p cipőt kell tennünk foglalt (a q cipő által).
+
+    Az első esetben elhelyezzük a p cipőt az üres dobozba. A második esetben előbb ki kell üresítenünk a q cipő által elfoglalt dobozt, majd az így felszabadított dobozba betesszük a p cipőt.
+
+    Költözik a múzeum. A tárgyakat kocka alakú, különböző méretű ládákba csomagolták. Kicsomagoláskor több személy dolgozik egyidőben. A rendetlenség elkerülése végett, azokba a helyiségekbe, ahol a kicsomagolás folyik felszereltek egy futószalagot,
+     amelyre az üres ládákat helyezik, a nyitott felükkel felfele. A futószalag végéhez egy gyereket állítottak, akinek az a feladata, hogy összeszedje a ládákat és úgy helyezze egyiket a másikba, (ha lehetséges), hogy végül a ládacsomagok száma a lehető
+      legkisebb legyen. Az igazgató úgy látja, hogy a gyerek tanácstalan, ezért még hozzáteszi:
+
+    - A ládákat az érkezésük sorrendjében kell a futószalagról levenni.
+
+    - Az aktuális láda csak egy nála nagyobb méretű ládába helyezhető.
+
+    - Ha nincs olyan megkezdett csomag, amelybe elhelyezhető az aktuális láda, akkor ez a láda egy új csomag első ládája lesz.
+
+    - Egy megkezdett csomagba csak egyetlen láda helyezhető, vagyis nem lehet két ládát egymás mellé helyezni még akkor sem, ha ez egyébként lehetséges volna.
+
+    - Egy elhelyezett ládát többé nem szabad mozgatni.
+
+    - Egy megkezdett csomag nem helyezhető egy másik csomagba még akkor sem, ha ez egyébként lehetséges volna.
+
+    - Egyetlen ládát sem lehet figyelmen kívül hagyni.
+
+    Állapítsuk meg, hogy minimálisan hány ládába lehet a ládasorozatot öszszepakolni, továbbá, hogy mely ládák lesznek egybepakolva.
+
+    Példa
+
+    Ládák száma = 10
+
+    Ládák méretei: 4, 1, 5, 10, 7, 9, 2, 8, 3, 2.
+
+    Ládacsomagok száma: 4
+
+    1. csomag: 4, 1
+
+    2. csomag: 5, 2
+
+    3. csomag: 10, 7, 3, 2
+
+    4. csomag: 9,8
+
+    Útmutatás ■ A feladatban adott sorozat minimális számú csökkenő részsorozatra bontását kell elvégeznünk. Megoldható egy mohó algoritmussal, amely mindig az első olyan ládába csomagol, amelybe lehetséges. Észrevesszük, hogy így a ládacsomagok
+     legfelső ládáinak mérete növekvő sorozatot alkot, tehát a megfelelő csomag megkeresése lehetséges bináris kereséssel.
+
+    Fakultatív ■ Határozzuk meg azt a legnagyobb ládaszámot amit a megírt programmal még fel tudunk dolgozni!
+
+    Egy kiállítási csarnokban a pavilonokat egy m  n méretű négyzetháló mentén jelölik ki a résztvevő cégek számára. Egy őrző cég szerződést kötött a cégek egy részével, amelynek értelmében felügyelet alatt tartják az illető pavilonokat.
+     A szervezők lehetővé teszik az őrző cégnek, hogy megfigyelőhelyeket szereljenek a pavilonok fölé. Egy ilyen helyről egy pavilon csak akkor látható, ha ez egyvonalban található a megfigyelőhellyel sorosan vagy oszloposan és, ha a megfigyelőhely
+      és a pavilon között nem található más pavilon. Ugyanakkor, nem látható az a pavilon, amely fölött található a megfigyelőhely.
+
+    Határozzuk meg annak a legkevesebb megfigyelőhelynek a számát, amelyekkel a szerződés szerint biztosítani lehet a pavilonok őrzését.
+
+    Beolvasunk egy n soros és m oszlopos tömböt, ahol az 1 érték egy olyan pavilont jelent, amelyet őrizni fognak és a 0 olyan pavilont, amelyet nem kell őrizni.
+ 
+    Írjuk ki a legkevesebb megfigyelőhelynek a számát és a megfigyelőhelyek sor és oszlopindexeit is. [2]
+
+    Példa ■ Legyen a csarnoknak megfelelő kétdimenziós tömb:
+
+    1 1 1 0 0
+
+    0 1 0 0 0
+
+    0 0 1 0 0
+
+    0 1 0 0 1
+
+    0 1 0 0 1
+
+    A példa esetében, ha (közelítő) mohó algoritmussal oldjuk meg a feladatot, 4 megfigyelőhelyre lesz szükség a követke ző helyeken: (1, 2), (1, 1), (4, 3), (5, 3).
+
+    Meghatározzuk az első olyan (i, j) helyet, ahonnan maximális számú pavilont lehet megfigyelni.
+
+    (i, j)-t betesszük az eredménybe.
+
+    Megjelöljük azokat a pozíciókat, amelyeket az (i, j) helyről meg lehet figyelni ahhoz, hogy ne vizsgáljuk ezeket még egyszer.
+
+    Aktualizáljuk a felvigyázott pozíciók számát.
+
+    Az egyetem kapott n számítógépet, amelyeket különböző épületekbe és termekbe fognak elhelyezni úgy, hogy a számítógépek egy lineáris hálózatot alkossanak: minden számítógép két másikkal lesz összekötve, kivéve az elsőt és az utolsót,
+     amelyek csak egy-egy számítógéppel lesznek összekötve. Beolvassuk az n számítógép x és y koordinátáit. Írjuk ki a hálózatot úgy, hogy minimális hosszúságú kábelre legyen szükség.
+
+    Példa ■ Legyen n = 4, és a számítógépek koordinátái: (1, 1), (2, 1), (1, 2), (3, 1). Egy greedy heurisztika a kábel minimális hosszának 3.00-at ad meg, ha a számítógépeket a következő sorrendben kötjük össze: (3, 1, 2, 4).
+
+    Kiválasztjuk az első számítógépet, majd megkeressük a hozzá legközelebb találhatót stb. Ezt az algoritmust megismételjük úgy, hogy más-más kiindulópontot választunk. Megtartjuk a legrövidebb kábelt igénylő megoldást. [2]

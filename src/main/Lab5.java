@@ -831,7 +831,7 @@ public class Lab5 extends Lab {
     }
 
 
-    private void a011() {
+    public void a011() {
         //given matrix, get the most used number
         int [][] x = NumberService.generateMatrixIntegers(n,n*2,a,b);
         int highStat = a011_impl(x);

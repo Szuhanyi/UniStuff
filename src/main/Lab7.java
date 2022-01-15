@@ -1,11 +1,11 @@
 package main;
 
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Algorithmic assignment, no 7 .
@@ -18,10 +18,100 @@ public class Lab7  extends Lab {
     boolean[] column = new boolean[n];
     private final List<List<Integer>> queenResults = new LinkedList<>();
     private long queenSolutionCount = 0;
+    private enum colors {red, green, blue};
 
-    private enum colors {red, green, blue}
+    /**
+     *  There are several prizes.
+     *  There are three tiers of winners. (1, 2, 3)
+     *  For one tier each, winners get the same value (numbers of rewards can vary)
+     *  lower tier gets less value
+     */
+    @Override
+    public void a011() {
+        int x = 2;
+        int y = 2;
+        int z = 1;
+        int[] prizes = new int[]{5, 8, 3, 7, 12, 1, 9};
+        a011_impl(x, y, z, prizes);
+    }
 
-    ;
+    private void a011_impl(int tier1, int tier2, int tier3, int[] prizes) {
+        // prepare data
+        LinkedList<LinkedList<Integer>> variations = new LinkedList<>();
+        LinkedList<Integer> prizeList = new LinkedList<>();
+        int[] tierCounts = new int[3];
+        tierCounts[0] = tier1;
+        tierCounts[1] = tier2;
+        tierCounts[2] = tier3;
+
+        for (int x : prizes) {
+            prizeList.add(x);
+        }
+        prizeList.sort(Comparator.reverseOrder());
+
+        // do calculation
+        variations = distributeRewards(prizeList ,tierCounts);
+
+        // do response to user
+        if(variations != null) {
+            System.out.println(variations);
+        }
+        else
+        {
+            System.out.println("No feasible solutions available.");
+        }
+    }
+
+    private LinkedList<LinkedList<Integer>> distributeRewards(LinkedList<Integer> prizeList,  int[] tiers) {
+        // lower limit is the max value , but it is sorted
+        int lowerLimit = prizeList.getFirst();
+        int upperLimit = lowerLimit*2;
+        int value = lowerLimit;// we start with the biggest number
+        LinkedList<LinkedList<Integer>> result = new LinkedList<>();
+
+//        Map<Integer, List<Integer>> mappedResult = new HashMap<>();
+//        mappedResult.put(tiers[0],new LinkedList<>());
+//        mappedResult.put(tiers[1],new LinkedList<>());
+//        mappedResult.put(tiers[2],new LinkedList<>());
+
+        // we look for value numbers
+        int count = tiers[0];
+        LinkedList<Integer> prizeListBackup = new LinkedList<>(prizeList);
+
+        // condition is that to have the number pool empty
+        boolean condition = false;
+
+        while( lowerLimit < upperLimit) {
+            //try finding a value for the first tier
+
+            LinkedList<Integer> aGoodTry = searchForNumbers(prizeList, lowerLimit, count);
+            // try finding value for the second tier
+
+            // if solution found print
+            System.out.println(lowerLimit);
+            System.out.println(aGoodTry);
+            lowerLimit++;
+        }
+        return null;
+    }
+
+    // prizes
+    // value to get
+    // how many to find
+    private LinkedList<Integer> searchForNumbers(LinkedList<Integer> prizeList, int searchedValue, int numberOfValue) {
+        LinkedList<Integer> result = new LinkedList<>();
+        while(numberOfValue > 0) {
+           LinkedList<Integer> prizesOfValue = NumberService.findValueInList(prizeList,searchedValue);
+           //if(NumberService.getSumOfList(prizesOfValue) == searchedValue) {
+                numberOfValue --;
+                if(prizesOfValue != null && prizesOfValue.size() > 0) {
+                    result.addAll(prizesOfValue);
+                }
+            //}
+        }
+        return result;
+    }
+
 
 
     /**
@@ -53,7 +143,6 @@ public class Lab7  extends Lab {
         isRunning.add(true);
         findWayTo(tableGrid, destinationPoint, walk, isRunning);
     }
-
 
     private void markRunnerInChessTable(boolean[][] x, int[] p) {
         int p1 = p[0];
@@ -89,7 +178,6 @@ public class Lab7  extends Lab {
             markDirectionOnTable(x,p,direction);
         }
     }
-
 
     private void findWayTo(boolean[][] tableGrid, int[] destinationPoint, LinkedList<LinkedList<Integer>> walk, LinkedList<Boolean> isRunning) {
         if (searchIsStillRunning(isRunning) && isLastStepInWalkCorrect(tableGrid, walk)) {
@@ -247,8 +335,9 @@ public class Lab7  extends Lab {
 
     private int[][] readMatrixFromTextFile(String s, int n) {
         int[][] result = new int[n][n];
+        BufferedReader myReader = null;
         try {
-            BufferedReader myReader = new BufferedReader(new FileReader(s));
+             myReader = new BufferedReader(new FileReader(s));
             String line = "";
             int lineCount = 0;
             while ((line = myReader.readLine()) != null) {
@@ -262,6 +351,14 @@ public class Lab7  extends Lab {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+        finally {
+            try {
+                if(myReader!=null)
+                    myReader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return result;
     }
