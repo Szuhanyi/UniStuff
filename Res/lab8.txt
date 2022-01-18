@@ -138,7 +138,7 @@ GREEDY
     Határozzuk meg annak a legkevesebb megfigyelőhelynek a számát, amelyekkel a szerződés szerint biztosítani lehet a pavilonok őrzését.
 
     Beolvasunk egy n soros és m oszlopos tömböt, ahol az 1 érték egy olyan pavilont jelent, amelyet őrizni fognak és a 0 olyan pavilont, amelyet nem kell őrizni.
- 
+
     Írjuk ki a legkevesebb megfigyelőhelynek a számát és a megfigyelőhelyek sor és oszlopindexeit is. [2]
 
     Példa ■ Legyen a csarnoknak megfelelő kétdimenziós tömb:

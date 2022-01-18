@@ -7,3 +7,5 @@ K
 Res/lab7_2.txt,4\8\48f087561fdb0dfe1699173531cc8c966f23b2fd
 B
 src/main/Main.java,f\e\fe03b4fd3afe162c6e01309b98a22588e093d274
+<
+Res/lab8.txt,5\c\5c551612ba47dd582993fd808e36dd14b911e83a
